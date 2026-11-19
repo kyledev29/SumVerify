@@ -21,7 +21,7 @@
   },
   "home": {
     "h1": "Verify a file’s checksum",
-    "intro": "Drop a file, paste the hash from the download page, and see if they match. The file is read in small pieces on your device and never uploaded, so large files are fine. Each hash type is calculated one at a time, most common first.",
+    "intro": "Want to be sure a download is complete and untouched? Drop the file here, paste the checksum (the short code) listed on the download page, and see if they match. Everything happens on your device, so nothing is uploaded and even very large files work fine.",
     "dropTitle": "Drop a file here, or click to choose",
     "cmpLabel": "Hash to compare",
     "optional": "(optional)",
@@ -74,7 +74,7 @@
     "features": [
       "<b>Private by design:</b> files are read locally and never uploaded.",
       "<b>Built for large files:</b> data is streamed in 8 MB pieces, so multi-gigabyte files work.",
-      "<b>20 hash types:</b> SHA-256, MD5, SHA-1, SHA-512, BLAKE3, CRC32 and more, most common first.",
+      "<b>21 hash types:</b> SHA-256, MD5, SHA-1, SHA-512, BLAKE3, CRC32 and more, most common first.",
       "<b>Free and open source:</b> MIT-licensed, available on {githubLink}."
     ],
     "authorTitle": "Who builds it",
@@ -107,6 +107,8 @@
     "matchOne": "<b>Match.</b> The {types} hash matches{note}. This file is identical to the original.",
     "matchMany": "<b>Match.</b> The {types} hashes match{note}. This file is identical to the original.",
     "matchNote": " ({matched} of the {total} hashes you provided match)",
+    "riskMedium": "<b>Note:</b> {types} is an older hash type and carries a small risk of being forged. For files you really need to trust, compare a SHA-256 hash too if the site provides one.",
+    "riskWeak": "<b>Security warning:</b> {types} only detects accidental errors and gives no protection against tampering, so the security risk is high. Don’t rely on this match to trust the file: compare a SHA-256 hash from the official site instead.",
     "comparing": "Comparing… no match yet, still calculating. Results appear one hash type at a time.",
     "noMatchCommon": "<b>No match with the common hash types.</b> If your hash uses a different format, check the other types too. {button}",
     "checkOther": "Check other hash types",

@@ -51,6 +51,18 @@ Các `{token}` khác (`{n}`, `{name}`, …) giữ nguyên cho JS chạy trên tr
 2. Thêm `{ id, path: '<id>/', multilingual: true|false }` vào `pages` trong `i18n.config.js`
    (nếu đa ngôn ngữ thì thêm `meta.<id>.title/description` và nội dung vào các file JSON; nếu chỉ English thì đặt `title`/`description` ngay trong config như `privacy`/`terms`).
 
+## Mức độ tin cậy khi khớp hash
+
+`src/checker/hashers.js` → `SECURITY` chia mọi loại hash thành 3 cấp; banner xanh "Match" luôn hiện, nhưng lời nhắc phụ thuộc loại **mạnh nhất** trong các hash khớp:
+
+| Cấp | Loại hash | Hiển thị |
+|---|---|---|
+| strong | SHA-256/512/384/224, SHA3-*, BLAKE2b/2s, BLAKE3 | khớp bình thường |
+| medium | MD5, SHA-1 | thêm ghi chú nhẹ (`riskMedium`) |
+| weak | MD4, CRC8/16/32/32C, Adler-32, Fletcher-16/32 | thêm cảnh báo rủi ro cao (`riskWeak`) |
+
+Muốn đổi cấp của một loại hash, sửa một dòng trong `SECURITY`; muốn đổi lời nhắc, sửa `ui.riskMedium` / `ui.riskWeak` trong JSON ngôn ngữ.
+
 ## SEO (Google / Bing)
 
 Mọi thứ sinh tự động từ `i18n.config.js` + JSON ngôn ngữ, không cần sửa tay từng trang:

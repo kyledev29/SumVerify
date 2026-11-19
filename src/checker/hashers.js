@@ -1,6 +1,6 @@
 import {
   createSHA256, createSHA512, createSHA1, createMD5, createCRC32, createBLAKE2b, createBLAKE3,
-  createSHA224, createSHA384, createSHA3, createBLAKE2s,
+  createSHA224, createSHA384, createSHA3, createBLAKE2s, createMD4,
 } from 'hash-wasm';
 
 /* Small pure-JS checksums with the same streaming interface as hash-wasm: update(u8) / digest() */
@@ -70,7 +70,7 @@ function fl32() {
 
 /** name -> factory returning (a Promise of) a streaming hasher */
 export const FACTORIES = {
-  'SHA-256': () => createSHA256(), 'SHA-512': () => createSHA512(), 'SHA-1': () => createSHA1(), 'MD5': () => createMD5(),
+  'SHA-256': () => createSHA256(), 'SHA-512': () => createSHA512(), 'SHA-1': () => createSHA1(), 'MD4': () => createMD4(), 'MD5': () => createMD5(),
   'CRC32': () => createCRC32(), 'CRC32C': () => refl(0x82F63B78, 0xFFFFFFFF, 0xFFFFFFFF, 8),
   'BLAKE2b': () => createBLAKE2b(512), 'BLAKE3': () => createBLAKE3(),
   'SHA-224': () => createSHA224(), 'SHA-384': () => createSHA384(),
@@ -82,6 +82,20 @@ export const FACTORIES = {
 /* Hash types in order of real-world checksum popularity. Each type is hashed in its own
    streaming pass over the file (8 MB chunks), one type at a time, most common first. */
 export const ORDER = ['SHA-256', 'MD5', 'SHA-1', 'SHA-512', 'CRC32', 'BLAKE2b', 'BLAKE3', 'CRC32C'];
-export const MORE = ['SHA-384', 'SHA3-256', 'SHA-224', 'SHA3-512', 'BLAKE2s', 'SHA3-384', 'SHA3-224', 'Adler-32', 'CRC16', 'Fletcher-32', 'Fletcher-16', 'CRC8'];
+export const MORE = ['SHA-384', 'SHA3-256', 'SHA-224', 'SHA3-512', 'BLAKE2s', 'SHA3-384', 'SHA3-224', 'MD4', 'Adler-32', 'CRC16', 'Fletcher-32', 'Fletcher-16', 'CRC8'];
 export const CHUNK = 8 * 1024 * 1024;
 export const MIN_HASH_MS = 100;
+
+/* How far a MATCH of each type can be trusted against deliberate tampering.
+     strong : no practical forgery known (SHA-2, SHA-3, BLAKE)
+     medium : broken for collisions but still fine against random damage (MD5, SHA-1)
+     weak   : error-detection only, or trivially forgeable (CRC, Adler, Fletcher, MD4) */
+export const SECURITY = {
+  'SHA-256': 'strong', 'SHA-512': 'strong', 'SHA-384': 'strong', 'SHA-224': 'strong',
+  'SHA3-224': 'strong', 'SHA3-256': 'strong', 'SHA3-384': 'strong', 'SHA3-512': 'strong',
+  'BLAKE2b': 'strong', 'BLAKE2s': 'strong', 'BLAKE3': 'strong',
+  'MD5': 'medium', 'SHA-1': 'medium',
+  'MD4': 'weak', 'CRC32': 'weak', 'CRC32C': 'weak', 'CRC16': 'weak', 'CRC8': 'weak',
+  'Adler-32': 'weak', 'Fletcher-16': 'weak', 'Fletcher-32': 'weak',
+};
+export const TIERS = ['weak', 'medium', 'strong']; // ascending trust

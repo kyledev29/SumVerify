@@ -12,7 +12,7 @@
   "footer": { "tagline": "Kostenloser Prüfsummenrechner, der in Ihrem Browser läuft.", "pages": "Seiten", "legal": "Rechtliches", "further": "Weitere Informationen", "privacy": "Datenschutzerklärung", "terms": "Nutzungsbedingungen" },
   "home": {
     "h1": "Prüfsumme einer Datei überprüfen",
-    "intro": "Legen Sie eine Datei ab, fügen Sie den Hash von der Download-Seite ein und sehen Sie, ob beide übereinstimmen. Die Datei wird in kleinen Stücken auf Ihrem Gerät gelesen und nie hochgeladen, daher sind auch große Dateien kein Problem. Jeder Hash-Typ wird nacheinander berechnet, die gängigsten zuerst.",
+    "intro": "Sie möchten sichergehen, dass ein Download vollständig und unverändert ist? Legen Sie die Datei hier ab, fügen Sie die Prüfsumme (den kurzen Code) von der Download-Seite ein und sehen Sie, ob beide übereinstimmen. Alles passiert auf Ihrem Gerät: Es wird nichts hochgeladen, und selbst sehr große Dateien sind kein Problem.",
     "dropTitle": "Datei hier ablegen oder zum Auswählen klicken",
     "cmpLabel": "Hash zum Vergleichen", "optional": "(optional)",
     "cmpPlaceholder": "Fügen Sie den zu vergleichenden Hash ein. Sie können mehrere Hashes eingeben, einen pro Zeile.",
@@ -59,7 +59,7 @@
     "features": [
       "<b>Datenschutz von Grund auf:</b> Dateien werden lokal gelesen und nie hochgeladen.",
       "<b>Für große Dateien gebaut:</b> Daten werden in 8-MB-Stücken gestreamt, daher funktionieren auch mehrere Gigabyte große Dateien.",
-      "<b>20 Hash-Typen:</b> SHA-256, MD5, SHA-1, SHA-512, BLAKE3, CRC32 und mehr, die gängigsten zuerst.",
+      "<b>21 Hash-Typen:</b> SHA-256, MD5, SHA-1, SHA-512, BLAKE3, CRC32 und mehr, die gängigsten zuerst.",
       "<b>Kostenlos und Open Source:</b> MIT-lizenziert, verfügbar auf {githubLink}."
     ],
     "authorTitle": "Wer dahintersteckt",
@@ -85,6 +85,8 @@
     "matchOne": "<b>Übereinstimmung.</b> Der {types}-Hash stimmt überein{note}. Diese Datei ist mit dem Original identisch.",
     "matchMany": "<b>Übereinstimmung.</b> Die {types}-Hashes stimmen überein{note}. Diese Datei ist mit dem Original identisch.",
     "matchNote": " ({matched} von {total} angegebenen Hashes stimmen überein)",
+    "riskMedium": "<b>Hinweis:</b> {types} ist ein älterer Hash-Typ mit einem geringen Fälschungsrisiko. Bei Dateien, denen Sie wirklich vertrauen müssen, vergleichen Sie zusätzlich einen SHA-256-Hash, falls die Seite einen bietet.",
+    "riskWeak": "<b>Sicherheitswarnung:</b> {types} erkennt nur zufällige Fehler und schützt nicht vor Manipulation, das Sicherheitsrisiko ist daher hoch. Verlassen Sie sich nicht auf diese Übereinstimmung, um der Datei zu vertrauen. Vergleichen Sie stattdessen einen SHA-256-Hash von der offiziellen Seite.",
     "comparing": "Vergleiche… noch keine Übereinstimmung, die Berechnung läuft noch. Die Ergebnisse erscheinen nacheinander für jeden Hash-Typ.",
     "noMatchCommon": "<b>Keine Übereinstimmung bei den gängigen Hash-Typen.</b> Wenn Ihr Hash ein anderes Format verwendet, prüfen Sie auch die anderen Typen. {button}",
     "checkOther": "Andere Hash-Typen prüfen",

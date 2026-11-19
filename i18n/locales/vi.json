@@ -21,7 +21,7 @@
   },
   "home": {
     "h1": "Xác minh checksum của tệp",
-    "intro": "Thả tệp vào, dán mã hash từ trang tải xuống và xem hai mã có khớp không. Tệp được đọc từng phần nhỏ ngay trên thiết bị và không bao giờ được tải lên, nên tệp lớn cũng không sao. Mỗi loại hash được tính lần lượt, loại phổ biến nhất trước.",
+    "intro": "Muốn chắc chắn tệp tải về còn nguyên vẹn và không bị sửa đổi? Hãy thả tệp vào đây, dán checksum (mã ngắn) ghi trên trang tải xuống và xem hai bên có khớp không. Mọi thứ diễn ra ngay trên thiết bị của bạn, nên không có gì bị tải lên và tệp rất lớn cũng dùng được.",
     "dropTitle": "Thả tệp vào đây hoặc bấm để chọn",
     "cmpLabel": "Mã hash cần so sánh",
     "optional": "(không bắt buộc)",
@@ -74,7 +74,7 @@
     "features": [
       "<b>Riêng tư từ thiết kế:</b> tệp được đọc cục bộ và không bao giờ tải lên.",
       "<b>Dành cho tệp lớn:</b> dữ liệu được xử lý theo luồng từng phần 8 MB, nên tệp nhiều gigabyte vẫn dùng được.",
-      "<b>20 loại hash:</b> SHA-256, MD5, SHA-1, SHA-512, BLAKE3, CRC32 và nhiều loại khác, loại phổ biến nhất trước.",
+      "<b>21 loại hash:</b> SHA-256, MD5, SHA-1, SHA-512, BLAKE3, CRC32 và nhiều loại khác, loại phổ biến nhất trước.",
       "<b>Miễn phí và mã nguồn mở:</b> giấy phép MIT, có trên {githubLink}."
     ],
     "authorTitle": "Ai xây dựng nên nó",
@@ -107,6 +107,8 @@
     "matchOne": "<b>Khớp.</b> Hash {types} khớp{note}. Tệp này giống hệt bản gốc.",
     "matchMany": "<b>Khớp.</b> Các hash {types} khớp{note}. Tệp này giống hệt bản gốc.",
     "matchNote": " ({matched}/{total} mã hash bạn cung cấp khớp)",
+    "riskMedium": "<b>Lưu ý:</b> {types} là loại hash đã cũ, có rủi ro thấp là bị làm giả. Với tệp bạn thật sự cần tin cậy, hãy so sánh thêm hash SHA-256 nếu trang tải xuống có cung cấp.",
+    "riskWeak": "<b>Cảnh báo bảo mật:</b> {types} chỉ phát hiện được lỗi ngẫu nhiên và không bảo vệ trước việc bị sửa đổi, nên rủi ro bảo mật cao. Đừng dựa vào kết quả khớp này để tin tệp: hãy so sánh hash SHA-256 từ trang chính thức.",
     "comparing": "Đang so sánh… chưa có kết quả khớp, vẫn đang tính. Kết quả hiện lần lượt từng loại hash.",
     "noMatchCommon": "<b>Không khớp với các loại hash phổ biến.</b> Nếu mã hash của bạn dùng định dạng khác, hãy kiểm tra thêm các loại khác. {button}",
     "checkOther": "Kiểm tra các loại hash khác",

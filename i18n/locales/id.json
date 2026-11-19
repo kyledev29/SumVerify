@@ -12,7 +12,7 @@
   "footer": { "tagline": "Kalkulator checksum gratis yang berjalan di browser Anda.", "pages": "Halaman", "legal": "Legal", "further": "Informasi lebih lanjut", "privacy": "Kebijakan Privasi", "terms": "Ketentuan Penggunaan" },
   "home": {
     "h1": "Verifikasi checksum file",
-    "intro": "Letakkan file, tempel hash dari halaman unduhan, lalu lihat apakah keduanya cocok. File dibaca dalam potongan kecil di perangkat Anda dan tidak pernah diunggah, sehingga file besar pun aman. Setiap jenis hash dihitung satu per satu, dimulai dari yang paling umum.",
+    "intro": "Ingin memastikan unduhan Anda lengkap dan tidak diubah? Letakkan file di sini, tempel checksum (kode pendek) dari halaman unduhan, lalu lihat apakah keduanya cocok. Semuanya terjadi di perangkat Anda, jadi tidak ada yang diunggah dan file yang sangat besar pun aman.",
     "dropTitle": "Letakkan file di sini, atau klik untuk memilih",
     "cmpLabel": "Hash untuk dibandingkan", "optional": "(opsional)",
     "cmpPlaceholder": "Tempel hash yang akan dibandingkan. Anda dapat memasukkan beberapa hash, satu per baris.",
@@ -59,7 +59,7 @@
     "features": [
       "<b>Privat sejak desain:</b> file dibaca secara lokal dan tidak pernah diunggah.",
       "<b>Dibuat untuk file besar:</b> data diproses secara streaming dalam potongan 8 MB, sehingga file berukuran beberapa gigabyte pun bisa.",
-      "<b>20 jenis hash:</b> SHA-256, MD5, SHA-1, SHA-512, BLAKE3, CRC32, dan lainnya, dimulai dari yang paling umum.",
+      "<b>21 jenis hash:</b> SHA-256, MD5, SHA-1, SHA-512, BLAKE3, CRC32, dan lainnya, dimulai dari yang paling umum.",
       "<b>Gratis dan open source:</b> berlisensi MIT, tersedia di {githubLink}."
     ],
     "authorTitle": "Siapa yang membuatnya",
@@ -85,6 +85,8 @@
     "matchOne": "<b>Cocok.</b> Hash {types} cocok{note}. File ini identik dengan aslinya.",
     "matchMany": "<b>Cocok.</b> Hash {types} cocok{note}. File ini identik dengan aslinya.",
     "matchNote": " ({matched} dari {total} hash yang Anda berikan cocok)",
+    "riskMedium": "<b>Catatan:</b> {types} adalah jenis hash lama dengan risiko kecil untuk dipalsukan. Untuk file yang benar-benar perlu Anda percaya, bandingkan juga hash SHA-256 jika situsnya menyediakan.",
+    "riskWeak": "<b>Peringatan keamanan:</b> {types} hanya mendeteksi kesalahan yang tidak disengaja dan tidak melindungi dari perubahan berbahaya, sehingga risiko keamanannya tinggi. Jangan mengandalkan kecocokan ini untuk memercayai file: bandingkan hash SHA-256 dari situs resmi.",
     "comparing": "Membandingkan… belum ada yang cocok, masih menghitung. Hasil muncul satu jenis hash demi satu.",
     "noMatchCommon": "<b>Tidak cocok dengan jenis hash yang umum.</b> Jika hash Anda memakai format lain, periksa juga jenis lainnya. {button}",
     "checkOther": "Periksa jenis hash lainnya",

@@ -12,7 +12,7 @@
   "footer": { "tagline": "Calculadora de checksum gratuita que se ejecuta en tu navegador.", "pages": "Páginas", "legal": "Legal", "further": "Más información", "privacy": "Política de privacidad", "terms": "Términos de uso" },
   "home": {
     "h1": "Verifica el checksum de un archivo",
-    "intro": "Suelta un archivo, pega el hash de la página de descarga y comprueba si coinciden. El archivo se lee en trozos pequeños en tu dispositivo y nunca se sube, así que los archivos grandes no son un problema. Cada tipo de hash se calcula uno a uno, empezando por los más comunes.",
+    "intro": "¿Quieres asegurarte de que una descarga está completa y sin alterar? Suelta el archivo aquí, pega el checksum (el código corto) que aparece en la página de descarga y comprueba si coinciden. Todo ocurre en tu dispositivo, así que no se sube nada y funcionan incluso archivos muy grandes.",
     "dropTitle": "Suelta un archivo aquí o haz clic para elegir",
     "cmpLabel": "Hash a comparar", "optional": "(opcional)",
     "cmpPlaceholder": "Pega el hash a comparar. Puedes introducir varios, uno por línea.",
@@ -59,7 +59,7 @@
     "features": [
       "<b>Privado por diseño:</b> los archivos se leen localmente y nunca se suben.",
       "<b>Hecho para archivos grandes:</b> los datos se procesan en bloques de 8 MB, así que funcionan archivos de varios gigabytes.",
-      "<b>20 tipos de hash:</b> SHA-256, MD5, SHA-1, SHA-512, BLAKE3, CRC32 y más, los más comunes primero.",
+      "<b>21 tipos de hash:</b> SHA-256, MD5, SHA-1, SHA-512, BLAKE3, CRC32 y más, los más comunes primero.",
       "<b>Gratuito y de código abierto:</b> licencia MIT, disponible en {githubLink}."
     ],
     "authorTitle": "Quién lo crea",
@@ -85,6 +85,8 @@
     "matchOne": "<b>Coincide.</b> El hash {types} coincide{note}. Este archivo es idéntico al original.",
     "matchMany": "<b>Coincide.</b> Los hashes {types} coinciden{note}. Este archivo es idéntico al original.",
     "matchNote": " ({matched} de los {total} hashes proporcionados coinciden)",
+    "riskMedium": "<b>Nota:</b> {types} es un tipo de hash antiguo y tiene un riesgo bajo de ser falsificado. Para archivos en los que realmente necesitas confiar, compara también un hash SHA-256 si el sitio lo ofrece.",
+    "riskWeak": "<b>Advertencia de seguridad:</b> {types} solo detecta errores accidentales y no protege contra manipulaciones, por lo que el riesgo de seguridad es alto. No confíes en esta coincidencia para fiarte del archivo: compara en su lugar un hash SHA-256 del sitio oficial.",
     "comparing": "Comparando… aún sin coincidencia, sigue calculando. Los resultados aparecen un tipo de hash cada vez.",
     "noMatchCommon": "<b>Sin coincidencia con los tipos de hash comunes.</b> Si tu hash usa otro formato, comprueba también los demás tipos. {button}",
     "checkOther": "Comprobar otros tipos de hash",

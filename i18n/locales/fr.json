@@ -12,7 +12,7 @@
   "footer": { "tagline": "Calculateur de checksum gratuit qui s’exécute dans votre navigateur.", "pages": "Pages", "legal": "Mentions légales", "further": "Plus d’informations", "privacy": "Politique de confidentialité", "terms": "Conditions d’utilisation" },
   "home": {
     "h1": "Vérifiez le checksum d’un fichier",
-    "intro": "Déposez un fichier, collez le hash de la page de téléchargement et voyez s’ils correspondent. Le fichier est lu par petits morceaux sur votre appareil et n’est jamais envoyé, donc les gros fichiers ne posent pas de problème. Chaque type de hash est calculé l’un après l’autre, les plus courants d’abord.",
+    "intro": "Envie de vérifier qu’un téléchargement est complet et intact ? Déposez le fichier ici, collez le checksum (le court code) indiqué sur la page de téléchargement et voyez s’ils correspondent. Tout se passe sur votre appareil : rien n’est envoyé, et même les très gros fichiers passent sans problème.",
     "dropTitle": "Déposez un fichier ici ou cliquez pour choisir",
     "cmpLabel": "Hash à comparer", "optional": "(facultatif)",
     "cmpPlaceholder": "Collez le hash à comparer. Vous pouvez en saisir plusieurs, un par ligne.",
@@ -59,7 +59,7 @@
     "features": [
       "<b>Confidentialité dès la conception :</b> les fichiers sont lus localement et jamais envoyés.",
       "<b>Pensé pour les gros fichiers :</b> les données sont traitées en flux par blocs de 8 Mo, donc les fichiers de plusieurs gigaoctets passent.",
-      "<b>20 types de hash :</b> SHA-256, MD5, SHA-1, SHA-512, BLAKE3, CRC32 et plus, les plus courants d’abord.",
+      "<b>21 types de hash :</b> SHA-256, MD5, SHA-1, SHA-512, BLAKE3, CRC32 et plus, les plus courants d’abord.",
       "<b>Gratuit et open source :</b> sous licence MIT, disponible sur {githubLink}."
     ],
     "authorTitle": "Qui est derrière SumVerify",
@@ -85,6 +85,8 @@
     "matchOne": "<b>Correspondance.</b> Le hash {types} correspond{note}. Ce fichier est identique à l’original.",
     "matchMany": "<b>Correspondance.</b> Les hashes {types} correspondent{note}. Ce fichier est identique à l’original.",
     "matchNote": " ({matched} des {total} hashes fournis correspondent)",
+    "riskMedium": "<b>À noter :</b> {types} est un type de hash ancien, avec un faible risque de falsification. Pour un fichier auquel vous devez vraiment faire confiance, comparez aussi un hash SHA-256 si le site en fournit un.",
+    "riskWeak": "<b>Alerte de sécurité :</b> {types} ne détecte que les erreurs accidentelles et n’offre aucune protection contre la falsification : le risque est élevé. Ne vous fiez pas à cette correspondance pour faire confiance au fichier ; comparez plutôt un hash SHA-256 du site officiel.",
     "comparing": "Comparaison… aucune correspondance pour l’instant, calcul en cours. Les résultats apparaissent un type de hash à la fois.",
     "noMatchCommon": "<b>Aucune correspondance avec les types de hash courants.</b> Si votre hash utilise un autre format, vérifiez aussi les autres types. {button}",
     "checkOther": "Vérifier les autres types de hash",

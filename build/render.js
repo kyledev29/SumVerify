@@ -92,7 +92,7 @@ function renderTemplate(root, tpl, ctx, where) {
 const stripHtml = (s) => String(s).replace(/<[^>]+>/g, '').replace(/\s+/g, ' ').trim();
 const ldJson = (o) => JSON.stringify(o).replace(/</g, '\\u003c');
 const ROBOTS = 'index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1';
-const FEATURES = ['SHA-256', 'MD5', 'SHA-1', 'SHA-512', 'CRC32', 'CRC32C', 'BLAKE2b', 'BLAKE3', 'SHA-384', 'SHA3-256', 'SHA-224', 'SHA3-512', 'BLAKE2s', 'SHA3-384', 'SHA3-224', 'Adler-32', 'CRC16', 'Fletcher-32', 'Fletcher-16', 'CRC8'];
+const FEATURES = ['SHA-256', 'MD5', 'SHA-1', 'SHA-512', 'CRC32', 'CRC32C', 'BLAKE2b', 'BLAKE3', 'SHA-384', 'SHA3-256', 'SHA-224', 'SHA3-512', 'BLAKE2s', 'SHA3-384', 'SHA3-224', 'MD4', 'Adler-32', 'CRC16', 'Fletcher-32', 'Fletcher-16', 'CRC8'];
 
 /** Everything SEO-related that goes in <head>: robots, keywords, Open Graph, Twitter, verification, JSON-LD. */
 function buildSeoHead({ config, desc, page, locale, base, meta, messages }) {

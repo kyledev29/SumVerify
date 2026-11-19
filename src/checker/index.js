@@ -1,5 +1,5 @@
 import { t } from '../i18n.js';
-import { FACTORIES as F, ORDER, MORE, CHUNK, MIN_HASH_MS } from './hashers.js';
+import { FACTORIES as F, ORDER, MORE, CHUNK, MIN_HASH_MS, SECURITY, TIERS } from './hashers.js';
 
 const $ = (id) => document.getElementById(id);
 
@@ -130,7 +130,13 @@ function evaluate() {
     let matched = 0;
     entries.forEach((e) => { if (all.some((n) => S[n] === e.hash)) matched++; });
     const note = entries.length > 1 ? t('matchNote', { matched, total: entries.length }) : '';
-    return banner('ok', t(hit.length > 1 ? 'matchMany' : 'matchOne', { types: hit.join(', '), note }));
+    // Judge the match by the most trustworthy hash type that matched.
+    const best = TIERS[Math.max(...hit.map((n) => TIERS.indexOf(SECURITY[n])))];
+    const bestTypes = hit.filter((n) => SECURITY[n] === best).join(', ');
+    let html = t(hit.length > 1 ? 'matchMany' : 'matchOne', { types: hit.join(', '), note });
+    if (best === 'medium') html += `<div class="mt-2 text-muted">${t('riskMedium', { types: bestTypes })}</div>`;
+    if (best === 'weak') html += `<div class="mt-2 rounded-control bg-danger-soft px-3 py-2 text-danger">${t('riskWeak', { types: bestTypes })}</div>`;
+    return banner('ok', html);
   }
   if (!ORDER.every((n) => S[n])) return banner('info', t('comparing'));
   if (!moreDone) {
