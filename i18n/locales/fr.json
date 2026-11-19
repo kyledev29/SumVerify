@@ -1,0 +1,99 @@
+{
+  "meta": {
+    "home": { "title": "SumVerify – Calculateur de checksum et vérificateur de fichiers gratuit en ligne", "description": "Calculez SHA-256, MD5, SHA-1, SHA-512, CRC32, BLAKE3 et plus pour n’importe quel fichier dans votre navigateur, même volumineux. Comparez avec un hash publié. Vos fichiers ne quittent jamais votre appareil." },
+    "about": { "title": "À propos de SumVerify – Calculateur de checksum gratuit dans le navigateur", "description": "SumVerify est un calculateur de checksum gratuit et open source qui s’exécute dans votre navigateur. Découvrez son fonctionnement et son auteur." },
+    "contact": { "title": "Contact – SumVerify", "description": "Contactez le développeur de SumVerify via GitHub ou par e-mail." }
+  },
+  "common": {
+    "language": "Langue", "themeAria": "Basculer entre mode sombre et mode clair", "menu": "Menu",
+    "nav": { "home": "Accueil", "what": "Qu’est-ce qu’un checksum ?", "faq": "FAQ", "about": "À propos", "contact": "Contact" }
+  },
+  "footer": { "tagline": "Calculateur de checksum gratuit qui s’exécute dans votre navigateur.", "pages": "Pages", "legal": "Mentions légales", "further": "Plus d’informations", "privacy": "Politique de confidentialité", "terms": "Conditions d’utilisation" },
+  "home": {
+    "h1": "Vérifiez le checksum d’un fichier",
+    "intro": "Déposez un fichier, collez le hash de la page de téléchargement et voyez s’ils correspondent. Le fichier est lu par petits morceaux sur votre appareil et n’est jamais envoyé, donc les gros fichiers ne posent pas de problème. Chaque type de hash est calculé l’un après l’autre, les plus courants d’abord.",
+    "dropTitle": "Déposez un fichier ici ou cliquez pour choisir",
+    "cmpLabel": "Hash à comparer", "optional": "(facultatif)",
+    "cmpPlaceholder": "Collez le hash à comparer. Vous pouvez en saisir plusieurs, un par ligne.",
+    "uploadChecksum": "Importer un fichier de checksum",
+    "uploadTitle": "Tout fichier texte est accepté : .md5, .sha1, .sha256, .sha512, .b3, .txt, …",
+    "clear": "Effacer", "recommended": "Recommandé", "commonHashes": "Hashes courants", "otherHashes": "Autres types de hash",
+    "moreBtn": "Calculer d’autres types de hash", "lookupTitle": "Recherche de fichier connu", "soon": "Bientôt disponible",
+    "lookupText": "Bientôt, vous pourrez vérifier si un fichier est connu publiquement en comparant son hash à notre propre base de données. Seul le hash sera envoyé, jamais le fichier.",
+    "checksum": {
+      "title": "Qu’est-ce qu’un checksum ?",
+      "p1": "Un checksum est une courte chaîne de lettres et de chiffres calculée à partir du contenu d’un fichier, comme une empreinte digitale. Modifiez un seul bit du fichier et le checksum change complètement. Des fichiers identiques donnent toujours des checksums identiques.",
+      "p2": "Les éditeurs indiquent un checksum à côté du téléchargement. Vous le calculez pour le fichier reçu et vous comparez. S’ils correspondent, le fichier est exactement celui que l’éditeur a publié. Sinon, le téléchargement est corrompu ou a été modifié.",
+      "howTitle": "Comment vérifier un téléchargement",
+      "steps": [
+        "Copiez le checksum depuis la page de téléchargement officielle, ou enregistrez leur fichier de checksum (<code>.sha256</code>, <code>.md5</code>, <code>.txt</code>, …).",
+        "Déposez ici votre fichier téléchargé et collez la valeur, ou importez le fichier de checksum.",
+        "Une correspondance signifie que le fichier est identique. Sinon, téléchargez-le à nouveau depuis la source officielle."
+      ],
+      "trustTitle": "À quel type faire confiance ?",
+      "trust": [
+        "<b>SHA-256</b> est la norme actuelle et notre recommandation. SHA-512, SHA-3 et BLAKE3 sont tout aussi solides.",
+        "<b>SHA-1 et MD5</b> détectent encore les dommages accidentels mais peuvent être falsifiés volontairement : ne vous y fiez pas pour la sécurité.",
+        "<b>CRC32, CRC32C, Adler-32 et Fletcher</b> sont de petits codes de détection d’erreurs utilisés dans les archives et les réseaux. Ils ne sont pas sûrs."
+      ],
+      "note": "Un checksum montre que deux fichiers sont identiques, pas que le fichier est sûr. Il ne vaut que ce que vaut l’endroit où vous l’avez copié."
+    },
+    "faqTitle": "FAQ",
+    "faq": [
+      { "q": "Mon fichier est-il envoyé quelque part ?", "a": "Non. Les checksums sont calculés dans votre navigateur : votre fichier ne quitte jamais votre appareil." },
+      { "q": "Quelle taille de fichier puis-je vérifier ?", "a": "Presque toutes, y compris des fichiers de plusieurs gigaoctets. Le fichier est lu par blocs de 8 Mo, donc plus il est gros, plus c’est long. Gardez l’onglet ouvert jusqu’à la fin de la barre de progression." },
+      { "q": "Les majuscules et les espaces comptent-ils ?", "a": "Non, les deux sont ignorés. Mettez chaque checksum sur sa propre ligne. Vous pouvez aussi coller ou importer un fichier de checksum entier, avec des lignes comme <code>hash *filename</code> ou <code>MD5 (filename) = hash</code>. Les lignes commençant par <code>#</code> sont ignorées." },
+      { "q": "Pourquoi autant de types de checksum ?", "a": "Les sites de téléchargement n’utilisent pas tous le même, donc SumVerify vérifie automatiquement les types courants. Si aucun ne correspond, vous pouvez aussi vérifier les autres types." },
+      { "q": "Mon checksum ne correspond pas. Que faire ?", "a": "Vérifiez que vous avez copié la valeur en entier et qu’elle correspond à ce fichier et à cette version précis. Puis téléchargez à nouveau le fichier depuis la source officielle. Si cela ne correspond toujours pas, ne l’ouvrez pas." },
+      { "q": "Une correspondance signifie-t-elle que le fichier est sûr ?", "a": "Non. Une correspondance prouve seulement que le fichier est identique à celui dont le checksum a été calculé. Obtenez toujours les deux auprès d’une source de confiance." },
+      { "q": "Qu’est-ce que la recherche de fichier connu ?", "a": "Une fonctionnalité bientôt disponible qui vérifie si le checksum de votre fichier correspond à un fichier connu dans notre propre base de données. Seul le checksum est envoyé, jamais le fichier." },
+      { "q": "SumVerify est-il gratuit et open source ?", "a": "Oui, gratuit pour toujours et sous licence MIT. Signalez des bugs ou contribuez sur {githubLink}." }
+    ]
+  },
+  "about": {
+    "h1": "À propos de SumVerify",
+    "intro": "SumVerify est un calculateur de checksum et vérificateur de fichiers gratuit qui s’exécute entièrement dans votre navigateur. Déposez un fichier, collez le hash publié par la page de téléchargement et voyez immédiatement s’ils correspondent.",
+    "why": "Les pages de téléchargement publient souvent un hash, mais le vérifier oblige généralement à ouvrir un terminal et à retrouver la bonne commande. SumVerify transforme cette vérification en simple glisser-déposer, sans rien installer et sans envoyer votre fichier à un serveur.",
+    "featuresTitle": "Ce qui le distingue",
+    "features": [
+      "<b>Confidentialité dès la conception :</b> les fichiers sont lus localement et jamais envoyés.",
+      "<b>Pensé pour les gros fichiers :</b> les données sont traitées en flux par blocs de 8 Mo, donc les fichiers de plusieurs gigaoctets passent.",
+      "<b>20 types de hash :</b> SHA-256, MD5, SHA-1, SHA-512, BLAKE3, CRC32 et plus, les plus courants d’abord.",
+      "<b>Gratuit et open source :</b> sous licence MIT, disponible sur {githubLink}."
+    ],
+    "authorTitle": "Qui est derrière SumVerify",
+    "author": "SumVerify est conçu, développé et maintenu par Kyle, développeur indépendant. Le code source, les rapports de bugs et les contributions sont les bienvenus sur {githubLink}, et vous pouvez toujours écrire à {emailLink}.",
+    "contactCta": "Me contacter"
+  },
+  "contact": {
+    "h1": "Contact",
+    "intro": "Vous avez trouvé un bug, une idée, ou repéré une erreur de traduction ? Contactez-moi de la manière qui vous convient.",
+    "githubTitle": "GitHub",
+    "githubDesc": "Idéal pour les rapports de bugs, les demandes de fonctionnalités et les contributions. Ouvrez une issue ou une pull request.",
+    "emailTitle": "E-mail",
+    "emailDesc": "Pour tout le reste : questions, retours, idées de partenariat. Je lis chaque message.",
+    "tip": "Vous signalez un bug ? Indiquez votre navigateur, votre système d’exploitation et la taille du fichier. N’envoyez jamais le fichier lui-même."
+  },
+  "ui": {
+    "themeDark": "Sombre", "themeLight": "Clair", "noFile": "Aucun fichier sélectionné", "waiting": "En attente", "calculating": "Calcul en cours…",
+    "match": "Correspond", "copy": "Copier", "copied": "Copié",
+    "progress": "Calcul de {name} · {i} sur {total}",
+    "hashDetectedOne": "{n} hash détecté", "hashDetectedMany": "{n} hashes détectés",
+    "noValidHash": "<b>Aucun hash valide trouvé dans le texte.</b> Chaque ligne doit contenir un hash de 2 à 128 caractères hexadécimaux. Formats de ligne pris en charge : un hash seul, <code>hash *filename</code> ou <code>MD5 (filename) = hash</code>. Les lignes commençant par # sont ignorées.",
+    "hashesReady": "Les hashes sont prêts. Déposez maintenant le fichier à vérifier ci-dessus et chaque ligne sera comparée.",
+    "matchOne": "<b>Correspondance.</b> Le hash {types} correspond{note}. Ce fichier est identique à l’original.",
+    "matchMany": "<b>Correspondance.</b> Les hashes {types} correspondent{note}. Ce fichier est identique à l’original.",
+    "matchNote": " ({matched} des {total} hashes fournis correspondent)",
+    "comparing": "Comparaison… aucune correspondance pour l’instant, calcul en cours. Les résultats apparaissent un type de hash à la fois.",
+    "noMatchCommon": "<b>Aucune correspondance avec les types de hash courants.</b> Si votre hash utilise un autre format, vérifiez aussi les autres types. {button}",
+    "checkOther": "Vérifier les autres types de hash",
+    "checkingOther": "Aucune correspondance avec les types de hash courants. Vérification des autres types de hash…",
+    "noMatchTitle": "Aucune correspondance.",
+    "noMatchOne": "Le hash fourni ne correspond à ce fichier dans aucun des {total} types de hash.",
+    "noMatchMany": "Aucun des {count} hashes fournis ne correspond à ce fichier dans aucun des {total} types de hash.",
+    "noMatchNamed": " En particulier, le hash publié pour « {file} » (ligne {line}) ne correspond pas.",
+    "noMatchAdvice": " Vérifiez que vous l’avez copié en entier, ou téléchargez à nouveau le fichier depuis la source officielle.",
+    "readError": "Ce fichier n’a pas pu être lu. Il a peut-être été déplacé ou le navigateur a manqué de ressources. Réessayez ou utilisez un navigateur de bureau.",
+    "hashFileError": "Ce fichier n’a pas pu être lu comme du texte. Collez les hashes manuellement."
+  }
+}

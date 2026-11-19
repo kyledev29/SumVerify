@@ -1,0 +1,99 @@
+{
+  "meta": {
+    "home": { "title": "SumVerify – Kalkulator checksum dan verifikasi file online gratis", "description": "Hitung SHA-256, MD5, SHA-1, SHA-512, CRC32, BLAKE3, dan lainnya untuk file apa pun di browser Anda, bahkan yang besar. Bandingkan dengan hash yang dipublikasikan. File tidak pernah meninggalkan perangkat Anda." },
+    "about": { "title": "Tentang SumVerify – Kalkulator checksum gratis di browser", "description": "SumVerify adalah kalkulator checksum gratis dan open source yang berjalan di browser Anda. Pelajari cara kerjanya dan siapa yang membuatnya." },
+    "contact": { "title": "Kontak – SumVerify", "description": "Hubungi pengembang SumVerify melalui GitHub atau email." }
+  },
+  "common": {
+    "language": "Bahasa", "themeAria": "Beralih mode gelap atau terang", "menu": "Menu",
+    "nav": { "home": "Beranda", "what": "Apa itu checksum?", "faq": "FAQ", "about": "Tentang", "contact": "Kontak" }
+  },
+  "footer": { "tagline": "Kalkulator checksum gratis yang berjalan di browser Anda.", "pages": "Halaman", "legal": "Legal", "further": "Informasi lebih lanjut", "privacy": "Kebijakan Privasi", "terms": "Ketentuan Penggunaan" },
+  "home": {
+    "h1": "Verifikasi checksum file",
+    "intro": "Letakkan file, tempel hash dari halaman unduhan, lalu lihat apakah keduanya cocok. File dibaca dalam potongan kecil di perangkat Anda dan tidak pernah diunggah, sehingga file besar pun aman. Setiap jenis hash dihitung satu per satu, dimulai dari yang paling umum.",
+    "dropTitle": "Letakkan file di sini, atau klik untuk memilih",
+    "cmpLabel": "Hash untuk dibandingkan", "optional": "(opsional)",
+    "cmpPlaceholder": "Tempel hash yang akan dibandingkan. Anda dapat memasukkan beberapa hash, satu per baris.",
+    "uploadChecksum": "Unggah file checksum",
+    "uploadTitle": "Mendukung file teks apa pun: .md5, .sha1, .sha256, .sha512, .b3, .txt, …",
+    "clear": "Hapus", "recommended": "Disarankan", "commonHashes": "Hash umum", "otherHashes": "Jenis hash lainnya",
+    "moreBtn": "Hitung lebih banyak jenis hash", "lookupTitle": "Pencarian file dikenal", "soon": "Segera hadir",
+    "lookupText": "Segera Anda dapat memeriksa apakah suatu file dikenal publik dengan mencocokkan hash-nya dengan database kami sendiri. Hanya hash yang dikirim, tidak pernah file-nya.",
+    "checksum": {
+      "title": "Apa itu checksum?",
+      "p1": "Checksum adalah rangkaian pendek huruf dan angka yang dihitung dari isi sebuah file, seperti sidik jari. Ubah satu bit saja pada file dan checksum berubah total. File yang identik selalu menghasilkan checksum yang identik.",
+      "p2": "Penerbit mencantumkan checksum di samping tautan unduhan. Anda menghitungnya untuk file yang Anda terima lalu membandingkannya. Jika keduanya cocok, file tersebut persis sama dengan yang dirilis penerbit. Jika tidak, unduhan rusak atau telah diubah.",
+      "howTitle": "Cara memeriksa unduhan",
+      "steps": [
+        "Salin checksum dari halaman unduhan resmi, atau simpan file checksum mereka (<code>.sha256</code>, <code>.md5</code>, <code>.txt</code>, …).",
+        "Letakkan file unduhan Anda di sini lalu tempel nilainya, atau unggah file checksum.",
+        "Cocok berarti file identik. Tidak cocok berarti unduh ulang dari sumber resmi."
+      ],
+      "trustTitle": "Jenis mana yang sebaiknya dipercaya?",
+      "trust": [
+        "<b>SHA-256</b> adalah standar saat ini dan rekomendasi kami. SHA-512, SHA-3, dan BLAKE3 sama kuatnya.",
+        "<b>SHA-1 dan MD5</b> masih dapat mendeteksi kerusakan yang tidak disengaja, tetapi bisa dipalsukan dengan sengaja, jadi jangan mengandalkannya untuk keamanan.",
+        "<b>CRC32, CRC32C, Adler-32, dan Fletcher</b> adalah kode deteksi kesalahan kecil yang dipakai pada arsip dan jaringan. Kode ini tidak aman."
+      ],
+      "note": "Checksum menunjukkan bahwa dua file sama, bukan bahwa file tersebut aman. Tingkat kepercayaannya hanya setara dengan tempat Anda menyalinnya."
+    },
+    "faqTitle": "FAQ",
+    "faq": [
+      { "q": "Apakah file saya diunggah ke suatu tempat?", "a": "Tidak. Checksum dihitung di browser Anda, sehingga file Anda tidak pernah meninggalkan perangkat." },
+      { "q": "Sebesar apa file yang bisa saya periksa?", "a": "Hampir semua ukuran, termasuk file berukuran beberapa gigabyte. File dibaca dalam potongan 8 MB, jadi file yang lebih besar hanya membutuhkan waktu lebih lama. Biarkan tab tetap terbuka sampai bilah progres selesai." },
+      { "q": "Apakah huruf kapital dan spasi berpengaruh?", "a": "Tidak, keduanya diabaikan. Letakkan setiap checksum pada barisnya sendiri. Anda juga dapat menempel atau mengunggah seluruh file checksum, termasuk baris seperti <code>hash *filename</code> atau <code>MD5 (filename) = hash</code>. Baris yang diawali <code>#</code> dilewati." },
+      { "q": "Mengapa ada begitu banyak jenis checksum?", "a": "Situs unduhan memakai jenis yang berbeda-beda, sehingga SumVerify memeriksa jenis yang umum secara otomatis. Jika tidak ada yang cocok, Anda juga bisa memeriksa jenis lainnya." },
+      { "q": "Checksum saya tidak cocok. Apa yang harus dilakukan?", "a": "Pastikan Anda menyalin seluruh nilainya dan nilai itu milik file serta versi yang persis sama. Lalu unduh ulang file dari sumber resmi. Jika masih tidak cocok, jangan dibuka." },
+      { "q": "Apakah cocok berarti file aman?", "a": "Tidak. Cocok hanya membuktikan bahwa file identik dengan file yang dipakai untuk membuat checksum. Selalu dapatkan keduanya dari sumber tepercaya." },
+      { "q": "Apa itu pencarian file dikenal?", "a": "Fitur yang segera hadir untuk memeriksa apakah checksum file Anda cocok dengan file yang dikenal di database kami sendiri. Hanya checksum yang dikirim, tidak pernah file-nya." },
+      { "q": "Apakah SumVerify gratis dan open source?", "a": "Ya, gratis selamanya dan berlisensi MIT. Laporkan bug atau berkontribusi di {githubLink}." }
+    ]
+  },
+  "about": {
+    "h1": "Tentang SumVerify",
+    "intro": "SumVerify adalah kalkulator checksum dan verifikator file gratis yang berjalan sepenuhnya di browser Anda. Letakkan file, tempel hash yang dipublikasikan di halaman unduhan, dan langsung lihat apakah keduanya cocok.",
+    "why": "Halaman unduhan sering mencantumkan hash, tetapi memeriksanya biasanya berarti membuka terminal dan mengingat perintah yang tepat. SumVerify membuat pemeriksaan yang sama cukup dengan seret dan lepas, tanpa memasang apa pun dan tanpa mengirim file Anda ke server.",
+    "featuresTitle": "Yang membuatnya berbeda",
+    "features": [
+      "<b>Privat sejak desain:</b> file dibaca secara lokal dan tidak pernah diunggah.",
+      "<b>Dibuat untuk file besar:</b> data diproses secara streaming dalam potongan 8 MB, sehingga file berukuran beberapa gigabyte pun bisa.",
+      "<b>20 jenis hash:</b> SHA-256, MD5, SHA-1, SHA-512, BLAKE3, CRC32, dan lainnya, dimulai dari yang paling umum.",
+      "<b>Gratis dan open source:</b> berlisensi MIT, tersedia di {githubLink}."
+    ],
+    "authorTitle": "Siapa yang membuatnya",
+    "author": "SumVerify dirancang, dibangun, dan dikelola oleh Kyle, seorang pengembang independen. Kode sumber, laporan bug, dan kontribusi disambut baik di {githubLink}, dan Anda selalu bisa menulis ke {emailLink}.",
+    "contactCta": "Hubungi saya"
+  },
+  "contact": {
+    "h1": "Kontak",
+    "intro": "Menemukan bug, punya ide, atau melihat kesalahan terjemahan? Hubungi saya dengan cara yang paling nyaman bagi Anda.",
+    "githubTitle": "GitHub",
+    "githubDesc": "Paling cocok untuk laporan bug, permintaan fitur, dan kontribusi. Buat issue atau pull request.",
+    "emailTitle": "Email",
+    "emailDesc": "Untuk hal lainnya, termasuk pertanyaan, masukan, dan ide kerja sama. Saya membaca setiap pesan.",
+    "tip": "Melaporkan bug? Sertakan browser, sistem operasi, dan ukuran file Anda. Jangan pernah mengirim file-nya."
+  },
+  "ui": {
+    "themeDark": "Gelap", "themeLight": "Terang", "noFile": "Belum ada file dipilih", "waiting": "Menunggu", "calculating": "Menghitung…",
+    "match": "Cocok", "copy": "Salin", "copied": "Tersalin",
+    "progress": "Menghitung {name} · {i} dari {total}",
+    "hashDetectedOne": "{n} hash terdeteksi", "hashDetectedMany": "{n} hash terdeteksi",
+    "noValidHash": "<b>Tidak ada hash valid di dalam teks.</b> Setiap baris membutuhkan hash 2–128 karakter heksadesimal. Format baris yang didukung: hash saja, <code>hash *filename</code>, atau <code>MD5 (filename) = hash</code>. Baris yang diawali # diabaikan.",
+    "hashesReady": "Hash sudah siap. Sekarang letakkan file yang akan diperiksa di atas, dan setiap baris akan dibandingkan dengannya.",
+    "matchOne": "<b>Cocok.</b> Hash {types} cocok{note}. File ini identik dengan aslinya.",
+    "matchMany": "<b>Cocok.</b> Hash {types} cocok{note}. File ini identik dengan aslinya.",
+    "matchNote": " ({matched} dari {total} hash yang Anda berikan cocok)",
+    "comparing": "Membandingkan… belum ada yang cocok, masih menghitung. Hasil muncul satu jenis hash demi satu.",
+    "noMatchCommon": "<b>Tidak cocok dengan jenis hash yang umum.</b> Jika hash Anda memakai format lain, periksa juga jenis lainnya. {button}",
+    "checkOther": "Periksa jenis hash lainnya",
+    "checkingOther": "Tidak cocok dengan jenis hash yang umum. Memeriksa jenis hash lainnya…",
+    "noMatchTitle": "Tidak cocok.",
+    "noMatchOne": "Hash yang Anda berikan tidak cocok dengan file ini pada satu pun dari {total} jenis hash.",
+    "noMatchMany": "Tidak ada satu pun dari {count} hash yang Anda berikan yang cocok dengan file ini pada {total} jenis hash.",
+    "noMatchNamed": " Khususnya, hash yang dipublikasikan untuk “{file}” (baris {line}) tidak cocok.",
+    "noMatchAdvice": " Pastikan Anda menyalinnya secara lengkap, atau unduh ulang file dari sumber resmi.",
+    "readError": "File ini tidak dapat dibaca. Mungkin file telah dipindahkan atau browser kehabisan sumber daya. Coba lagi, atau gunakan browser desktop.",
+    "hashFileError": "File ini tidak dapat dibaca sebagai teks. Silakan tempel hash secara manual."
+  }
+}

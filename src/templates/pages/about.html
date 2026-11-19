@@ -1,0 +1,17 @@
+<section class="mx-auto max-w-5xl px-4 py-12">
+ <h1 class="text-3xl sm:text-4xl font-bold tracking-tight">{{about.h1}}</h1>
+ <div class="mt-6 max-w-2xl space-y-4">
+  <p>{{about.intro}}</p>
+  <p>{{about.why}}</p>
+
+  <h2 class="text-xl font-bold tracking-tight pt-4">{{about.featuresTitle}}</h2>
+  <ul class="list-disc pl-5 space-y-1">
+   {{#each about.features}}<li>{{.}}</li>
+   {{/each}}
+  </ul>
+
+  <h2 class="text-xl font-bold tracking-tight pt-4">{{about.authorTitle}}</h2>
+  <p>{{about.author}}</p>
+  <p><a class="btn btn-primary" href="{{@base}}contact/">{{about.contactCta}}</a></p>
+ </div>
+</section>

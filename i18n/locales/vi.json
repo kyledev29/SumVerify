@@ -1,0 +1,130 @@
+{
+  "meta": {
+    "home": {
+      "title": "SumVerify – Tính checksum và xác minh tệp trực tuyến miễn phí",
+      "description": "Tính SHA-256, MD5, SHA-1, SHA-512, CRC32, BLAKE3 và nhiều loại khác cho bất kỳ tệp nào ngay trong trình duyệt, kể cả tệp lớn. So sánh với mã hash đã công bố. Tệp không bao giờ rời khỏi thiết bị của bạn."
+    },
+    "about": {
+      "title": "Giới thiệu SumVerify – Công cụ tính checksum miễn phí trên trình duyệt",
+      "description": "SumVerify là công cụ tính checksum miễn phí, mã nguồn mở, chạy ngay trong trình duyệt. Tìm hiểu cách hoạt động và người xây dựng nó."
+    },
+    "contact": {
+      "title": "Liên hệ – SumVerify",
+      "description": "Liên hệ với nhà phát triển SumVerify qua GitHub hoặc email."
+    }
+  },
+  "common": {
+    "language": "Ngôn ngữ",
+    "themeAria": "Chuyển chế độ tối hoặc sáng",
+    "menu": "Menu",
+    "nav": { "home": "Trang chủ", "what": "Checksum là gì?", "faq": "Câu hỏi thường gặp", "about": "Giới thiệu", "contact": "Liên hệ" }
+  },
+  "footer": {
+    "tagline": "Công cụ tính checksum miễn phí chạy ngay trong trình duyệt.",
+    "pages": "Trang",
+    "legal": "Pháp lý",
+    "further": "Thông tin thêm",
+    "privacy": "Chính sách quyền riêng tư",
+    "terms": "Điều khoản sử dụng"
+  },
+  "home": {
+    "h1": "Xác minh checksum của tệp",
+    "intro": "Thả tệp vào, dán mã hash từ trang tải xuống và xem hai mã có khớp không. Tệp được đọc từng phần nhỏ ngay trên thiết bị và không bao giờ được tải lên, nên tệp lớn cũng không sao. Mỗi loại hash được tính lần lượt, loại phổ biến nhất trước.",
+    "dropTitle": "Thả tệp vào đây hoặc bấm để chọn",
+    "cmpLabel": "Mã hash cần so sánh",
+    "optional": "(không bắt buộc)",
+    "cmpPlaceholder": "Dán mã hash cần so sánh. Bạn có thể nhập nhiều mã, mỗi dòng một mã.",
+    "uploadChecksum": "Tải lên tệp checksum",
+    "uploadTitle": "Hỗ trợ mọi tệp văn bản: .md5, .sha1, .sha256, .sha512, .b3, .txt, …",
+    "clear": "Xóa",
+    "recommended": "Khuyên dùng",
+    "commonHashes": "Hash phổ biến",
+    "otherHashes": "Các loại hash khác",
+    "moreBtn": "Tính thêm các loại hash khác",
+    "lookupTitle": "Tra cứu tệp đã biết",
+    "soon": "Sắp ra mắt",
+    "lookupText": "Sắp tới bạn có thể kiểm tra xem một tệp có được biết đến công khai hay không bằng cách đối chiếu mã hash với cơ sở dữ liệu của chúng tôi. Chỉ mã hash được gửi đi, không bao giờ gửi tệp.",
+    "checksum": {
+      "title": "Checksum là gì?",
+      "p1": "Checksum là một chuỗi ngắn gồm chữ và số được tính từ nội dung của tệp, giống như dấu vân tay. Chỉ cần đổi một bit trong tệp, checksum sẽ thay đổi hoàn toàn. Các tệp giống hệt nhau luôn cho checksum giống hệt nhau.",
+      "p2": "Nhà phát hành thường ghi checksum bên cạnh liên kết tải xuống. Bạn tính checksum cho tệp đã nhận rồi so sánh. Nếu khớp, tệp chính xác là bản nhà phát hành đã công bố. Nếu không, bản tải bị lỗi hoặc đã bị sửa đổi.",
+      "howTitle": "Cách kiểm tra một tệp tải về",
+      "steps": [
+        "Sao chép checksum từ trang tải xuống chính thức, hoặc lưu tệp checksum của họ (<code>.sha256</code>, <code>.md5</code>, <code>.txt</code>, …).",
+        "Thả tệp đã tải vào đây rồi dán giá trị, hoặc tải lên tệp checksum.",
+        "Khớp nghĩa là tệp giống hệt bản gốc. Không khớp thì hãy tải lại từ nguồn chính thức."
+      ],
+      "trustTitle": "Nên tin loại nào?",
+      "trust": [
+        "<b>SHA-256</b> là tiêu chuẩn hiện nay và là lựa chọn chúng tôi khuyên dùng. SHA-512, SHA-3 và BLAKE3 cũng mạnh tương đương.",
+        "<b>SHA-1 và MD5</b> vẫn phát hiện được lỗi ngẫu nhiên nhưng có thể bị làm giả có chủ đích, nên đừng dựa vào chúng để bảo mật.",
+        "<b>CRC32, CRC32C, Adler-32 và Fletcher</b> là các mã phát hiện lỗi nhỏ dùng trong tệp nén và mạng. Chúng không an toàn về mặt bảo mật."
+      ],
+      "note": "Checksum cho biết hai tệp giống nhau, chứ không cho biết tệp có an toàn hay không. Độ tin cậy của nó chỉ bằng nơi bạn sao chép nó."
+    },
+    "faqTitle": "Câu hỏi thường gặp",
+    "faq": [
+      { "q": "Tệp của tôi có bị tải lên đâu không?", "a": "Không. Checksum được tính ngay trong trình duyệt, nên tệp của bạn không bao giờ rời khỏi thiết bị." },
+      { "q": "Tôi có thể kiểm tra tệp lớn đến mức nào?", "a": "Gần như mọi kích thước, kể cả tệp nhiều gigabyte. Tệp được đọc từng phần 8 MB nên tệp càng lớn thì càng mất nhiều thời gian. Hãy giữ tab mở cho đến khi thanh tiến trình chạy xong." },
+      { "q": "Chữ hoa và khoảng trắng có quan trọng không?", "a": "Không, cả hai đều được bỏ qua. Hãy đặt mỗi checksum trên một dòng riêng. Bạn cũng có thể dán hoặc tải lên cả tệp checksum, gồm các dòng như <code>hash *filename</code> hoặc <code>MD5 (filename) = hash</code>. Các dòng bắt đầu bằng <code>#</code> sẽ bị bỏ qua." },
+      { "q": "Tại sao có nhiều loại checksum như vậy?", "a": "Mỗi trang tải xuống dùng một loại khác nhau, nên SumVerify tự động kiểm tra các loại phổ biến. Nếu không loại nào khớp, bạn có thể kiểm tra thêm các loại khác." },
+      { "q": "Checksum của tôi không khớp. Phải làm gì?", "a": "Hãy chắc rằng bạn đã sao chép đủ giá trị và nó thuộc đúng tệp và phiên bản này. Sau đó tải lại tệp từ nguồn chính thức. Nếu vẫn không khớp, đừng mở tệp." },
+      { "q": "Khớp có nghĩa là tệp an toàn không?", "a": "Không. Khớp chỉ chứng minh tệp giống hệt tệp đã dùng để tạo checksum. Hãy luôn lấy cả hai từ nguồn đáng tin cậy." },
+      { "q": "Tra cứu tệp đã biết là gì?", "a": "Một tính năng sắp ra mắt, kiểm tra xem checksum của tệp có khớp với một tệp đã biết trong cơ sở dữ liệu của chúng tôi không. Chỉ checksum được gửi đi, không bao giờ gửi tệp." },
+      { "q": "SumVerify có miễn phí và mã nguồn mở không?", "a": "Có, miễn phí mãi mãi và dùng giấy phép MIT. Báo lỗi hoặc đóng góp trên {githubLink}." }
+    ]
+  },
+  "about": {
+    "h1": "Giới thiệu SumVerify",
+    "intro": "SumVerify là công cụ tính checksum và xác minh tệp miễn phí, chạy hoàn toàn trong trình duyệt. Thả tệp vào, dán mã hash do trang tải xuống công bố và biết ngay hai mã có khớp hay không.",
+    "why": "Các trang tải xuống thường công bố mã hash, nhưng để kiểm tra thường phải mở terminal và nhớ đúng câu lệnh. SumVerify biến việc này thành thao tác kéo thả, không cần cài đặt gì và không gửi tệp của bạn lên máy chủ.",
+    "featuresTitle": "Điểm khác biệt",
+    "features": [
+      "<b>Riêng tư từ thiết kế:</b> tệp được đọc cục bộ và không bao giờ tải lên.",
+      "<b>Dành cho tệp lớn:</b> dữ liệu được xử lý theo luồng từng phần 8 MB, nên tệp nhiều gigabyte vẫn dùng được.",
+      "<b>20 loại hash:</b> SHA-256, MD5, SHA-1, SHA-512, BLAKE3, CRC32 và nhiều loại khác, loại phổ biến nhất trước.",
+      "<b>Miễn phí và mã nguồn mở:</b> giấy phép MIT, có trên {githubLink}."
+    ],
+    "authorTitle": "Ai xây dựng nên nó",
+    "author": "SumVerify do Kyle, một nhà phát triển độc lập, thiết kế, xây dựng và duy trì. Mã nguồn, báo lỗi và đóng góp luôn được hoan nghênh trên {githubLink}, và bạn có thể viết thư cho tôi qua {emailLink}.",
+    "contactCta": "Liên hệ"
+  },
+  "contact": {
+    "h1": "Liên hệ",
+    "intro": "Bạn phát hiện lỗi, có ý tưởng hay thấy lỗi dịch thuật? Hãy liên hệ theo cách nào tiện nhất với bạn.",
+    "githubTitle": "GitHub",
+    "githubDesc": "Phù hợp nhất để báo lỗi, đề xuất tính năng và đóng góp. Hãy mở một issue hoặc pull request.",
+    "emailTitle": "Email",
+    "emailDesc": "Cho mọi việc khác, gồm câu hỏi, góp ý và ý tưởng hợp tác. Tôi đọc mọi thư.",
+    "tip": "Báo lỗi? Vui lòng cho biết trình duyệt, hệ điều hành và kích thước tệp. Đừng bao giờ gửi chính tệp đó."
+  },
+  "ui": {
+    "themeDark": "Tối",
+    "themeLight": "Sáng",
+    "noFile": "Chưa chọn tệp",
+    "waiting": "Đang chờ",
+    "calculating": "Đang tính…",
+    "match": "Khớp",
+    "copy": "Sao chép",
+    "copied": "Đã chép",
+    "progress": "Đang tính {name} · {i}/{total}",
+    "hashDetectedOne": "Đã nhận diện {n} mã hash",
+    "hashDetectedMany": "Đã nhận diện {n} mã hash",
+    "noValidHash": "<b>Không tìm thấy mã hash hợp lệ trong văn bản.</b> Mỗi dòng cần một mã hash gồm 2–128 ký tự hex. Định dạng dòng được hỗ trợ: mã hash trơn, <code>hash *filename</code> hoặc <code>MD5 (filename) = hash</code>. Các dòng bắt đầu bằng # sẽ bị bỏ qua.",
+    "hashesReady": "Các mã hash đã sẵn sàng. Giờ hãy thả tệp cần kiểm tra vào phía trên, từng dòng sẽ được so sánh với tệp đó.",
+    "matchOne": "<b>Khớp.</b> Hash {types} khớp{note}. Tệp này giống hệt bản gốc.",
+    "matchMany": "<b>Khớp.</b> Các hash {types} khớp{note}. Tệp này giống hệt bản gốc.",
+    "matchNote": " ({matched}/{total} mã hash bạn cung cấp khớp)",
+    "comparing": "Đang so sánh… chưa có kết quả khớp, vẫn đang tính. Kết quả hiện lần lượt từng loại hash.",
+    "noMatchCommon": "<b>Không khớp với các loại hash phổ biến.</b> Nếu mã hash của bạn dùng định dạng khác, hãy kiểm tra thêm các loại khác. {button}",
+    "checkOther": "Kiểm tra các loại hash khác",
+    "checkingOther": "Không khớp với các loại hash phổ biến. Đang kiểm tra các loại hash khác…",
+    "noMatchTitle": "Không khớp.",
+    "noMatchOne": "Mã hash bạn cung cấp không khớp với tệp này ở bất kỳ loại nào trong {total} loại hash.",
+    "noMatchMany": "Không mã nào trong {count} mã hash bạn cung cấp khớp với tệp này ở bất kỳ loại nào trong {total} loại hash.",
+    "noMatchNamed": " Cụ thể, mã hash công bố cho “{file}” (dòng {line}) không khớp.",
+    "noMatchAdvice": " Hãy kiểm tra bạn đã sao chép đầy đủ chưa, hoặc tải lại tệp từ nguồn chính thức.",
+    "readError": "Không đọc được tệp này. Có thể tệp đã bị di chuyển hoặc trình duyệt hết tài nguyên. Hãy thử lại hoặc dùng trình duyệt trên máy tính.",
+    "hashFileError": "Không đọc được tệp này dưới dạng văn bản. Vui lòng dán mã hash thủ công."
+  }
+}

@@ -1,0 +1,24 @@
+<footer class="mt-20 border-t border-line">
+ <div class="mx-auto max-w-5xl px-4 py-8 grid gap-6 sm:grid-cols-2 md:grid-cols-4 text-sm">
+  <div><div class="font-semibold">{{@name}}</div><p class="mt-1 text-muted max-w-[16rem]">{{footer.tagline}}</p></div>
+  <div><div class="font-medium mb-1">{{footer.pages}}</div><ul class="space-y-1 text-muted">
+   <li><a class="hover:underline" href="{{@base}}">{{common.nav.home}}</a></li>
+   <li><a class="hover:underline" href="{{@base}}#what-is-a-checksum">{{common.nav.what}}</a></li>
+   <li><a class="hover:underline" href="{{@base}}#faq">{{common.nav.faq}}</a></li>
+   <li><a class="hover:underline" href="{{@base}}about/">{{common.nav.about}}</a></li>
+   <li><a class="hover:underline" href="{{@base}}contact/">{{common.nav.contact}}</a></li></ul></div>
+  <div><div class="font-medium mb-1">{{footer.legal}}</div><ul class="space-y-1 text-muted">
+   <li><a class="hover:underline" hreflang="en" href="/privacy/">{{footer.privacy}}</a></li>
+   <li><a class="hover:underline" hreflang="en" href="/terms/">{{footer.terms}}</a></li></ul></div>
+  <div><div class="font-medium mb-1">{{footer.further}}</div><ul class="space-y-1 text-muted">
+   <li><a class="hover:underline" href="{{@repo}}" target="_blank" rel="noopener noreferrer">{{@repoLabel}}</a></li>
+   <li><a class="hover:underline" href="mailto:{{@email}}">{{@email}}</a></li></ul></div>
+ </div>
+ <div class="mx-auto max-w-5xl px-4 pb-8 grid gap-6 sm:grid-cols-2 md:grid-cols-4 text-sm items-center">
+  <div class="flex items-center gap-2">
+   <select class="lang h-9 rounded-control border border-line bg-surface px-2 text-sm text-ink" aria-label="{{common.language|attr}}">{{@langOptions}}</select>
+   <button data-theme-toggle class="btn btn-secondary btn-sm" aria-label="{{common.themeAria|attr}}">{{ui.themeDark}}</button>
+  </div>
+  <div class="text-xs text-muted md:col-start-4">© {{@year}} {{@name}}.com</div>
+ </div>
+</footer>

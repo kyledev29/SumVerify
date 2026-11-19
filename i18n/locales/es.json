@@ -1,0 +1,99 @@
+{
+  "meta": {
+    "home": { "title": "SumVerify – Calculadora de checksum y verificador de archivos en línea gratis", "description": "Calcula SHA-256, MD5, SHA-1, SHA-512, CRC32, BLAKE3 y más para cualquier archivo en tu navegador, incluso los grandes. Compáralo con un hash publicado. Tus archivos nunca salen de tu dispositivo." },
+    "about": { "title": "Acerca de SumVerify – Calculadora de checksum gratuita en el navegador", "description": "SumVerify es una calculadora de checksum gratuita y de código abierto que se ejecuta en tu navegador. Conoce cómo funciona y quién la crea." },
+    "contact": { "title": "Contacto – SumVerify", "description": "Ponte en contacto con el desarrollador de SumVerify por GitHub o correo electrónico." }
+  },
+  "common": {
+    "language": "Idioma", "themeAria": "Cambiar entre modo oscuro y claro", "menu": "Menú",
+    "nav": { "home": "Inicio", "what": "¿Qué es un checksum?", "faq": "Preguntas frecuentes", "about": "Acerca de", "contact": "Contacto" }
+  },
+  "footer": { "tagline": "Calculadora de checksum gratuita que se ejecuta en tu navegador.", "pages": "Páginas", "legal": "Legal", "further": "Más información", "privacy": "Política de privacidad", "terms": "Términos de uso" },
+  "home": {
+    "h1": "Verifica el checksum de un archivo",
+    "intro": "Suelta un archivo, pega el hash de la página de descarga y comprueba si coinciden. El archivo se lee en trozos pequeños en tu dispositivo y nunca se sube, así que los archivos grandes no son un problema. Cada tipo de hash se calcula uno a uno, empezando por los más comunes.",
+    "dropTitle": "Suelta un archivo aquí o haz clic para elegir",
+    "cmpLabel": "Hash a comparar", "optional": "(opcional)",
+    "cmpPlaceholder": "Pega el hash a comparar. Puedes introducir varios, uno por línea.",
+    "uploadChecksum": "Subir archivo de checksum",
+    "uploadTitle": "Admite cualquier archivo de texto: .md5, .sha1, .sha256, .sha512, .b3, .txt, …",
+    "clear": "Borrar", "recommended": "Recomendado", "commonHashes": "Hashes comunes", "otherHashes": "Otros tipos de hash",
+    "moreBtn": "Calcular más tipos de hash", "lookupTitle": "Búsqueda de archivos conocidos", "soon": "Próximamente",
+    "lookupText": "Pronto podrás comprobar si un archivo es conocido públicamente comparando su hash con nuestra propia base de datos. Solo se enviará el hash, nunca el archivo.",
+    "checksum": {
+      "title": "¿Qué es un checksum?",
+      "p1": "Un checksum es una cadena corta de letras y números calculada a partir del contenido de un archivo, como una huella digital. Cambia un solo bit del archivo y el checksum cambia por completo. Los archivos idénticos siempre producen checksums idénticos.",
+      "p2": "Los editores publican un checksum junto a la descarga. Tú lo calculas para el archivo que recibiste y lo comparas. Si coinciden, el archivo es exactamente el que publicó el editor. Si no, la descarga está dañada o ha sido alterada.",
+      "howTitle": "Cómo comprobar una descarga",
+      "steps": [
+        "Copia el checksum de la página de descarga oficial, o guarda su archivo de checksum (<code>.sha256</code>, <code>.md5</code>, <code>.txt</code>, …).",
+        "Suelta aquí tu archivo descargado y pega el valor, o sube el archivo de checksum.",
+        "Si coinciden, el archivo es idéntico. Si no, vuelve a descargarlo desde la fuente oficial."
+      ],
+      "trustTitle": "¿En qué tipo debes confiar?",
+      "trust": [
+        "<b>SHA-256</b> es el estándar actual y nuestra recomendación. SHA-512, SHA-3 y BLAKE3 son igual de robustos.",
+        "<b>SHA-1 y MD5</b> aún detectan daños accidentales, pero pueden falsificarse a propósito, así que no confíes en ellos para la seguridad.",
+        "<b>CRC32, CRC32C, Adler-32 y Fletcher</b> son pequeños códigos de detección de errores usados en archivos comprimidos y redes. No son seguros."
+      ],
+      "note": "Un checksum demuestra que dos archivos son iguales, no que el archivo sea seguro. Solo es tan fiable como el lugar de donde lo copiaste."
+    },
+    "faqTitle": "Preguntas frecuentes",
+    "faq": [
+      { "q": "¿Mi archivo se sube a algún sitio?", "a": "No. Los checksums se calculan en tu navegador, así que tu archivo nunca sale de tu dispositivo." },
+      { "q": "¿Qué tamaño de archivo puedo comprobar?", "a": "Casi cualquiera, incluidos archivos de varios gigabytes. El archivo se lee en bloques de 8 MB, por lo que los más grandes simplemente tardan más. Mantén la pestaña abierta hasta que termine la barra de progreso." },
+      { "q": "¿Importan las mayúsculas y los espacios?", "a": "No, ambos se ignoran. Pon cada checksum en su propia línea. También puedes pegar o subir un archivo de checksum completo, con líneas como <code>hash *filename</code> o <code>MD5 (filename) = hash</code>. Las líneas que empiezan por <code>#</code> se omiten." },
+      { "q": "¿Por qué hay tantos tipos de checksum?", "a": "Los sitios de descarga usan distintos tipos, por eso SumVerify comprueba automáticamente los más comunes. Si ninguno coincide, también puedes comprobar los demás." },
+      { "q": "Mi checksum no coincide. ¿Y ahora qué?", "a": "Asegúrate de haber copiado el valor completo y de que pertenece a este archivo y versión exactos. Luego vuelve a descargar el archivo desde la fuente oficial. Si sigue sin coincidir, no lo abras." },
+      { "q": "¿Una coincidencia significa que el archivo es seguro?", "a": "No. Una coincidencia solo prueba que el archivo es idéntico a aquel del que se creó el checksum. Obtén siempre ambos de una fuente de confianza." },
+      { "q": "¿Qué es la búsqueda de archivos conocidos?", "a": "Una función próxima que comprueba si el checksum de tu archivo coincide con un archivo conocido en nuestra propia base de datos. Solo se envía el checksum, nunca el archivo." },
+      { "q": "¿SumVerify es gratuito y de código abierto?", "a": "Sí, gratis para siempre y con licencia MIT. Informa de errores o colabora en {githubLink}." }
+    ]
+  },
+  "about": {
+    "h1": "Acerca de SumVerify",
+    "intro": "SumVerify es una calculadora de checksum y verificador de archivos gratuito que se ejecuta por completo en tu navegador. Suelta un archivo, pega el hash publicado en la página de descarga y comprueba al instante si coinciden.",
+    "why": "Las páginas de descarga suelen publicar un hash, pero comprobarlo normalmente implica abrir una terminal y recordar el comando correcto. SumVerify convierte esa comprobación en arrastrar y soltar, sin instalar nada y sin enviar tu archivo a ningún servidor.",
+    "featuresTitle": "Qué lo hace diferente",
+    "features": [
+      "<b>Privado por diseño:</b> los archivos se leen localmente y nunca se suben.",
+      "<b>Hecho para archivos grandes:</b> los datos se procesan en bloques de 8 MB, así que funcionan archivos de varios gigabytes.",
+      "<b>20 tipos de hash:</b> SHA-256, MD5, SHA-1, SHA-512, BLAKE3, CRC32 y más, los más comunes primero.",
+      "<b>Gratuito y de código abierto:</b> licencia MIT, disponible en {githubLink}."
+    ],
+    "authorTitle": "Quién lo crea",
+    "author": "SumVerify está diseñado, creado y mantenido por Kyle, un desarrollador independiente. El código fuente, los informes de errores y las contribuciones son bienvenidos en {githubLink}, y siempre puedes escribir a {emailLink}.",
+    "contactCta": "Ponte en contacto"
+  },
+  "contact": {
+    "h1": "Contacto",
+    "intro": "¿Has encontrado un error, tienes una idea o has visto un fallo de traducción? Escríbeme de la forma que prefieras.",
+    "githubTitle": "GitHub",
+    "githubDesc": "Ideal para informar de errores, pedir funciones y contribuir. Abre un issue o un pull request.",
+    "emailTitle": "Correo electrónico",
+    "emailDesc": "Para todo lo demás: preguntas, comentarios e ideas de colaboración. Leo todos los mensajes.",
+    "tip": "¿Informas de un error? Indica tu navegador, sistema operativo y el tamaño del archivo. Nunca envíes el archivo en sí."
+  },
+  "ui": {
+    "themeDark": "Oscuro", "themeLight": "Claro", "noFile": "Ningún archivo seleccionado", "waiting": "En espera", "calculating": "Calculando…",
+    "match": "Coincide", "copy": "Copiar", "copied": "Copiado",
+    "progress": "Calculando {name} · {i} de {total}",
+    "hashDetectedOne": "{n} hash detectado", "hashDetectedMany": "{n} hashes detectados",
+    "noValidHash": "<b>No se encontró ningún hash válido en el texto.</b> Cada línea necesita un hash de 2 a 128 caracteres hexadecimales. Formatos de línea admitidos: un hash solo, <code>hash *filename</code> o <code>MD5 (filename) = hash</code>. Las líneas que empiezan por # se ignoran.",
+    "hashesReady": "Los hashes están listos. Ahora suelta arriba el archivo a comprobar y cada línea se comparará con él.",
+    "matchOne": "<b>Coincide.</b> El hash {types} coincide{note}. Este archivo es idéntico al original.",
+    "matchMany": "<b>Coincide.</b> Los hashes {types} coinciden{note}. Este archivo es idéntico al original.",
+    "matchNote": " ({matched} de los {total} hashes proporcionados coinciden)",
+    "comparing": "Comparando… aún sin coincidencia, sigue calculando. Los resultados aparecen un tipo de hash cada vez.",
+    "noMatchCommon": "<b>Sin coincidencia con los tipos de hash comunes.</b> Si tu hash usa otro formato, comprueba también los demás tipos. {button}",
+    "checkOther": "Comprobar otros tipos de hash",
+    "checkingOther": "Sin coincidencia con los tipos de hash comunes. Comprobando los otros tipos de hash…",
+    "noMatchTitle": "Sin coincidencia.",
+    "noMatchOne": "El hash proporcionado no coincide con este archivo en ninguno de los {total} tipos de hash.",
+    "noMatchMany": "Ninguno de los {count} hashes proporcionados coincide con este archivo en ninguno de los {total} tipos de hash.",
+    "noMatchNamed": " En concreto, el hash publicado para «{file}» (línea {line}) no coincide.",
+    "noMatchAdvice": " Comprueba que lo copiaste completo, o vuelve a descargar el archivo desde la fuente oficial.",
+    "readError": "No se pudo leer este archivo. Puede que se haya movido o que el navegador se haya quedado sin recursos. Inténtalo de nuevo o usa un navegador de escritorio.",
+    "hashFileError": "No se pudo leer este archivo como texto. Pega los hashes manualmente."
+  }
+}

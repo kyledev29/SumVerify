@@ -1,0 +1,19 @@
+<header class="sticky top-0 z-30 border-b border-line bg-surface/90 backdrop-blur" style="padding-top:env(safe-area-inset-top,0px)">
+ <div class="mx-auto max-w-5xl h-14 px-4 flex items-center gap-4">
+  <a href="{{@base}}" class="flex items-center gap-2 font-bold text-lg shrink-0">
+   <svg class="h-7 w-7" aria-hidden="true"><use href="#logo-mark"/></svg>{{@name}}
+  </a>
+  <nav id="menu" class="hidden md:flex md:static absolute top-14 inset-x-0 flex-col md:flex-row gap-1 p-3 md:p-0 bg-surface border-b md:border-0 border-line text-sm font-medium text-muted md:ml-4">
+   <a class="px-3 py-1.5 rounded-control hover:bg-sunken hover:text-ink whitespace-nowrap" href="{{@base}}">{{common.nav.home}}</a>
+   <a class="px-3 py-1.5 rounded-control hover:bg-sunken hover:text-ink whitespace-nowrap" href="{{@base}}#what-is-a-checksum">{{common.nav.what}}</a>
+   <a class="px-3 py-1.5 rounded-control hover:bg-sunken hover:text-ink whitespace-nowrap" href="{{@base}}#faq">{{common.nav.faq}}</a>
+   <a class="px-3 py-1.5 rounded-control hover:bg-sunken hover:text-ink whitespace-nowrap" href="{{@base}}about/">{{common.nav.about}}</a>
+   <a class="px-3 py-1.5 rounded-control hover:bg-sunken hover:text-ink whitespace-nowrap" href="{{@base}}contact/">{{common.nav.contact}}</a>
+  </nav>
+  <div class="ml-auto flex items-center gap-2">
+   <select class="lang h-9 rounded-control border border-line bg-surface px-2 text-sm text-ink" aria-label="{{common.language|attr}}">{{@langOptions}}</select>
+   <button data-theme-toggle class="btn btn-secondary btn-sm" aria-label="{{common.themeAria|attr}}">{{ui.themeDark}}</button>
+   <button id="menuBtn" class="btn btn-secondary btn-sm md:hidden" aria-expanded="false">{{common.menu}}</button>
+  </div>
+ </div>
+</header>

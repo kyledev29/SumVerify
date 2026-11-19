@@ -1,0 +1,99 @@
+{
+  "meta": {
+    "home": { "title": "SumVerify – Kostenloser Online-Prüfsummenrechner & Dateiprüfer", "description": "Berechnen Sie SHA-256, MD5, SHA-1, SHA-512, CRC32, BLAKE3 und mehr für jede Datei im Browser, auch für große. Vergleichen Sie mit einem veröffentlichten Hash. Ihre Dateien verlassen nie Ihr Gerät." },
+    "about": { "title": "Über SumVerify – Kostenloser Prüfsummenrechner im Browser", "description": "SumVerify ist ein kostenloser Open-Source-Prüfsummenrechner, der in Ihrem Browser läuft. Erfahren Sie, wie er funktioniert und wer dahintersteckt." },
+    "contact": { "title": "Kontakt – SumVerify", "description": "Kontaktieren Sie den Entwickler von SumVerify über GitHub oder per E-Mail." }
+  },
+  "common": {
+    "language": "Sprache", "themeAria": "Zwischen dunklem und hellem Modus wechseln", "menu": "Menü",
+    "nav": { "home": "Startseite", "what": "Was ist eine Prüfsumme?", "faq": "FAQ", "about": "Über uns", "contact": "Kontakt" }
+  },
+  "footer": { "tagline": "Kostenloser Prüfsummenrechner, der in Ihrem Browser läuft.", "pages": "Seiten", "legal": "Rechtliches", "further": "Weitere Informationen", "privacy": "Datenschutzerklärung", "terms": "Nutzungsbedingungen" },
+  "home": {
+    "h1": "Prüfsumme einer Datei überprüfen",
+    "intro": "Legen Sie eine Datei ab, fügen Sie den Hash von der Download-Seite ein und sehen Sie, ob beide übereinstimmen. Die Datei wird in kleinen Stücken auf Ihrem Gerät gelesen und nie hochgeladen, daher sind auch große Dateien kein Problem. Jeder Hash-Typ wird nacheinander berechnet, die gängigsten zuerst.",
+    "dropTitle": "Datei hier ablegen oder zum Auswählen klicken",
+    "cmpLabel": "Hash zum Vergleichen", "optional": "(optional)",
+    "cmpPlaceholder": "Fügen Sie den zu vergleichenden Hash ein. Sie können mehrere Hashes eingeben, einen pro Zeile.",
+    "uploadChecksum": "Prüfsummendatei hochladen",
+    "uploadTitle": "Unterstützt jede Textdatei: .md5, .sha1, .sha256, .sha512, .b3, .txt, …",
+    "clear": "Leeren", "recommended": "Empfohlen", "commonHashes": "Gängige Hashes", "otherHashes": "Weitere Hash-Typen",
+    "moreBtn": "Weitere Hash-Typen berechnen", "lookupTitle": "Abfrage bekannter Dateien", "soon": "Demnächst",
+    "lookupText": "Bald können Sie prüfen, ob eine Datei öffentlich bekannt ist, indem ihr Hash mit unserer eigenen Datenbank abgeglichen wird. Es wird nur der Hash gesendet, nie die Datei.",
+    "checksum": {
+      "title": "Was ist eine Prüfsumme?",
+      "p1": "Eine Prüfsumme ist eine kurze Zeichenfolge aus Buchstaben und Zahlen, die aus dem Inhalt einer Datei berechnet wird, wie ein Fingerabdruck. Ändert sich nur ein einziges Bit der Datei, ändert sich die Prüfsumme komplett. Identische Dateien ergeben stets identische Prüfsummen.",
+      "p2": "Herausgeber nennen neben dem Download eine Prüfsumme. Sie berechnen sie für die erhaltene Datei und vergleichen. Stimmen beide überein, ist die Datei genau die, die der Herausgeber veröffentlicht hat. Wenn nicht, ist der Download beschädigt oder wurde verändert.",
+      "howTitle": "So prüfen Sie einen Download",
+      "steps": [
+        "Kopieren Sie die Prüfsumme von der offiziellen Download-Seite oder speichern Sie die Prüfsummendatei (<code>.sha256</code>, <code>.md5</code>, <code>.txt</code>, …).",
+        "Legen Sie Ihre heruntergeladene Datei hier ab und fügen Sie den Wert ein, oder laden Sie die Prüfsummendatei hoch.",
+        "Eine Übereinstimmung bedeutet, dass die Datei identisch ist. Bei keiner Übereinstimmung laden Sie sie erneut von der offiziellen Quelle herunter."
+      ],
+      "trustTitle": "Welchem Typ sollten Sie vertrauen?",
+      "trust": [
+        "<b>SHA-256</b> ist der heutige Standard und unsere Empfehlung. SHA-512, SHA-3 und BLAKE3 sind ebenso stark.",
+        "<b>SHA-1 und MD5</b> erkennen noch zufällige Beschädigungen, können aber absichtlich gefälscht werden. Verlassen Sie sich für die Sicherheit nicht auf sie.",
+        "<b>CRC32, CRC32C, Adler-32 und Fletcher</b> sind kleine Fehlererkennungscodes für Archive und Netzwerke. Sie sind nicht sicher."
+      ],
+      "note": "Eine Prüfsumme zeigt, dass zwei Dateien gleich sind, nicht dass die Datei sicher ist. Sie ist nur so vertrauenswürdig wie die Quelle, von der Sie sie kopiert haben."
+    },
+    "faqTitle": "FAQ",
+    "faq": [
+      { "q": "Wird meine Datei irgendwohin hochgeladen?", "a": "Nein. Prüfsummen werden in Ihrem Browser berechnet, Ihre Datei verlässt also nie Ihr Gerät." },
+      { "q": "Wie groß darf eine Datei sein?", "a": "Fast beliebig groß, auch mehrere Gigabyte. Die Datei wird in 8-MB-Stücken gelesen, größere Dateien dauern daher einfach länger. Lassen Sie den Tab geöffnet, bis der Fortschrittsbalken fertig ist." },
+      { "q": "Spielen Groß- und Kleinschreibung oder Leerzeichen eine Rolle?", "a": "Nein, beides wird ignoriert. Setzen Sie jede Prüfsumme in eine eigene Zeile. Sie können auch eine ganze Prüfsummendatei einfügen oder hochladen, inklusive Zeilen wie <code>hash *filename</code> oder <code>MD5 (filename) = hash</code>. Zeilen, die mit <code>#</code> beginnen, werden übersprungen." },
+      { "q": "Warum gibt es so viele Prüfsummentypen?", "a": "Download-Seiten verwenden unterschiedliche Typen, daher prüft SumVerify die gängigen automatisch. Wenn keiner übereinstimmt, können Sie auch die anderen Typen prüfen." },
+      { "q": "Meine Prüfsumme stimmt nicht überein. Was nun?", "a": "Stellen Sie sicher, dass Sie den ganzen Wert kopiert haben und dass er zu genau dieser Datei und Version gehört. Laden Sie die Datei dann erneut von der offiziellen Quelle herunter. Stimmt sie immer noch nicht überein, öffnen Sie sie nicht." },
+      { "q": "Bedeutet eine Übereinstimmung, dass die Datei sicher ist?", "a": "Nein. Eine Übereinstimmung beweist nur, dass die Datei mit der identisch ist, aus der die Prüfsumme erzeugt wurde. Beziehen Sie beides immer aus einer vertrauenswürdigen Quelle." },
+      { "q": "Was ist die Abfrage bekannter Dateien?", "a": "Eine bald verfügbare Funktion, die prüft, ob die Prüfsumme Ihrer Datei einer bekannten Datei in unserer eigenen Datenbank entspricht. Es wird nur die Prüfsumme gesendet, nie die Datei." },
+      { "q": "Ist SumVerify kostenlos und Open Source?", "a": "Ja, für immer kostenlos und unter MIT-Lizenz. Melden Sie Fehler oder tragen Sie bei auf {githubLink}." }
+    ]
+  },
+  "about": {
+    "h1": "Über SumVerify",
+    "intro": "SumVerify ist ein kostenloser Prüfsummenrechner und Dateiprüfer, der vollständig in Ihrem Browser läuft. Legen Sie eine Datei ab, fügen Sie den auf der Download-Seite veröffentlichten Hash ein und sehen Sie sofort, ob beide übereinstimmen.",
+    "why": "Download-Seiten veröffentlichen oft einen Hash, doch die Prüfung bedeutet meist, ein Terminal zu öffnen und sich an den richtigen Befehl zu erinnern. SumVerify macht daraus eine Drag-and-drop-Aufgabe, ohne Installation und ohne Ihre Datei an einen Server zu senden.",
+    "featuresTitle": "Was SumVerify besonders macht",
+    "features": [
+      "<b>Datenschutz von Grund auf:</b> Dateien werden lokal gelesen und nie hochgeladen.",
+      "<b>Für große Dateien gebaut:</b> Daten werden in 8-MB-Stücken gestreamt, daher funktionieren auch mehrere Gigabyte große Dateien.",
+      "<b>20 Hash-Typen:</b> SHA-256, MD5, SHA-1, SHA-512, BLAKE3, CRC32 und mehr, die gängigsten zuerst.",
+      "<b>Kostenlos und Open Source:</b> MIT-lizenziert, verfügbar auf {githubLink}."
+    ],
+    "authorTitle": "Wer dahintersteckt",
+    "author": "SumVerify wird von Kyle, einem unabhängigen Entwickler, entworfen, gebaut und betreut. Quellcode, Fehlerberichte und Beiträge sind auf {githubLink} willkommen, und Sie können jederzeit an {emailLink} schreiben.",
+    "contactCta": "Kontakt aufnehmen"
+  },
+  "contact": {
+    "h1": "Kontakt",
+    "intro": "Einen Fehler gefunden, eine Idee oder einen Übersetzungsfehler entdeckt? Melden Sie sich auf dem Weg, der Ihnen am besten passt.",
+    "githubTitle": "GitHub",
+    "githubDesc": "Am besten für Fehlerberichte, Funktionswünsche und Beiträge. Eröffnen Sie ein Issue oder einen Pull Request.",
+    "emailTitle": "E-Mail",
+    "emailDesc": "Für alles andere, etwa Fragen, Feedback und Kooperationsideen. Ich lese jede Nachricht.",
+    "tip": "Fehler melden? Bitte geben Sie Browser, Betriebssystem und Dateigröße an. Senden Sie niemals die Datei selbst."
+  },
+  "ui": {
+    "themeDark": "Dunkel", "themeLight": "Hell", "noFile": "Keine Datei ausgewählt", "waiting": "Wartet", "calculating": "Wird berechnet…",
+    "match": "Übereinstimmung", "copy": "Kopieren", "copied": "Kopiert",
+    "progress": "Berechne {name} · {i} von {total}",
+    "hashDetectedOne": "{n} Hash erkannt", "hashDetectedMany": "{n} Hashes erkannt",
+    "noValidHash": "<b>Im Text wurde kein gültiger Hash gefunden.</b> Jede Zeile braucht einen Hash aus 2–128 Hexadezimalzeichen. Unterstützte Zeilenformate: ein reiner Hash, <code>hash *filename</code> oder <code>MD5 (filename) = hash</code>. Zeilen, die mit # beginnen, werden ignoriert.",
+    "hashesReady": "Die Hashes sind bereit. Legen Sie nun oben die zu prüfende Datei ab, dann wird jede Zeile damit verglichen.",
+    "matchOne": "<b>Übereinstimmung.</b> Der {types}-Hash stimmt überein{note}. Diese Datei ist mit dem Original identisch.",
+    "matchMany": "<b>Übereinstimmung.</b> Die {types}-Hashes stimmen überein{note}. Diese Datei ist mit dem Original identisch.",
+    "matchNote": " ({matched} von {total} angegebenen Hashes stimmen überein)",
+    "comparing": "Vergleiche… noch keine Übereinstimmung, die Berechnung läuft noch. Die Ergebnisse erscheinen nacheinander für jeden Hash-Typ.",
+    "noMatchCommon": "<b>Keine Übereinstimmung bei den gängigen Hash-Typen.</b> Wenn Ihr Hash ein anderes Format verwendet, prüfen Sie auch die anderen Typen. {button}",
+    "checkOther": "Andere Hash-Typen prüfen",
+    "checkingOther": "Keine Übereinstimmung bei den gängigen Hash-Typen. Die anderen Hash-Typen werden geprüft…",
+    "noMatchTitle": "Keine Übereinstimmung.",
+    "noMatchOne": "Der angegebene Hash stimmt in keinem der {total} Hash-Typen mit dieser Datei überein.",
+    "noMatchMany": "Keiner der {count} angegebenen Hashes stimmt in einem der {total} Hash-Typen mit dieser Datei überein.",
+    "noMatchNamed": " Insbesondere der für „{file}“ veröffentlichte Hash (Zeile {line}) stimmt nicht überein.",
+    "noMatchAdvice": " Prüfen Sie, ob Sie ihn vollständig kopiert haben, oder laden Sie die Datei erneut von der offiziellen Quelle herunter.",
+    "readError": "Diese Datei konnte nicht gelesen werden. Möglicherweise wurde sie verschoben oder dem Browser gingen die Ressourcen aus. Versuchen Sie es erneut oder nutzen Sie einen Desktop-Browser.",
+    "hashFileError": "Diese Datei konnte nicht als Text gelesen werden. Bitte fügen Sie die Hashes manuell ein."
+  }
+}

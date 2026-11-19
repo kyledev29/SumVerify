@@ -1,0 +1,47 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root{
+  color-scheme:light;box-sizing:border-box;
+  --bg:247 248 250;--surface:255 255 255;--sunken:239 241 245;--line:225 229 236;
+  --ink:20 24 33;--muted:94 102 118;--titlebar:238 241 246;
+  --primary:47 91 234;--primary-hover:36 72 201;--primary-soft:232 238 253;--on-primary:255 255 255;
+  --success:22 128 80;--success-soft:223 244 232;--danger:200 52 52;--danger-soft:252 232 232;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  color-scheme:dark;--titlebar:33 38 49;
+  --bg:16 19 25;--surface:24 28 36;--sunken:12 14 19;--line:44 50 62;
+  --ink:236 239 245;--muted:150 158 174;
+  --primary:108 140 255;--primary-hover:138 164 255;--primary-soft:28 38 70;--on-primary:12 16 30;
+  --success:74 201 134;--success-soft:20 48 36;--danger:255 130 130;--danger-soft:56 26 28;
+}}
+:root[data-theme="dark"]{
+  color-scheme:dark;--titlebar:33 38 49;
+  --bg:16 19 25;--surface:24 28 36;--sunken:12 14 19;--line:44 50 62;
+  --ink:236 239 245;--muted:150 158 174;
+  --primary:108 140 255;--primary-hover:138 164 255;--primary-soft:28 38 70;--on-primary:12 16 30;
+  --success:74 201 134;--success-soft:20 48 36;--danger:255 130 130;--danger-soft:56 26 28;
+}
+
+/* Row whose hash matches “Hash to compare”: light green background */
+.row-hit{background-color:rgb(var(--success) / .14);box-shadow:inset 3px 0 0 rgb(var(--success) / .6)}
+html{scroll-behavior:smooth;scroll-padding-top:4.5rem}
+details>summary{list-style:none}
+details>summary::-webkit-details-marker{display:none}
+details[open] .chev{transform:rotate(180deg)}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+
+@layer components{
+  .btn{@apply inline-flex items-center justify-center gap-2 rounded-control font-semibold h-10 px-4 text-sm transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary disabled:opacity-50 disabled:pointer-events-none}
+  .btn-sm{@apply h-8 px-3 text-[13px]}
+  .btn-lg{@apply h-12 px-6 text-base}
+  .btn-primary{@apply bg-primary text-on-primary hover:bg-primary-hover}
+  .btn-secondary{@apply bg-surface text-ink border border-line hover:bg-sunken}
+  .btn-ghost{@apply text-ink hover:bg-sunken}
+  .field{@apply h-10 w-full rounded-control border border-line bg-surface px-3 text-sm text-ink placeholder:text-muted focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-1 focus-visible:outline-primary}
+  .card{@apply rounded-card border border-line bg-surface p-5}
+  .badge{@apply inline-flex items-center gap-1 rounded-md px-2.5 py-0.5 text-xs font-semibold}
+  /* <code> inside translated strings needs no classes */
+  main code{@apply font-mono text-sm bg-sunken rounded-control px-1}
+}
