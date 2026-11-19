@@ -1,17 +1,9 @@
 {
   "meta": {
-    "home": {
-      "title": "SumVerify – Free online checksum calculator & file verifier",
-      "description": "Calculate SHA-256, MD5, SHA-1, SHA-512, CRC32, BLAKE3 and more for any file in your browser, even large ones. Compare with a published hash. Files never leave your device."
-    },
-    "about": {
-      "title": "About SumVerify – Free browser-based checksum calculator",
-      "description": "SumVerify is a free, open-source checksum calculator that runs in your browser. Learn how it works and who builds it."
-    },
-    "contact": {
-      "title": "Contact – SumVerify",
-      "description": "Get in touch with the SumVerify developer through GitHub or email."
-    }
+    "home": { "title": "SumVerify – Free Online Checksum Calculator & File Verifier", "description": "Verify SHA-256, MD5, SHA-1, SHA-512, CRC32 & BLAKE3 checksums of any file in your browser. Free, no upload, works with large files.", "keywords": "checksum calculator, file hash checker, SHA-256 checksum, MD5 checksum, SHA-1, SHA-512, CRC32, BLAKE3, verify file integrity, compare hash, online file verifier, hash generator" },
+    "about": { "title": "About SumVerify – Free Browser-Based Checksum Tool", "description": "SumVerify is a free, open-source checksum calculator that runs in your browser. See how it works and who builds it.", "keywords": "about SumVerify, open source checksum tool, browser file verifier, private hash calculator, Kyle" },
+    "contact": { "title": "Contact SumVerify – GitHub & Email", "description": "Report a bug, suggest a feature or ask a question. Contact the SumVerify developer through GitHub or email.", "keywords": "contact SumVerify, report bug, feature request, SumVerify GitHub, SumVerify email" },
+    "imageAlt": "SumVerify – free online checksum calculator and file verifier"
   },
   "common": {
     "language": "Language",

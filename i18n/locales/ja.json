@@ -1,8 +1,9 @@
 {
   "meta": {
-    "home": { "title": "SumVerify – 無料のオンラインチェックサム計算・ファイル検証ツール", "description": "ブラウザ上で、大きなファイルでも SHA-256、MD5、SHA-1、SHA-512、CRC32、BLAKE3 などを計算できます。公開されているハッシュと照合。ファイルがお使いのデバイスから出ることはありません。" },
-    "about": { "title": "SumVerify について – ブラウザで動く無料のチェックサム計算ツール", "description": "SumVerify はブラウザ上で動作する無料のオープンソース チェックサム計算ツールです。仕組みと開発者についてご紹介します。" },
-    "contact": { "title": "お問い合わせ – SumVerify", "description": "GitHub またはメールで SumVerify の開発者にご連絡ください。" }
+    "home": { "title": "SumVerify – 無料オンラインチェックサム計算・ファイル検証", "description": "ブラウザ上で SHA-256、MD5、SHA-1、SHA-512、CRC32、BLAKE3 を検証。無料・アップロード不要で、大きなファイルにも対応。", "keywords": "チェックサム計算,ファイルハッシュ確認,SHA-256,MD5,ファイル整合性チェック,ハッシュ比較,オンラインファイル検証" },
+    "about": { "title": "SumVerify について – 無料のチェックサム計算ツール", "description": "SumVerify はブラウザで動く無料のオープンソース チェックサム計算ツールです。仕組みと開発者を紹介します。", "keywords": "SumVerify とは,オープンソース チェックサムツール,ブラウザ ファイル検証,アップロード不要 ハッシュ計算" },
+    "contact": { "title": "お問い合わせ – SumVerify（GitHub・メール）", "description": "不具合の報告、機能のご提案、ご質問は GitHub またはメールで SumVerify の開発者までお気軽にどうぞ。", "keywords": "SumVerify お問い合わせ,不具合報告,機能要望,SumVerify GitHub,SumVerify メール" },
+    "imageAlt": "SumVerify – 無料のチェックサム計算・ファイル検証ツール"
   },
   "common": {
     "language": "言語", "themeAria": "ダークモードとライトモードを切り替え", "menu": "メニュー",

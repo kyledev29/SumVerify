@@ -1,8 +1,9 @@
 {
   "meta": {
-    "home": { "title": "SumVerify – Calculateur de checksum et vérificateur de fichiers gratuit en ligne", "description": "Calculez SHA-256, MD5, SHA-1, SHA-512, CRC32, BLAKE3 et plus pour n’importe quel fichier dans votre navigateur, même volumineux. Comparez avec un hash publié. Vos fichiers ne quittent jamais votre appareil." },
-    "about": { "title": "À propos de SumVerify – Calculateur de checksum gratuit dans le navigateur", "description": "SumVerify est un calculateur de checksum gratuit et open source qui s’exécute dans votre navigateur. Découvrez son fonctionnement et son auteur." },
-    "contact": { "title": "Contact – SumVerify", "description": "Contactez le développeur de SumVerify via GitHub ou par e-mail." }
+    "home": { "title": "SumVerify – Calculateur de checksum en ligne gratuit", "description": "Vérifiez les checksums SHA-256, MD5, SHA-1, SHA-512, CRC32 et BLAKE3 de tout fichier dans votre navigateur. Gratuit, sans envoi, gros fichiers acceptés.", "keywords": "calculateur de checksum, vérificateur de hash, checksum SHA-256, checksum MD5, vérifier l’intégrité d’un fichier, comparer un hash, vérificateur de fichier en ligne" },
+    "about": { "title": "À propos de SumVerify – Outil de checksum gratuit", "description": "SumVerify est un calculateur de checksum gratuit et open source qui s’exécute dans votre navigateur. Découvrez son fonctionnement et son auteur.", "keywords": "à propos de SumVerify, outil de checksum open source, vérificateur de fichiers navigateur, calcul de hash privé" },
+    "contact": { "title": "Contact SumVerify – GitHub et e-mail", "description": "Signalez un bug, proposez une fonctionnalité ou posez une question. Contactez le développeur de SumVerify via GitHub ou e-mail.", "keywords": "contacter SumVerify, signaler un bug, demande de fonctionnalité, SumVerify GitHub, SumVerify e-mail" },
+    "imageAlt": "SumVerify – calculateur de checksum et vérificateur de fichiers gratuit"
   },
   "common": {
     "language": "Langue", "themeAria": "Basculer entre mode sombre et mode clair", "menu": "Menu",

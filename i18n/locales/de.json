@@ -1,8 +1,9 @@
 {
   "meta": {
-    "home": { "title": "SumVerify – Kostenloser Online-Prüfsummenrechner & Dateiprüfer", "description": "Berechnen Sie SHA-256, MD5, SHA-1, SHA-512, CRC32, BLAKE3 und mehr für jede Datei im Browser, auch für große. Vergleichen Sie mit einem veröffentlichten Hash. Ihre Dateien verlassen nie Ihr Gerät." },
-    "about": { "title": "Über SumVerify – Kostenloser Prüfsummenrechner im Browser", "description": "SumVerify ist ein kostenloser Open-Source-Prüfsummenrechner, der in Ihrem Browser läuft. Erfahren Sie, wie er funktioniert und wer dahintersteckt." },
-    "contact": { "title": "Kontakt – SumVerify", "description": "Kontaktieren Sie den Entwickler von SumVerify über GitHub oder per E-Mail." }
+    "home": { "title": "SumVerify – Kostenloser Online-Prüfsummenrechner", "description": "Prüfsummen SHA-256, MD5, SHA-1, SHA-512, CRC32 und BLAKE3 jeder Datei im Browser prüfen. Kostenlos, ohne Upload, auch für große Dateien.", "keywords": "Prüfsummenrechner, Datei-Hash prüfen, SHA-256 Prüfsumme, MD5 Prüfsumme, Dateiintegrität prüfen, Hash vergleichen, Online-Dateiprüfer, Hash-Generator" },
+    "about": { "title": "Über SumVerify – Kostenloses Prüfsummen-Tool", "description": "SumVerify ist ein kostenloser Open-Source-Prüfsummenrechner im Browser. Erfahren Sie, wie er funktioniert und wer dahintersteckt.", "keywords": "über SumVerify, Open-Source Prüfsummen-Tool, Dateiprüfer im Browser, Hash-Rechner ohne Upload" },
+    "contact": { "title": "Kontakt – SumVerify per GitHub und E-Mail", "description": "Fehler melden, Funktion vorschlagen oder Frage stellen: Kontaktieren Sie den SumVerify-Entwickler über GitHub oder per E-Mail.", "keywords": "SumVerify Kontakt, Fehler melden, Funktionswunsch, SumVerify GitHub, SumVerify E-Mail" },
+    "imageAlt": "SumVerify – kostenloser Prüfsummenrechner und Dateiprüfer"
   },
   "common": {
     "language": "Sprache", "themeAria": "Zwischen dunklem und hellem Modus wechseln", "menu": "Menü",

@@ -1,8 +1,9 @@
 {
   "meta": {
-    "home": { "title": "SumVerify – Kalkulator checksum dan verifikasi file online gratis", "description": "Hitung SHA-256, MD5, SHA-1, SHA-512, CRC32, BLAKE3, dan lainnya untuk file apa pun di browser Anda, bahkan yang besar. Bandingkan dengan hash yang dipublikasikan. File tidak pernah meninggalkan perangkat Anda." },
-    "about": { "title": "Tentang SumVerify – Kalkulator checksum gratis di browser", "description": "SumVerify adalah kalkulator checksum gratis dan open source yang berjalan di browser Anda. Pelajari cara kerjanya dan siapa yang membuatnya." },
-    "contact": { "title": "Kontak – SumVerify", "description": "Hubungi pengembang SumVerify melalui GitHub atau email." }
+    "home": { "title": "SumVerify – Kalkulator Checksum Online Gratis", "description": "Verifikasi checksum SHA-256, MD5, SHA-1, SHA-512, CRC32, dan BLAKE3 file apa pun di browser. Gratis, tanpa unggah, mendukung file besar.", "keywords": "kalkulator checksum, pengecek hash file, checksum SHA-256, checksum MD5, cek integritas file, bandingkan hash, verifikasi file online" },
+    "about": { "title": "Tentang SumVerify – Alat Checksum Gratis", "description": "SumVerify adalah kalkulator checksum gratis dan open source yang berjalan di browser. Pelajari cara kerjanya dan siapa pembuatnya.", "keywords": "tentang SumVerify, alat checksum open source, verifikator file di browser, hitung hash tanpa unggah" },
+    "contact": { "title": "Kontak SumVerify – GitHub dan Email", "description": "Laporkan bug, usulkan fitur, atau ajukan pertanyaan. Hubungi pengembang SumVerify lewat GitHub atau email.", "keywords": "kontak SumVerify, laporkan bug, usul fitur, SumVerify GitHub, SumVerify email" },
+    "imageAlt": "SumVerify – kalkulator checksum dan verifikasi file online gratis"
   },
   "common": {
     "language": "Bahasa", "themeAria": "Beralih mode gelap atau terang", "menu": "Menu",

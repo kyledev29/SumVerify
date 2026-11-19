@@ -30,5 +30,18 @@ for (const { code } of config.locales) {
   if (badTokens.length) console.warn(`[i18n] ${code}: {placeholder} mismatch -> ${badTokens.join(', ')}`);
   problems += missing.length + extra.length + badTokens.length;
 }
+
+// SEO lint: Google truncates titles at ~60 and descriptions at ~160 Latin characters (CJK counts double).
+const width = (str) => [...str].reduce((n, c) => n + (c.codePointAt(0) >= 0x2e80 ? 2 : 1), 0);
+for (const { code } of config.locales) {
+  const m = flat(load(code));
+  for (const k of Object.keys(m)) {
+    if (/^meta\.\w+\.title$/.test(k) && width(m[k]) > 62) console.warn(`[seo] ${code}: ${k} is ${width(m[k])} wide (aim <= 60)`);
+    if (/^meta\.\w+\.description$/.test(k) && width(m[k]) > 160) console.warn(`[seo] ${code}: ${k} is ${width(m[k])} wide (aim <= 160)`);
+  }
+}
+for (const p of config.pages.filter((x) => !x.multilingual)) {
+  if (width(p.title) > 62 || width(p.description) > 160) console.warn(`[seo] config page ${p.id}: title/description too long`);
+}
 console.log(problems ? `[i18n] ${problems} issue(s) found.` : '[i18n] all locales complete.');
 if (problems && process.argv.includes('--strict')) process.exit(1);

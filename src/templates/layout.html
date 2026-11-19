@@ -7,10 +7,13 @@
 <meta name="description" content="{{page.description|attr}}">
 <link rel="canonical" href="{{@canonical}}">
 {{@hreflangLinks}}
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='10' fill='%236c8cff'/%3E%3Cpath d='M45 16H19l15 16-15 16h26' fill='none' stroke='%23fff' stroke-width='6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="sitemap" type="application/xml" href="/sitemap.xml">
+{{@seoHead}}
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&display=swap"></noscript>
 <script>try{var t=localStorage.getItem('sv-theme');if(t)document.documentElement.setAttribute('data-theme',t)}catch(e){}</script>
 <script type="application/json" id="i18n-data">{{@i18nJson}}</script>
 </head>

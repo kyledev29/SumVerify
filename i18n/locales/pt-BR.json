@@ -1,8 +1,9 @@
 {
   "meta": {
-    "home": { "title": "SumVerify – Calculadora de checksum e verificador de arquivos online grátis", "description": "Calcule SHA-256, MD5, SHA-1, SHA-512, CRC32, BLAKE3 e mais para qualquer arquivo no seu navegador, mesmo os grandes. Compare com um hash publicado. Seus arquivos nunca saem do seu dispositivo." },
-    "about": { "title": "Sobre o SumVerify – Calculadora de checksum gratuita no navegador", "description": "O SumVerify é uma calculadora de checksum gratuita e de código aberto que roda no seu navegador. Saiba como funciona e quem o desenvolve." },
-    "contact": { "title": "Contato – SumVerify", "description": "Entre em contato com o desenvolvedor do SumVerify pelo GitHub ou por e-mail." }
+    "home": { "title": "SumVerify – Calculadora de checksum online grátis", "description": "Verifique checksums SHA-256, MD5, SHA-1, SHA-512, CRC32 e BLAKE3 de qualquer arquivo no navegador. Grátis, sem upload, funciona com arquivos grandes.", "keywords": "calculadora de checksum, verificador de hash, checksum SHA-256, checksum MD5, verificar integridade de arquivo, comparar hash, verificador de arquivos online" },
+    "about": { "title": "Sobre o SumVerify – Ferramenta de checksum grátis", "description": "O SumVerify é uma calculadora de checksum gratuita e de código aberto que roda no navegador. Veja como funciona e quem o desenvolve.", "keywords": "sobre o SumVerify, ferramenta de checksum open source, verificador de arquivos no navegador, calcular hash sem upload" },
+    "contact": { "title": "Contato – SumVerify pelo GitHub e e-mail", "description": "Relate um bug, sugira um recurso ou tire uma dúvida. Fale com o desenvolvedor do SumVerify pelo GitHub ou por e-mail.", "keywords": "contato SumVerify, relatar bug, sugerir recurso, SumVerify GitHub, SumVerify e-mail" },
+    "imageAlt": "SumVerify – calculadora de checksum e verificador de arquivos grátis"
   },
   "common": {
     "language": "Idioma", "themeAria": "Alternar entre modo escuro e claro", "menu": "Menu",

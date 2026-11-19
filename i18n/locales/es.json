@@ -1,8 +1,9 @@
 {
   "meta": {
-    "home": { "title": "SumVerify – Calculadora de checksum y verificador de archivos en línea gratis", "description": "Calcula SHA-256, MD5, SHA-1, SHA-512, CRC32, BLAKE3 y más para cualquier archivo en tu navegador, incluso los grandes. Compáralo con un hash publicado. Tus archivos nunca salen de tu dispositivo." },
-    "about": { "title": "Acerca de SumVerify – Calculadora de checksum gratuita en el navegador", "description": "SumVerify es una calculadora de checksum gratuita y de código abierto que se ejecuta en tu navegador. Conoce cómo funciona y quién la crea." },
-    "contact": { "title": "Contacto – SumVerify", "description": "Ponte en contacto con el desarrollador de SumVerify por GitHub o correo electrónico." }
+    "home": { "title": "SumVerify – Calculadora de checksum en línea gratis", "description": "Verifica los checksums SHA-256, MD5, SHA-1, SHA-512, CRC32 y BLAKE3 de cualquier archivo en tu navegador. Gratis, sin subir nada, archivos grandes.", "keywords": "calculadora de checksum, verificador de hash, checksum SHA-256, checksum MD5, comprobar integridad de archivo, comparar hash, verificador de archivos en línea" },
+    "about": { "title": "Acerca de SumVerify – Herramienta de checksum gratis", "description": "SumVerify es una calculadora de checksum gratuita y de código abierto que se ejecuta en tu navegador. Conoce cómo funciona y quién la crea.", "keywords": "acerca de SumVerify, herramienta de checksum de código abierto, verificador de archivos en el navegador, calcular hash sin subir" },
+    "contact": { "title": "Contacto – SumVerify por GitHub y correo", "description": "Informa de un error, sugiere una función o haz una pregunta. Contacta con el desarrollador de SumVerify por GitHub o correo electrónico.", "keywords": "contacto SumVerify, informar de un error, sugerir función, SumVerify GitHub, SumVerify correo" },
+    "imageAlt": "SumVerify – calculadora de checksum y verificador de archivos gratis"
   },
   "common": {
     "language": "Idioma", "themeAria": "Cambiar entre modo oscuro y claro", "menu": "Menú",

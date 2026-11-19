@@ -51,6 +51,18 @@ Các `{token}` khác (`{n}`, `{name}`, …) giữ nguyên cho JS chạy trên tr
 2. Thêm `{ id, path: '<id>/', multilingual: true|false }` vào `pages` trong `i18n.config.js`
    (nếu đa ngôn ngữ thì thêm `meta.<id>.title/description` và nội dung vào các file JSON; nếu chỉ English thì đặt `title`/`description` ngay trong config như `privacy`/`terms`).
 
+## SEO (Google / Bing)
+
+Mọi thứ sinh tự động từ `i18n.config.js` + JSON ngôn ngữ, không cần sửa tay từng trang:
+
+- `sitemap.xml` (có `lastmod` + `xhtml:link hreflang` + x-default) và `robots.txt` (trỏ tới sitemap) được **tạo khi build** vào `dist/`, và cũng được phục vụ ở dev (`/sitemap.xml`, `/robots.txt`).
+- Mỗi trang có: `<title>`, `description`, `keywords`, canonical, hreflang, robots (`max-image-preview:large`…), Open Graph (+ `og:locale` và `locale:alternate`), Twitter Card, theme-color.
+- JSON-LD: trang chủ = `WebSite` + `WebApplication` (miễn phí, MIT) + `FAQPage` + `Person`; About = `AboutPage`; Contact = `ContactPage`; About/Contact/Privacy/Terms có thêm `BreadcrumbList`.
+- Mô tả/từ khóa của từng trang nằm ở `meta.<home|about|contact>` trong mỗi file JSON (privacy/terms nằm trong `i18n.config.js`). `npm run i18n:check` cảnh báo khi title > 60 hoặc description > 160 ký tự (chữ CJK tính gấp đôi).
+- **Ảnh chia sẻ:** đặt file PNG 1200×630 tại `public/og-image.png` (URL đã được chèn sẵn: `https://sumverify.com/og-image.png`). Thiếu file thì build sẽ cảnh báo.
+- Xác minh Search Console / Bing Webmaster: điền `site.verification.google` / `site.verification.bing`. IndexNow: điền `site.indexNowKey` để tạo `/<key>.txt`.
+- `lastmod` lấy theo thời gian sửa file template/JSON của trang đó; nếu CI clone mới mỗi lần thì ngày sẽ là ngày checkout.
+
 ## Ghi chú triển khai
 
 - Server cần phục vụ `/about/` → `about/index.html` (mặc định của Netlify, Vercel, Cloudflare Pages, GitHub Pages, nginx `try_files $uri $uri/`).

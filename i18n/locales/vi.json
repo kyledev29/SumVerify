@@ -1,17 +1,9 @@
 {
   "meta": {
-    "home": {
-      "title": "SumVerify – Tính checksum và xác minh tệp trực tuyến miễn phí",
-      "description": "Tính SHA-256, MD5, SHA-1, SHA-512, CRC32, BLAKE3 và nhiều loại khác cho bất kỳ tệp nào ngay trong trình duyệt, kể cả tệp lớn. So sánh với mã hash đã công bố. Tệp không bao giờ rời khỏi thiết bị của bạn."
-    },
-    "about": {
-      "title": "Giới thiệu SumVerify – Công cụ tính checksum miễn phí trên trình duyệt",
-      "description": "SumVerify là công cụ tính checksum miễn phí, mã nguồn mở, chạy ngay trong trình duyệt. Tìm hiểu cách hoạt động và người xây dựng nó."
-    },
-    "contact": {
-      "title": "Liên hệ – SumVerify",
-      "description": "Liên hệ với nhà phát triển SumVerify qua GitHub hoặc email."
-    }
+    "home": { "title": "SumVerify – Tính checksum và kiểm tra tệp miễn phí", "description": "Kiểm tra checksum SHA-256, MD5, SHA-1, SHA-512, CRC32, BLAKE3 của mọi tệp ngay trong trình duyệt. Miễn phí, không tải lên, hỗ trợ tệp lớn.", "keywords": "tính checksum, kiểm tra hash tệp, checksum SHA-256, checksum MD5, kiểm tra tính toàn vẹn tệp, so sánh hash, xác minh tệp trực tuyến" },
+    "about": { "title": "Giới thiệu SumVerify – Công cụ checksum miễn phí", "description": "SumVerify là công cụ tính checksum miễn phí, mã nguồn mở, chạy ngay trong trình duyệt. Tìm hiểu cách hoạt động và người xây dựng.", "keywords": "giới thiệu SumVerify, công cụ checksum mã nguồn mở, xác minh tệp trên trình duyệt, tính hash không tải lên" },
+    "contact": { "title": "Liên hệ SumVerify – GitHub và email", "description": "Báo lỗi, đề xuất tính năng hoặc đặt câu hỏi. Liên hệ nhà phát triển SumVerify qua GitHub hoặc email.", "keywords": "liên hệ SumVerify, báo lỗi, đề xuất tính năng, SumVerify GitHub, SumVerify email" },
+    "imageAlt": "SumVerify – công cụ tính checksum và kiểm tra tệp miễn phí"
   },
   "common": {
     "language": "Ngôn ngữ",

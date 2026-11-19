@@ -1,8 +1,9 @@
 {
   "meta": {
-    "home": { "title": "SumVerify – 免费在线校验和计算器与文件校验工具", "description": "在浏览器中为任意文件（包括大文件）计算 SHA-256、MD5、SHA-1、SHA-512、CRC32、BLAKE3 等校验值，并与官方公布的哈希比对。文件不会离开你的设备。" },
-    "about": { "title": "关于 SumVerify – 免费的浏览器端校验和计算器", "description": "SumVerify 是一款免费、开源、在浏览器中运行的校验和计算器。了解它的工作方式和开发者。" },
-    "contact": { "title": "联系我们 – SumVerify", "description": "通过 GitHub 或电子邮件联系 SumVerify 开发者。" }
+    "home": { "title": "SumVerify – 免费在线校验和计算器与文件校验工具", "description": "在浏览器中校验任意文件的 SHA-256、MD5、SHA-1、SHA-512、CRC32、BLAKE3。免费、无需上传，支持大文件。", "keywords": "校验和计算器,文件哈希校验,SHA-256 校验,MD5 校验,文件完整性校验,哈希值比对,在线文件校验" },
+    "about": { "title": "关于 SumVerify – 免费校验和工具", "description": "SumVerify 是在浏览器中运行的免费开源校验和计算器。了解它的工作方式和开发者。", "keywords": "关于 SumVerify,开源校验和工具,浏览器文件校验,无需上传的哈希计算" },
+    "contact": { "title": "联系 SumVerify – GitHub 与邮箱", "description": "报告错误、提出功能建议或提问，欢迎通过 GitHub 或电子邮件联系 SumVerify 开发者。", "keywords": "联系 SumVerify,报告错误,功能建议,SumVerify GitHub,SumVerify 邮箱" },
+    "imageAlt": "SumVerify – 免费在线校验和计算器与文件校验工具"
   },
   "common": {
     "language": "语言", "themeAria": "切换深色或浅色模式", "menu": "菜单",

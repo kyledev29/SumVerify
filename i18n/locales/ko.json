@@ -1,8 +1,9 @@
 {
   "meta": {
-    "home": { "title": "SumVerify – 무료 온라인 체크섬 계산기 및 파일 검증 도구", "description": "대용량 파일도 브라우저에서 SHA-256, MD5, SHA-1, SHA-512, CRC32, BLAKE3 등을 계산하세요. 공개된 해시와 비교할 수 있습니다. 파일은 기기를 벗어나지 않습니다." },
-    "about": { "title": "SumVerify 소개 – 브라우저 기반 무료 체크섬 계산기", "description": "SumVerify는 브라우저에서 실행되는 무료 오픈 소스 체크섬 계산기입니다. 작동 방식과 만든 사람을 소개합니다." },
-    "contact": { "title": "문의 – SumVerify", "description": "GitHub 또는 이메일로 SumVerify 개발자에게 연락하세요." }
+    "home": { "title": "SumVerify – 무료 온라인 체크섬 계산기·파일 검증", "description": "브라우저에서 SHA-256, MD5, SHA-1, SHA-512, CRC32, BLAKE3를 검증하세요. 무료, 업로드 없음, 대용량 파일 지원.", "keywords": "체크섬 계산기,파일 해시 확인,SHA-256 체크섬,MD5 체크섬,파일 무결성 검증,해시 비교,온라인 파일 검증" },
+    "about": { "title": "SumVerify 소개 – 무료 체크섬 도구", "description": "SumVerify는 브라우저에서 실행되는 무료 오픈 소스 체크섬 계산기입니다. 작동 방식과 만든 사람을 소개합니다.", "keywords": "SumVerify 소개,오픈 소스 체크섬 도구,브라우저 파일 검증,업로드 없는 해시 계산" },
+    "contact": { "title": "문의 – SumVerify (GitHub·이메일)", "description": "버그 신고, 기능 제안, 질문은 GitHub 또는 이메일로 SumVerify 개발자에게 문의하세요.", "keywords": "SumVerify 문의,버그 신고,기능 제안,SumVerify GitHub,SumVerify 이메일" },
+    "imageAlt": "SumVerify – 무료 체크섬 계산기 및 파일 검증 도구"
   },
   "common": {
     "language": "언어", "themeAria": "다크 모드와 라이트 모드 전환", "menu": "메뉴",
