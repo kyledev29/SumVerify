@@ -12,7 +12,7 @@
   "footer": { "tagline": "Calculadora de checksum gratuita que se ejecuta en tu navegador.", "pages": "Páginas", "legal": "Legal", "further": "Más información", "privacy": "Política de privacidad", "terms": "Términos de uso" },
   "home": {
     "h1": "Verifica el checksum de un archivo",
-    "intro": "¿Quieres asegurarte de que una descarga está completa y sin alterar? Suelta el archivo aquí, pega el checksum (el código corto) que aparece en la página de descarga y comprueba si coinciden. Todo ocurre en tu dispositivo, así que no se sube nada y funcionan incluso archivos muy grandes.",
+    "intro": "¿Quieres asegurarte de que una descarga está completa y sin alterar? Suelta el archivo aquí, pega el checksum que aparece en la página de descarga y comprueba si coinciden. Todo ocurre en tu dispositivo, así que no se sube nada y funcionan incluso archivos muy grandes.",
     "dropTitle": "Suelta un archivo aquí o haz clic para elegir",
     "cmpLabel": "Hash a comparar", "optional": "(opcional)",
     "cmpPlaceholder": "Pega el hash a comparar. Puedes introducir varios, uno por línea.",

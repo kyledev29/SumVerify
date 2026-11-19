@@ -12,7 +12,7 @@
   "footer": { "tagline": "Calculateur de checksum gratuit qui s’exécute dans votre navigateur.", "pages": "Pages", "legal": "Mentions légales", "further": "Plus d’informations", "privacy": "Politique de confidentialité", "terms": "Conditions d’utilisation" },
   "home": {
     "h1": "Vérifiez le checksum d’un fichier",
-    "intro": "Envie de vérifier qu’un téléchargement est complet et intact ? Déposez le fichier ici, collez le checksum (le court code) indiqué sur la page de téléchargement et voyez s’ils correspondent. Tout se passe sur votre appareil : rien n’est envoyé, et même les très gros fichiers passent sans problème.",
+    "intro": "Envie de vérifier qu’un téléchargement est complet et intact ? Déposez le fichier ici, collez le checksum indiqué sur la page de téléchargement et voyez s’ils correspondent. Tout se passe sur votre appareil : rien n’est envoyé, et même les très gros fichiers passent sans problème.",
     "dropTitle": "Déposez un fichier ici ou cliquez pour choisir",
     "cmpLabel": "Hash à comparer", "optional": "(facultatif)",
     "cmpPlaceholder": "Collez le hash à comparer. Vous pouvez en saisir plusieurs, un par ligne.",

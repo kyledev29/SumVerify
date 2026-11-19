@@ -12,7 +12,7 @@
   "footer": { "tagline": "Kalkulator checksum gratis yang berjalan di browser Anda.", "pages": "Halaman", "legal": "Legal", "further": "Informasi lebih lanjut", "privacy": "Kebijakan Privasi", "terms": "Ketentuan Penggunaan" },
   "home": {
     "h1": "Verifikasi checksum file",
-    "intro": "Ingin memastikan unduhan Anda lengkap dan tidak diubah? Letakkan file di sini, tempel checksum (kode pendek) dari halaman unduhan, lalu lihat apakah keduanya cocok. Semuanya terjadi di perangkat Anda, jadi tidak ada yang diunggah dan file yang sangat besar pun aman.",
+    "intro": "Ingin memastikan unduhan Anda lengkap dan tidak diubah? Letakkan file di sini, tempel checksum dari halaman unduhan, lalu lihat apakah keduanya cocok. Semuanya terjadi di perangkat Anda, jadi tidak ada yang diunggah dan file yang sangat besar pun aman.",
     "dropTitle": "Letakkan file di sini, atau klik untuk memilih",
     "cmpLabel": "Hash untuk dibandingkan", "optional": "(opsional)",
     "cmpPlaceholder": "Tempel hash yang akan dibandingkan. Anda dapat memasukkan beberapa hash, satu per baris.",

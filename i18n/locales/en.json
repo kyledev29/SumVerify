@@ -21,7 +21,7 @@
   },
   "home": {
     "h1": "Verify a file’s checksum",
-    "intro": "Want to be sure a download is complete and untouched? Drop the file here, paste the checksum (the short code) listed on the download page, and see if they match. Everything happens on your device, so nothing is uploaded and even very large files work fine.",
+    "intro": "Want to be sure a download is complete and untouched? Drop the file here, paste the checksum listed on the download page, and see if they match. Everything happens on your device, so nothing is uploaded and even very large files work fine.",
     "dropTitle": "Drop a file here, or click to choose",
     "cmpLabel": "Hash to compare",
     "optional": "(optional)",

@@ -12,7 +12,7 @@
   "footer": { "tagline": "Kostenloser Prüfsummenrechner, der in Ihrem Browser läuft.", "pages": "Seiten", "legal": "Rechtliches", "further": "Weitere Informationen", "privacy": "Datenschutzerklärung", "terms": "Nutzungsbedingungen" },
   "home": {
     "h1": "Prüfsumme einer Datei überprüfen",
-    "intro": "Sie möchten sichergehen, dass ein Download vollständig und unverändert ist? Legen Sie die Datei hier ab, fügen Sie die Prüfsumme (den kurzen Code) von der Download-Seite ein und sehen Sie, ob beide übereinstimmen. Alles passiert auf Ihrem Gerät: Es wird nichts hochgeladen, und selbst sehr große Dateien sind kein Problem.",
+    "intro": "Sie möchten sichergehen, dass ein Download vollständig und unverändert ist? Legen Sie die Datei hier ab, fügen Sie die Prüfsumme von der Download-Seite ein und sehen Sie, ob beide übereinstimmen. Alles passiert auf Ihrem Gerät: Es wird nichts hochgeladen, und selbst sehr große Dateien sind kein Problem.",
     "dropTitle": "Datei hier ablegen oder zum Auswählen klicken",
     "cmpLabel": "Hash zum Vergleichen", "optional": "(optional)",
     "cmpPlaceholder": "Fügen Sie den zu vergleichenden Hash ein. Sie können mehrere Hashes eingeben, einen pro Zeile.",

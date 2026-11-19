@@ -21,7 +21,7 @@
   },
   "home": {
     "h1": "Xác minh checksum của tệp",
-    "intro": "Muốn chắc chắn tệp tải về còn nguyên vẹn và không bị sửa đổi? Hãy thả tệp vào đây, dán checksum (mã ngắn) ghi trên trang tải xuống và xem hai bên có khớp không. Mọi thứ diễn ra ngay trên thiết bị của bạn, nên không có gì bị tải lên và tệp rất lớn cũng dùng được.",
+    "intro": "Muốn chắc chắn tệp tải về còn nguyên vẹn và không bị sửa đổi? Hãy thả tệp vào đây, dán checksum ghi trên trang tải xuống và xem hai bên có khớp không. Mọi thứ diễn ra ngay trên thiết bị của bạn, nên không có gì bị tải lên và tệp rất lớn cũng dùng được.",
     "dropTitle": "Thả tệp vào đây hoặc bấm để chọn",
     "cmpLabel": "Mã hash cần so sánh",
     "optional": "(không bắt buộc)",
