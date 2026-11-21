@@ -107,6 +107,8 @@
     "hashesReady": "Các mã hash đã sẵn sàng. Giờ hãy thả tệp cần kiểm tra vào phía trên, từng dòng sẽ được so sánh với tệp đó.",
     "matchOne": "<b>Khớp.</b> Hash {types} khớp{note}. Tệp này giống hệt bản gốc.",
     "matchMany": "<b>Khớp.</b> Các hash {types} khớp{note}. Tệp này giống hệt bản gốc.",
+    "matchWeakOne": "<b>Khớp.</b> Hash {types} khớp{note}. Tệp này trông giống như bản gốc.",
+    "matchWeakMany": "<b>Khớp.</b> Các hash {types} khớp{note}. Tệp này trông giống như bản gốc.",
     "matchNote": " ({matched}/{total} mã hash bạn cung cấp khớp)",
     "riskMedium": "<b>Lưu ý:</b> {types} là loại hash đã cũ, có rủi ro thấp là bị làm giả. Với tệp bạn thật sự cần tin cậy, hãy so sánh thêm hash SHA-256 nếu trang tải xuống có cung cấp.",
     "riskWeak": "<b>Cảnh báo bảo mật:</b> {types} chỉ phát hiện được lỗi ngẫu nhiên và không bảo vệ trước việc bị sửa đổi, nên rủi ro bảo mật cao. Đừng dựa vào kết quả khớp này để tin tệp: hãy so sánh hash SHA-256 từ trang chính thức.",
@@ -134,23 +136,6 @@
     "crumb": "Checksum {name}",
     "linkText": "Checksum {name}",
     "aboutTitle": "{name} là gì?",
-    "factsTitle": "{name} trong nháy mắt",
-    "facts": {
-      "size": "Kích thước",
-      "length": "Độ dài",
-      "family": "Họ thuật toán",
-      "year": "Năm ra đời",
-      "designer": "Tác giả",
-      "standard": "Tiêu chuẩn",
-      "security": "Bảo mật",
-      "bitsValue": "{bits} bit",
-      "charsValue": "{hexLen} ký tự"
-    },
-    "tiers": {
-      "strong": "Mạnh",
-      "medium": "Trung bình (loại cũ)",
-      "weak": "Yếu"
-    },
     "exampleLead": "Mọi tệp rỗng đều có cùng một mã {name}:",
     "secureTitle": "{name} có an toàn không?",
     "secure": {
@@ -165,19 +150,17 @@
       "Dán mã vào ô “Mã hash cần so sánh”. Dấu Khớp màu xanh nghĩa là tệp giống hệt bản gốc."
     ],
     "cmdTitle": "Hoặc tính bằng dòng lệnh",
-    "faqTitle": "Câu hỏi về {name}",
-    "faq": [
-      {
-        "q": "Checksum {name} dài bao nhiêu?",
-        "a": "Checksum {name} dài {bits} bit, được viết thành {hexLen} ký tự gồm chữ số 0–9 và chữ cái a–f. Chữ hoa và khoảng trắng không quan trọng."
-      },
-      {
-        "q": "Tôi có thể so sánh loại hash khác với {name} không?",
-        "a": "Không. Mã {name} chỉ khớp với mã {name} khác, nên hãy dùng đúng loại ghi trên trang tải xuống. Độ dài ({hexLen} ký tự) chỉ là gợi ý vì nhiều loại có cùng độ dài. Nếu không chắc, hãy bấm “Kiểm tra các loại hash khác” ở trên."
-      }
-    ],
     "relatedTitle": "Các loại checksum khác",
-    "allTypes": "Xem tất cả loại hash"
+    "allTypes": "Xem tất cả loại hash",
+    "charsValue": "{hexLen} ký tự",
+    "infoTitle": "Thông tin về {name}",
+    "info": {
+      "size": "{name} tạo ra checksum {bits} bit, được viết thành {hexLen} ký tự (chữ số 0–9 và chữ cái a–f). Chữ hoa và khoảng trắng không quan trọng.",
+      "origin": "Nó do {designer} tạo ra vào năm {released}.",
+      "standard": "Nó được quy định trong {standard}.",
+      "variant": "Trang này dùng biến thể {variant}.",
+      "compare": "Chỉ so sánh với một giá trị {name} khác. Độ dài ({hexLen} ký tự) chỉ là gợi ý vì nhiều loại hash có cùng độ dài, nên hãy theo loại được ghi trên trang tải xuống. Nếu không chắc, hãy bấm “Kiểm tra các loại hash khác” ở trên."
+    }
   },
   "hashes": {
     "sha256": "SHA-256 là loại checksum được dùng phổ biến nhất hiện nay. Các bản tải Linux, ứng dụng, firmware và công cụ cho lập trình viên thường công bố mã SHA-256, và mã 64 ký tự này là loại đáng tin cậy nhất để đối chiếu trước tiên.",

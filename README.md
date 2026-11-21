@@ -55,9 +55,9 @@ Các `{token}` khác (`{n}`, `{name}`, …) giữ nguyên cho JS chạy trên tr
 
 - Dữ liệu trung tính ngôn ngữ của 21 loại hash (độ dài, họ thuật toán, năm, tác giả, tiêu chuẩn, mức bảo mật, lệnh terminal, giá trị của file rỗng, trang liên quan) nằm ở `i18n/hashes.js`, **xếp theo độ phổ biến**. Thứ tự này quyết định menu **Tools**, lưới "Công cụ theo loại hash" ở trang chủ và nhóm "Other hash types".
 - Mỗi loại có URL `/<slug>-checksum/` ở mọi ngôn ngữ (ví dụ `/sha256-checksum/`, `/ja/md5-checksum/`, `/vi/sha3-256-checksum/`), dùng chung template `src/templates/pages/hash.html`.
-- Nội dung dịch: `hashpage` (khung câu, có token `{name}`, `{bits}`, `{hexLen}`, `{successor}`, `{ext}`) và `hashes.<slug>` (đoạn giới thiệu riêng cho từng hash) trong JSON mỗi ngôn ngữ. Title, description, keywords, FAQ, JSON-LD và breadcrumb của từng trang đều sinh từ đó.
+- Nội dung dịch: `hashpage` (khung câu, có token `{name}`, `{bits}`, `{hexLen}`, `{successor}`, `{ext}`) và `hashes.<slug>` (đoạn giới thiệu riêng cho từng hash) trong JSON mỗi ngôn ngữ. Title, description, keywords, đoạn "Thông tin về …" (viết thành một đoạn văn từ các dữ kiện có thật của hash đó), JSON-LD và breadcrumb của từng trang đều sinh từ đó. Trang hash không có phần FAQ; FAQ chỉ còn ở trang chủ.
 - Trang hash chỉ tính loại hash của chính nó trước; nút **Check other hash types** sẽ tính nốt 20 loại còn lại trong **một nhóm duy nhất**, xếp theo độ phổ biến.
-- Chỉ trang chủ và trang SHA-256 có khối "Known-file lookup – Coming soon" (điều kiện `hasLookup` trong `build/render.js`).
+- Khối "Known-file lookup – Coming soon" xuất hiện ở trang chủ và cả 21 trang hash (cờ `hasLookup` trong `build/render.js`; About/Contact/Privacy/Terms không có).
 - Thêm loại hash mới: thêm hàm tính vào `src/checker/hashers.js` (`FACTORIES`, `SECURITY`, `MORE`), một dòng vào `i18n/hashes.js` và một dòng `hashes.<slug>` trong từng file ngôn ngữ.
 
 ## Mức độ tin cậy khi khớp hash

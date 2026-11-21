@@ -11,8 +11,8 @@
   <h2 class="text-2xl font-bold tracking-tight">{{hashpage.aboutTitle}}</h2>
   <p>{{hash.about}}</p>
 
-  <h2 class="text-xl font-bold tracking-tight pt-4">{{hashpage.factsTitle}}</h2>
-  {{@factsHtml}}
+  <h2 class="text-xl font-bold tracking-tight pt-4">{{hashpage.infoTitle}}</h2>
+  <p>{{hashpage.infoText}}</p>
   <p>{{hashpage.exampleLead}} <code class="break-all">{{@emptyDigest}}</code></p>
 
   <h2 class="text-xl font-bold tracking-tight pt-4">{{hashpage.secureTitle}}</h2>
@@ -29,13 +29,7 @@
 </section>
 
 <section class="mx-auto max-w-5xl px-4 pt-12">
- <h2 class="text-xl font-bold tracking-tight mb-4">{{hashpage.faqTitle}}</h2>
- <div class="max-w-2xl divide-y divide-line border-y border-line">
-  {{#each hashpage.faq}}<details class="py-3"><summary class="flex cursor-pointer justify-between gap-4 font-medium">{{.q}}<svg class="chev h-4 w-4 mt-1.5 shrink-0" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6l5 5 5-5"/></svg></summary><p class="mt-2 text-muted">{{.a}}</p></details>
-  {{/each}}
- </div>
-
- <h2 class="text-xl font-bold tracking-tight mt-12">{{hashpage.relatedTitle}}</h2>
+ <h2 class="text-xl font-bold tracking-tight ">{{hashpage.relatedTitle}}</h2>
  {{@relatedLinks}}
  <p class="mt-4"><a class="underline text-primary" href="{{@base}}#hash-types">{{hashpage.allTypes}}</a></p>
 </section>

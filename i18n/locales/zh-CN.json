@@ -85,6 +85,8 @@
     "hashesReady": "哈希已就绪。现在请将要检查的文件拖到上方，每一行都会与它比对。",
     "matchOne": "<b>匹配。</b>{types} 哈希匹配{note}。此文件与原始文件完全相同。",
     "matchMany": "<b>匹配。</b>{types} 哈希匹配{note}。此文件与原始文件完全相同。",
+    "matchWeakOne": "<b>匹配。</b>{types} 哈希匹配{note}。此文件看起来与原始文件相同。",
+    "matchWeakMany": "<b>匹配。</b>{types} 哈希匹配{note}。此文件看起来与原始文件相同。",
     "matchNote": "（你提供的 {total} 个哈希中有 {matched} 个匹配）",
     "riskMedium": "<b>提示：</b>{types} 是较旧的哈希类型，存在较小的被伪造风险。对于确实需要信任的文件，如果网站提供 SHA-256，建议再比对一次。",
     "riskWeak": "<b>安全警告：</b>{types} 只能发现意外错误，无法防止被篡改，安全风险较高。请不要仅凭这次匹配就信任该文件，请改为比对官方网站提供的 SHA-256 哈希。",
@@ -112,23 +114,6 @@
     "crumb": "{name} 校验和",
     "linkText": "{name} 校验和",
     "aboutTitle": "什么是 {name}？",
-    "factsTitle": "{name} 速览",
-    "facts": {
-      "size": "位数",
-      "length": "长度",
-      "family": "算法家族",
-      "year": "诞生年份",
-      "designer": "设计者",
-      "standard": "标准",
-      "security": "安全性",
-      "bitsValue": "{bits} 位",
-      "charsValue": "{hexLen} 个字符"
-    },
-    "tiers": {
-      "strong": "强",
-      "medium": "一般（较老的类型）",
-      "weak": "弱"
-    },
     "exampleLead": "所有空文件的 {name} 都相同：",
     "secureTitle": "{name} 安全吗？",
     "secure": {
@@ -143,19 +128,17 @@
       "将该值粘贴到“要比对的哈希值”中。绿色的“匹配”表示文件与原始文件完全相同。"
     ],
     "cmdTitle": "或者用命令行计算",
-    "faqTitle": "关于 {name} 的问题",
-    "faq": [
-      {
-        "q": "{name} 校验和有多长？",
-        "a": "{name} 校验和长 {bits} 位，写出来是 {hexLen} 个字符，由数字 0–9 和字母 a–f 组成。大小写和空格都不影响。"
-      },
-      {
-        "q": "可以用其他类型的哈希和 {name} 比对吗？",
-        "a": "不可以。{name} 值只能与另一个 {name} 值匹配，所以请使用下载页面上标明的类型。长度（{hexLen} 个字符）只是线索，因为有多种类型长度相同。不确定时，请点击上方的“检查其他哈希类型”。"
-      }
-    ],
     "relatedTitle": "其他校验和类型",
-    "allTypes": "查看所有哈希类型"
+    "allTypes": "查看所有哈希类型",
+    "charsValue": "{hexLen} 个字符",
+    "infoTitle": "关于 {name} 的信息",
+    "info": {
+      "size": "{name} 生成 {bits} 位的校验和，写成 {hexLen} 个字符（数字 0–9 和字母 a–f）。大小写和空格都不影响。",
+      "origin": "它由 {designer} 于 {released} 年创建。",
+      "standard": "它的规范见 {standard}。",
+      "variant": "本页使用的是 {variant} 变体。",
+      "compare": "只能与另一个 {name} 值比对。长度（{hexLen} 个字符）只是线索，因为有多种哈希类型长度相同，所以请以下载页面标明的类型为准。不确定时，请点击上方的“检查其他哈希类型”。"
+    }
   },
   "hashes": {
     "sha256": "SHA-256 是如今使用最广泛的校验和。Linux 下载、应用、固件和开发者工具通常都会公布 SHA-256 值，这个 64 位字符的编码是最值得优先信任的。",

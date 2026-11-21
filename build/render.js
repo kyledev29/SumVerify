@@ -95,12 +95,20 @@ const ldJson = (o) => JSON.stringify(o).replace(/</g, '\\u003c');
 const ROBOTS = 'index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1';
 
 /** Expands the {name} {bits} {hexLen} {successor} {ext} tokens of the `hashpage` / `hashes` messages for one hash. */
-export function hashTexts(messages, h) {
-  const hv = { name: h.name, slug: h.slug, bits: String(h.bits), hexLen: String(h.hexLen), successor: h.successor, ext: h.ext };
+export function hashTexts(messages, h, sep = ' ') {
+  const hv = { name: h.name, slug: h.slug, bits: String(h.bits), hexLen: String(h.hexLen), successor: h.successor, ext: h.ext, designer: h.designer, released: h.year, standard: h.standard, variant: h.variant };
   const fill = (str) => str.replace(/\{(\w+)\}/g, (m, k) => (k in hv ? hv[k] : m));
   const hp = mapStrings(messages.hashpage, fill);
   hp.about = fill(messages.hashes?.[h.slug] ?? '');
   hp.secureCurrent = hp.secure[h.tier];
+  // "Information about X": a short paragraph built from the facts we actually have for this hash
+  hp.infoText = [
+    hp.info.size,
+    h.designer && h.year ? hp.info.origin : '',
+    h.standard ? hp.info.standard : '',
+    h.variant ? hp.info.variant : '',
+    hp.info.compare,
+  ].filter(Boolean).join(sep);
   return hp;
 }
 
@@ -165,12 +173,14 @@ function buildSeoHead({ config, desc, page, locale, base, meta, messages, hash, 
       license: 'https://opensource.org/licenses/MIT', image, featureList: hash ? [hash.name] : config.hashes.map((h) => h.name),
       author: { '@id': ids.person }, sameAs: [site.repo],
     });
-    graph.push({
-      '@type': 'FAQPage', '@id': `${url}#faq`, inLanguage: lang,
-      mainEntity: (hash ? hp.faq : messages.home.faq).map((f) => ({
-        '@type': 'Question', name: stripHtml(f.q), acceptedAnswer: { '@type': 'Answer', text: stripHtml(f.a) },
-      })),
-    });
+    if (!hash) {
+      graph.push({
+        '@type': 'FAQPage', '@id': `${url}#faq`, inLanguage: lang,
+        mainEntity: messages.home.faq.map((f) => ({
+          '@type': 'Question', name: stripHtml(f.q), acceptedAnswer: { '@type': 'Answer', text: stripHtml(f.a) },
+        })),
+      });
+    }
   }
   if (page.id !== 'home') {
     if (page.id === 'about') pageNode.mainEntity = { '@id': ids.person };
@@ -187,8 +197,6 @@ function buildSeoHead({ config, desc, page, locale, base, meta, messages, hash, 
   tags.push(`<script type="application/ld+json">${ldJson({ '@context': 'https://schema.org', '@graph': graph })}</script>`);
   return tags.join('\n');
 }
-
-const TIER_CLASS = { strong: 'text-success', medium: 'text-primary', weak: 'text-danger' };
 
 export function renderPage(root, config, desc) {
   const { site } = config;
@@ -208,7 +216,7 @@ export function renderPage(root, config, desc) {
     emailLink: `<a class="underline text-primary" href="mailto:${site.email}">${site.email}</a>`,
   };
   const messages = loadMessages(root, config, desc.locale, msgVars);
-  const hp = hash ? hashTexts(messages, hash) : null;
+  const hp = hash ? hashTexts(messages, hash, locale.sentenceSep ?? ' ') : null;
   const meta = hash
     ? hp.meta
     : page.multilingual
@@ -255,7 +263,7 @@ export function renderPage(root, config, desc) {
   const hashLinks =
     '<ul class="mt-4 grid gap-2 sm:grid-cols-2 md:grid-cols-3">' +
     config.hashes
-      .map((h) => `<li><a class="block rounded-card border border-line bg-surface px-4 py-3 hover:border-primary" href="${href(h)}"><span class="font-semibold">${linkText(h)}</span><span class="block text-xs text-muted">${messages.hashpage.facts.charsValue.replace('{hexLen}', h.hexLen)}</span></a></li>`)
+      .map((h) => `<li><a class="block rounded-card border border-line bg-surface px-4 py-3 hover:border-primary" href="${href(h)}"><span class="font-semibold">${linkText(h)}</span><span class="block text-xs text-muted">${messages.hashpage.charsValue.replace('{hexLen}', h.hexLen)}</span></a></li>`)
       .join('') +
     '</ul>';
 
@@ -272,26 +280,13 @@ export function renderPage(root, config, desc) {
     hashLinks,
     focus: hash ? hash.name : '',
     moreLabel: hash ? messages.ui.checkOther : messages.home.moreBtn,
-    hasLookup: hash ? hash.slug === 'sha256' : true, // "Known-file lookup": home + SHA-256 only
+    hasLookup: true, // "Known-file lookup" card: home + every hash page (set per page here if you want to hide it)
     hasCmds: hash ? hash.cmds.length > 0 : false,
     seoHead: buildSeoHead({ config, desc, page, locale, base, meta, messages, hash, hp }),
     i18nJson: JSON.stringify(messages.ui).replace(/</g, '\\u003c'),
   };
 
   if (hash) {
-    const rows = [
-      [hp.facts.size, hp.facts.bitsValue],
-      [hp.facts.length, hp.facts.charsValue],
-      [hp.facts.family, hash.family],
-      hash.year && [hp.facts.year, hash.year],
-      hash.designer && [hp.facts.designer, hash.designer],
-      hash.standard && [hp.facts.standard, hash.standard],
-      [hp.facts.security, `<span class="font-semibold ${TIER_CLASS[hash.tier]}">${hp.tiers[hash.tier]}</span>`],
-    ].filter(Boolean);
-    vars.factsHtml =
-      '<div class="overflow-x-auto"><table class="w-full overflow-hidden rounded-card border border-line text-sm"><tbody>' +
-      rows.map(([k, v]) => `<tr class="border-t border-line first:border-t-0"><th scope="row" class="w-36 bg-sunken px-3 py-2 text-left font-medium">${k}</th><td class="px-3 py-2">${v}</td></tr>`).join('') +
-      '</tbody></table></div>';
     vars.emptyDigest = hash.empty;
     vars.cmdHtml = hash.cmds
       .map(([label, cmd]) => `<div class="mt-2"><div class="text-xs text-muted">${label}</div><pre class="mt-1 overflow-x-auto rounded-card border border-line bg-sunken p-3 text-xs"><code class="bg-transparent px-0">${escAttr(cmd)}</code></pre></div>`)

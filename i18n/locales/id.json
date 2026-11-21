@@ -85,6 +85,8 @@
     "hashesReady": "Hash sudah siap. Sekarang letakkan file yang akan diperiksa di atas, dan setiap baris akan dibandingkan dengannya.",
     "matchOne": "<b>Cocok.</b> Hash {types} cocok{note}. File ini identik dengan aslinya.",
     "matchMany": "<b>Cocok.</b> Hash {types} cocok{note}. File ini identik dengan aslinya.",
+    "matchWeakOne": "<b>Cocok.</b> Hash {types} cocok{note}. File ini tampak seperti aslinya.",
+    "matchWeakMany": "<b>Cocok.</b> Hash {types} cocok{note}. File ini tampak seperti aslinya.",
     "matchNote": " ({matched} dari {total} hash yang Anda berikan cocok)",
     "riskMedium": "<b>Catatan:</b> {types} adalah jenis hash lama dengan risiko kecil untuk dipalsukan. Untuk file yang benar-benar perlu Anda percaya, bandingkan juga hash SHA-256 jika situsnya menyediakan.",
     "riskWeak": "<b>Peringatan keamanan:</b> {types} hanya mendeteksi kesalahan yang tidak disengaja dan tidak melindungi dari perubahan berbahaya, sehingga risiko keamanannya tinggi. Jangan mengandalkan kecocokan ini untuk memercayai file: bandingkan hash SHA-256 dari situs resmi.",
@@ -112,23 +114,6 @@
     "crumb": "Checksum {name}",
     "linkText": "Checksum {name}",
     "aboutTitle": "Apa itu {name}?",
-    "factsTitle": "{name} sekilas",
-    "facts": {
-      "size": "Ukuran",
-      "length": "Panjang",
-      "family": "Keluarga",
-      "year": "Tahun",
-      "designer": "Dibuat oleh",
-      "standard": "Standar",
-      "security": "Keamanan",
-      "bitsValue": "{bits} bit",
-      "charsValue": "{hexLen} karakter"
-    },
-    "tiers": {
-      "strong": "Kuat",
-      "medium": "Sedang (jenis lama)",
-      "weak": "Lemah"
-    },
     "exampleLead": "Setiap file kosong memiliki {name} yang sama:",
     "secureTitle": "Apakah {name} aman digunakan?",
     "secure": {
@@ -143,19 +128,17 @@
       "Tempel nilainya ke “Hash untuk dibandingkan”. Cocok berwarna hijau berarti file Anda identik dengan aslinya."
     ],
     "cmdTitle": "Atau hitung lewat baris perintah",
-    "faqTitle": "Pertanyaan tentang {name}",
-    "faq": [
-      {
-        "q": "Seberapa panjang checksum {name}?",
-        "a": "Checksum {name} panjangnya {bits} bit, ditulis sebagai {hexLen} karakter dengan angka 0–9 dan huruf a–f. Huruf kapital dan spasi tidak berpengaruh."
-      },
-      {
-        "q": "Bisakah saya membandingkan jenis hash lain dengan {name}?",
-        "a": "Tidak. Nilai {name} hanya cocok dengan nilai {name} lain, jadi gunakan jenis yang disebutkan di halaman unduhan. Panjangnya ({hexLen} karakter) hanyalah petunjuk karena beberapa jenis memiliki panjang yang sama. Jika ragu, tekan “Periksa jenis hash lainnya” di atas."
-      }
-    ],
     "relatedTitle": "Jenis checksum lainnya",
-    "allTypes": "Lihat semua jenis hash"
+    "allTypes": "Lihat semua jenis hash",
+    "charsValue": "{hexLen} karakter",
+    "infoTitle": "Informasi tentang {name}",
+    "info": {
+      "size": "{name} menghasilkan checksum {bits} bit, ditulis sebagai {hexLen} karakter (angka 0–9 dan huruf a–f). Huruf kapital dan spasi tidak berpengaruh.",
+      "origin": "Dibuat oleh {designer} pada tahun {released}.",
+      "standard": "Ditetapkan dalam {standard}.",
+      "variant": "Halaman ini memakai varian {variant}.",
+      "compare": "Bandingkan hanya dengan nilai {name} lain. Panjangnya ({hexLen} karakter) hanyalah petunjuk karena beberapa jenis hash memiliki panjang yang sama, jadi ikuti jenis yang disebutkan di halaman unduhan. Jika ragu, tekan “Periksa jenis hash lainnya” di atas."
+    }
   },
   "hashes": {
     "sha256": "SHA-256 adalah checksum yang paling banyak dipakai saat ini. Unduhan Linux, aplikasi, firmware, dan alat pengembang biasanya mencantumkan nilai SHA-256, dan kode 64 karakter ini adalah yang pertama layak dipercaya.",

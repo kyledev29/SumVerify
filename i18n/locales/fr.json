@@ -85,6 +85,8 @@
     "hashesReady": "Les hashes sont prêts. Déposez maintenant le fichier à vérifier ci-dessus et chaque ligne sera comparée.",
     "matchOne": "<b>Correspondance.</b> Le hash {types} correspond{note}. Ce fichier est identique à l’original.",
     "matchMany": "<b>Correspondance.</b> Les hashes {types} correspondent{note}. Ce fichier est identique à l’original.",
+    "matchWeakOne": "<b>Correspondance.</b> Le hash {types} correspond{note}. Ce fichier ressemble à l’original.",
+    "matchWeakMany": "<b>Correspondance.</b> Les hashes {types} correspondent{note}. Ce fichier ressemble à l’original.",
     "matchNote": " ({matched} des {total} hashes fournis correspondent)",
     "riskMedium": "<b>À noter :</b> {types} est un type de hash ancien, avec un faible risque de falsification. Pour un fichier auquel vous devez vraiment faire confiance, comparez aussi un hash SHA-256 si le site en fournit un.",
     "riskWeak": "<b>Alerte de sécurité :</b> {types} ne détecte que les erreurs accidentelles et n’offre aucune protection contre la falsification : le risque est élevé. Ne vous fiez pas à cette correspondance pour faire confiance au fichier ; comparez plutôt un hash SHA-256 du site officiel.",
@@ -112,23 +114,6 @@
     "crumb": "Checksum {name}",
     "linkText": "Checksum {name}",
     "aboutTitle": "Qu’est-ce que {name} ?",
-    "factsTitle": "{name} en un coup d’œil",
-    "facts": {
-      "size": "Taille",
-      "length": "Longueur",
-      "family": "Famille",
-      "year": "Année",
-      "designer": "Créé par",
-      "standard": "Norme",
-      "security": "Sécurité",
-      "bitsValue": "{bits} bits",
-      "charsValue": "{hexLen} caractères"
-    },
-    "tiers": {
-      "strong": "Solide",
-      "medium": "Moyenne (type ancien)",
-      "weak": "Faible"
-    },
     "exampleLead": "Tous les fichiers vides ont le même {name} :",
     "secureTitle": "{name} est-il sûr ?",
     "secure": {
@@ -143,19 +128,17 @@
       "Collez la valeur dans « Hash à comparer ». Un Match vert signifie que votre fichier est identique à l’original."
     ],
     "cmdTitle": "Ou calculez-le en ligne de commande",
-    "faqTitle": "Questions sur {name}",
-    "faq": [
-      {
-        "q": "Quelle est la longueur d’un checksum {name} ?",
-        "a": "Un checksum {name} fait {bits} bits, soit {hexLen} caractères composés des chiffres 0–9 et des lettres a–f. Les majuscules et les espaces n’ont pas d’importance."
-      },
-      {
-        "q": "Puis-je comparer un autre type de hash avec {name} ?",
-        "a": "Non. Une valeur {name} ne correspond qu’à une autre valeur {name} : utilisez donc le type indiqué sur la page de téléchargement. La longueur ({hexLen} caractères) est un indice, mais plusieurs types la partagent. En cas de doute, cliquez sur « Vérifier les autres types de hash » ci-dessus."
-      }
-    ],
     "relatedTitle": "Autres types de checksum",
-    "allTypes": "Voir tous les types de hash"
+    "allTypes": "Voir tous les types de hash",
+    "charsValue": "{hexLen} caractères",
+    "infoTitle": "Informations sur {name}",
+    "info": {
+      "size": "{name} produit un checksum de {bits} bits, écrit sur {hexLen} caractères (chiffres 0–9 et lettres a–f). Les majuscules et les espaces n’ont pas d’importance.",
+      "origin": "Il a été créé par {designer} en {released}.",
+      "standard": "Il est défini dans {standard}.",
+      "variant": "Cette page utilise la variante {variant}.",
+      "compare": "Ne le comparez qu’à une autre valeur {name}. La longueur ({hexLen} caractères) est un indice, mais plusieurs types de hash la partagent : fiez-vous au type indiqué sur la page de téléchargement. En cas de doute, cliquez sur « Vérifier les autres types de hash » ci-dessus."
+    }
   },
   "hashes": {
     "sha256": "SHA-256 est le checksum le plus utilisé aujourd’hui. Les téléchargements Linux, les applications, les firmwares et les outils de développement publient en général une valeur SHA-256, et ce code de 64 caractères est le premier à privilégier.",

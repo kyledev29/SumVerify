@@ -142,7 +142,9 @@ function evaluate() {
     // Judge the match by the most trustworthy hash type that matched.
     const best = TIERS[Math.max(...hit.map((n) => TIERS.indexOf(SECURITY[n])))];
     const bestTypes = hit.filter((n) => SECURITY[n] === best).join(', ');
-    let html = t(hit.length > 1 ? 'matchMany' : 'matchOne', { types: hit.join(', '), note });
+    // Weak types (CRC, Adler, Fletcher, MD4) can't prove the file is identical: say it only "looks like" the original.
+    const key = (best === 'weak' ? 'matchWeak' : 'match') + (hit.length > 1 ? 'Many' : 'One');
+    let html = t(key, { types: hit.join(', '), note });
     if (best === 'medium') html += `<div class="mt-2 text-muted">${t('riskMedium', { types: bestTypes })}</div>`;
     if (best === 'weak') html += `<div class="mt-2 rounded-control bg-danger-soft px-3 py-2 text-danger">${t('riskWeak', { types: bestTypes })}</div>`;
     return banner('ok', html);

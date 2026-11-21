@@ -36,8 +36,8 @@ export default {
 
   locales: [
     { code: 'en', label: 'English', og: 'en_US' },
-    { code: 'zh-CN', label: '简体中文', og: 'zh_CN' },
-    { code: 'ja', label: '日本語', og: 'ja_JP' },
+    { code: 'zh-CN', label: '简体中文', og: 'zh_CN', sentenceSep: '' },
+    { code: 'ja', label: '日本語', og: 'ja_JP', sentenceSep: '' },
     { code: 'ko', label: '한국어', og: 'ko_KR' },
     { code: 'fr', label: 'Français', og: 'fr_FR' },
     { code: 'de', label: 'Deutsch', og: 'de_DE' },

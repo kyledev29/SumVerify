@@ -85,6 +85,8 @@
     "hashesReady": "Die Hashes sind bereit. Legen Sie nun oben die zu prüfende Datei ab, dann wird jede Zeile damit verglichen.",
     "matchOne": "<b>Übereinstimmung.</b> Der {types}-Hash stimmt überein{note}. Diese Datei ist mit dem Original identisch.",
     "matchMany": "<b>Übereinstimmung.</b> Die {types}-Hashes stimmen überein{note}. Diese Datei ist mit dem Original identisch.",
+    "matchWeakOne": "<b>Übereinstimmung.</b> Der {types}-Hash stimmt überein{note}. Diese Datei sieht aus wie das Original.",
+    "matchWeakMany": "<b>Übereinstimmung.</b> Die {types}-Hashes stimmen überein{note}. Diese Datei sieht aus wie das Original.",
     "matchNote": " ({matched} von {total} angegebenen Hashes stimmen überein)",
     "riskMedium": "<b>Hinweis:</b> {types} ist ein älterer Hash-Typ mit einem geringen Fälschungsrisiko. Bei Dateien, denen Sie wirklich vertrauen müssen, vergleichen Sie zusätzlich einen SHA-256-Hash, falls die Seite einen bietet.",
     "riskWeak": "<b>Sicherheitswarnung:</b> {types} erkennt nur zufällige Fehler und schützt nicht vor Manipulation, das Sicherheitsrisiko ist daher hoch. Verlassen Sie sich nicht auf diese Übereinstimmung, um der Datei zu vertrauen. Vergleichen Sie stattdessen einen SHA-256-Hash von der offiziellen Seite.",
@@ -112,23 +114,6 @@
     "crumb": "{name}-Prüfsumme",
     "linkText": "{name}-Prüfsumme",
     "aboutTitle": "Was ist {name}?",
-    "factsTitle": "{name} auf einen Blick",
-    "facts": {
-      "size": "Größe",
-      "length": "Länge",
-      "family": "Familie",
-      "year": "Jahr",
-      "designer": "Entwickelt von",
-      "standard": "Standard",
-      "security": "Sicherheit",
-      "bitsValue": "{bits} Bit",
-      "charsValue": "{hexLen} Zeichen"
-    },
-    "tiers": {
-      "strong": "Stark",
-      "medium": "Mittel (älterer Typ)",
-      "weak": "Schwach"
-    },
     "exampleLead": "Jede leere Datei hat denselben {name}:",
     "secureTitle": "Ist {name} sicher?",
     "secure": {
@@ -143,19 +128,17 @@
       "Fügen Sie den Wert unter „Hash zum Vergleichen“ ein. Ein grünes „Übereinstimmung“ bedeutet, dass Ihre Datei mit dem Original identisch ist."
     ],
     "cmdTitle": "Oder auf der Kommandozeile berechnen",
-    "faqTitle": "Fragen zu {name}",
-    "faq": [
-      {
-        "q": "Wie lang ist eine {name}-Prüfsumme?",
-        "a": "Eine {name}-Prüfsumme ist {bits} Bit lang und wird als {hexLen} Zeichen aus den Ziffern 0–9 und den Buchstaben a–f geschrieben. Groß- und Kleinschreibung sowie Leerzeichen spielen keine Rolle."
-      },
-      {
-        "q": "Kann ich einen anderen Hash-Typ mit {name} vergleichen?",
-        "a": "Nein. Ein {name}-Wert stimmt nur mit einem anderen {name}-Wert überein, nutzen Sie also den Typ, der auf der Download-Seite genannt wird. Die Länge ({hexLen} Zeichen) ist ein Hinweis, aber mehrere Typen teilen sie. Wenn Sie unsicher sind, klicken Sie oben auf „Andere Hash-Typen prüfen“."
-      }
-    ],
     "relatedTitle": "Weitere Prüfsummentypen",
-    "allTypes": "Alle Hash-Typen ansehen"
+    "allTypes": "Alle Hash-Typen ansehen",
+    "charsValue": "{hexLen} Zeichen",
+    "infoTitle": "Informationen zu {name}",
+    "info": {
+      "size": "{name} erzeugt eine Prüfsumme mit {bits} Bit, geschrieben als {hexLen} Zeichen (Ziffern 0–9 und Buchstaben a–f). Groß- und Kleinschreibung sowie Leerzeichen spielen keine Rolle.",
+      "origin": "Entwickelt wurde es von {designer} im Jahr {released}.",
+      "standard": "Festgelegt ist es in {standard}.",
+      "variant": "Diese Seite verwendet die Variante {variant}.",
+      "compare": "Vergleichen Sie nur mit einem anderen {name}-Wert. Die Länge ({hexLen} Zeichen) ist ein Hinweis, aber mehrere Hash-Typen teilen sie, richten Sie sich also nach dem Typ auf der Download-Seite. Wenn Sie unsicher sind, klicken Sie oben auf „Andere Hash-Typen prüfen“."
+    }
   },
   "hashes": {
     "sha256": "SHA-256 ist heute die am häufigsten verwendete Prüfsumme. Linux-Downloads, Apps, Firmware und Entwicklerwerkzeuge veröffentlichen meist einen SHA-256-Wert, und dieser 64-stellige Code ist der erste, dem Sie vertrauen sollten.",

@@ -107,6 +107,8 @@
     "hashesReady": "Hashes are ready. Now drop the file to check above, and each line will be compared against it.",
     "matchOne": "<b>Match.</b> The {types} hash matches{note}. This file is identical to the original.",
     "matchMany": "<b>Match.</b> The {types} hashes match{note}. This file is identical to the original.",
+    "matchWeakOne": "<b>Match.</b> The {types} hash matches{note}. This file looks like the original.",
+    "matchWeakMany": "<b>Match.</b> The {types} hashes match{note}. This file looks like the original.",
     "matchNote": " ({matched} of the {total} hashes you provided match)",
     "riskMedium": "<b>Note:</b> {types} is an older hash type and carries a small risk of being forged. For files you really need to trust, compare a SHA-256 hash too if the site provides one.",
     "riskWeak": "<b>Security warning:</b> {types} only detects accidental errors and gives no protection against tampering, so the security risk is high. Don’t rely on this match to trust the file: compare a SHA-256 hash from the official site instead.",
@@ -134,23 +136,6 @@
     "crumb": "{name} checksum",
     "linkText": "{name} checksum",
     "aboutTitle": "What is {name}?",
-    "factsTitle": "{name} at a glance",
-    "facts": {
-      "size": "Size",
-      "length": "Length",
-      "family": "Family",
-      "year": "Year",
-      "designer": "Created by",
-      "standard": "Standard",
-      "security": "Security",
-      "bitsValue": "{bits} bits",
-      "charsValue": "{hexLen} characters"
-    },
-    "tiers": {
-      "strong": "Strong",
-      "medium": "Fair (older type)",
-      "weak": "Weak"
-    },
     "exampleLead": "Every empty file has the same {name}:",
     "secureTitle": "Is {name} safe to use?",
     "secure": {
@@ -165,19 +150,17 @@
       "Paste the value into “Hash to compare”. A green Match means your file is identical to the original."
     ],
     "cmdTitle": "Or calculate it from the command line",
-    "faqTitle": "{name} questions",
-    "faq": [
-      {
-        "q": "How long is a {name} checksum?",
-        "a": "A {name} checksum is {bits} bits long, which is written as {hexLen} characters using the digits 0–9 and the letters a–f. Capital letters and spaces don’t matter."
-      },
-      {
-        "q": "Can I compare a different hash type with {name}?",
-        "a": "No. A {name} value only matches another {name} value, so use the type named on the download page. The length ({hexLen} characters) is a hint, but several types share it. If you’re unsure, press “Check other hash types” above."
-      }
-    ],
     "relatedTitle": "Other checksum types",
-    "allTypes": "See all hash types"
+    "allTypes": "See all hash types",
+    "charsValue": "{hexLen} characters",
+    "infoTitle": "Information about {name}",
+    "info": {
+      "size": "{name} produces a checksum {bits} bits long, written as {hexLen} characters (digits 0–9 and letters a–f). Capital letters and spaces don’t matter.",
+      "origin": "It was created by {designer} in {released}.",
+      "standard": "It is specified in {standard}.",
+      "variant": "This page uses the {variant} variant.",
+      "compare": "Compare it only with another {name} value. The length ({hexLen} characters) is a hint, but several hash types share it, so go by the type named on the download page. If you’re unsure, press “Check other hash types” above."
+    }
   },
   "hashes": {
     "sha256": "SHA-256 is the most widely used checksum today. Linux downloads, apps, firmware and developer tools usually publish a SHA-256 value, and its 64-character code is the one to trust first.",
