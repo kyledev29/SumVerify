@@ -4,6 +4,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import config from '../i18n.config.js';
+import { loadMessages, hashTexts } from '../build/render.js';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const load = (c) => JSON.parse(fs.readFileSync(path.join(root, 'i18n/locales', `${c}.json`), 'utf8'));
@@ -14,7 +15,7 @@ function flat(v, p = '', out = {}) {
   else Object.entries(v).forEach(([k, x]) => flat(x, p ? `${p}.${k}` : k, out));
   return out;
 }
-const tokens = (s) => (s.match(/\{\w+\}/g) || []).sort().join(',');
+const tokens = (s) => [...new Set(s.match(/\{\w+\}/g) || [])].sort().join(',');
 
 const base = flat(load(config.defaultLocale));
 let problems = 0;
@@ -38,6 +39,14 @@ for (const { code } of config.locales) {
   for (const k of Object.keys(m)) {
     if (/^meta\.\w+\.title$/.test(k) && width(m[k]) > 62) console.warn(`[seo] ${code}: ${k} is ${width(m[k])} wide (aim <= 60)`);
     if (/^meta\.\w+\.description$/.test(k) && width(m[k]) > 160) console.warn(`[seo] ${code}: ${k} is ${width(m[k])} wide (aim <= 160)`);
+  }
+}
+for (const { code } of config.locales) {
+  const messages = loadMessages(root, config, code, {});
+  for (const h of config.hashes) {
+    const m = hashTexts(messages, h).meta;
+    if (width(m.title) > 62) console.warn(`[seo] ${code}/${h.slug}: title is ${width(m.title)} wide (aim <= 60)`);
+    if (width(m.description) > 160) console.warn(`[seo] ${code}/${h.slug}: description is ${width(m.description)} wide (aim <= 160)`);
   }
 }
 for (const p of config.pages.filter((x) => !x.multilingual)) {

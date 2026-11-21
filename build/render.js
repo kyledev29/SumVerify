@@ -68,7 +68,8 @@ function renderTemplate(root, tpl, ctx, where) {
   for (let i = 0; i < 4 && /\{\{>/.test(tpl); i++) {
     tpl = tpl.replace(/\{\{>\s*([\w-]+)\s*\}\}/g, (_, n) => read(root, 'src/templates/partials', `${n}.html`));
   }
-  // 2) loops
+  // 2) conditionals and loops
+  tpl = tpl.replace(/\{\{#if\s+@(\w+)\s*\}\}([\s\S]*?)\{\{\/if\}\}/g, (_, k, body) => (ctx.vars[k] ? body : ''));
   tpl = tpl.replace(/\{\{#each\s+([\w.]+)\s*\}\}([\s\S]*?)\{\{\/each\}\}/g, (_, p, body) => {
     const arr = get(ctx.t, p);
     if (!Array.isArray(arr)) { warn(`${where}: "${p}" is not an array`); return ''; }
@@ -92,10 +93,19 @@ function renderTemplate(root, tpl, ctx, where) {
 const stripHtml = (s) => String(s).replace(/<[^>]+>/g, '').replace(/\s+/g, ' ').trim();
 const ldJson = (o) => JSON.stringify(o).replace(/</g, '\\u003c');
 const ROBOTS = 'index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1';
-const FEATURES = ['SHA-256', 'MD5', 'SHA-1', 'SHA-512', 'CRC32', 'CRC32C', 'BLAKE2b', 'BLAKE3', 'SHA-384', 'SHA3-256', 'SHA-224', 'SHA3-512', 'BLAKE2s', 'SHA3-384', 'SHA3-224', 'MD4', 'Adler-32', 'CRC16', 'Fletcher-32', 'Fletcher-16', 'CRC8'];
+
+/** Expands the {name} {bits} {hexLen} {successor} {ext} tokens of the `hashpage` / `hashes` messages for one hash. */
+export function hashTexts(messages, h) {
+  const hv = { name: h.name, slug: h.slug, bits: String(h.bits), hexLen: String(h.hexLen), successor: h.successor, ext: h.ext };
+  const fill = (str) => str.replace(/\{(\w+)\}/g, (m, k) => (k in hv ? hv[k] : m));
+  const hp = mapStrings(messages.hashpage, fill);
+  hp.about = fill(messages.hashes?.[h.slug] ?? '');
+  hp.secureCurrent = hp.secure[h.tier];
+  return hp;
+}
 
 /** Everything SEO-related that goes in <head>: robots, keywords, Open Graph, Twitter, verification, JSON-LD. */
-function buildSeoHead({ config, desc, page, locale, base, meta, messages }) {
+function buildSeoHead({ config, desc, page, locale, base, meta, messages, hash, hp }) {
   const { site } = config;
   const url = site.url + desc.url;
   const image = site.url + site.ogImage;
@@ -110,7 +120,6 @@ function buildSeoHead({ config, desc, page, locale, base, meta, messages }) {
     '<meta name="theme-color" content="#101319" media="(prefers-color-scheme: dark)">',
     site.verification?.google ? `<meta name="google-site-verification" content="${a(site.verification.google)}">` : '',
     site.verification?.bing ? `<meta name="msvalidate.01" content="${a(site.verification.bing)}">` : '',
-    // Open Graph
     '<meta property="og:type" content="website">',
     `<meta property="og:site_name" content="${a(site.name)}">`,
     `<meta property="og:title" content="${a(meta.title)}">`,
@@ -125,7 +134,6 @@ function buildSeoHead({ config, desc, page, locale, base, meta, messages }) {
     ...(page.multilingual
       ? config.locales.filter((l) => l.code !== lang).map((l) => `<meta property="og:locale:alternate" content="${l.og}">`)
       : []),
-    // Twitter / X
     '<meta name="twitter:card" content="summary_large_image">',
     site.twitter ? `<meta name="twitter:site" content="${a(site.twitter)}">` : '',
     `<meta name="twitter:title" content="${a(meta.title)}">`,
@@ -146,26 +154,27 @@ function buildSeoHead({ config, desc, page, locale, base, meta, messages }) {
   };
   const graph = [website, pageNode, person];
 
-  if (page.id === 'home') {
+  if (page.id === 'home' || hash) {
     const appId = `${url}#app`;
     pageNode.mainEntity = { '@id': appId };
     graph.push({
-      '@type': 'WebApplication', '@id': appId, name: site.name, url, description: meta.description, inLanguage: lang,
+      '@type': 'WebApplication', '@id': appId, name: hash ? hp.h1 : site.name, url, description: meta.description, inLanguage: lang,
       applicationCategory: 'UtilitiesApplication', operatingSystem: 'Any',
       browserRequirements: 'Requires JavaScript and WebAssembly', isAccessibleForFree: true,
       offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
-      license: 'https://opensource.org/licenses/MIT', image, featureList: FEATURES,
+      license: 'https://opensource.org/licenses/MIT', image, featureList: hash ? [hash.name] : config.hashes.map((h) => h.name),
       author: { '@id': ids.person }, sameAs: [site.repo],
     });
     graph.push({
       '@type': 'FAQPage', '@id': `${url}#faq`, inLanguage: lang,
-      mainEntity: messages.home.faq.map((f) => ({
+      mainEntity: (hash ? hp.faq : messages.home.faq).map((f) => ({
         '@type': 'Question', name: stripHtml(f.q), acceptedAnswer: { '@type': 'Answer', text: stripHtml(f.a) },
       })),
     });
-  } else {
+  }
+  if (page.id !== 'home') {
     if (page.id === 'about') pageNode.mainEntity = { '@id': ids.person };
-    const crumb = { about: messages.common.nav.about, contact: messages.common.nav.contact, privacy: messages.footer.privacy, terms: messages.footer.terms }[page.id];
+    const crumb = hash ? hp.crumb : { about: messages.common.nav.about, contact: messages.common.nav.contact, privacy: messages.footer.privacy, terms: messages.footer.terms }[page.id];
     pageNode.breadcrumb = { '@id': `${url}#breadcrumb` };
     graph.push({
       '@type': 'BreadcrumbList', '@id': `${url}#breadcrumb`,
@@ -179,12 +188,15 @@ function buildSeoHead({ config, desc, page, locale, base, meta, messages }) {
   return tags.join('\n');
 }
 
+const TIER_CLASS = { strong: 'text-success', medium: 'text-primary', weak: 'text-danger' };
+
 export function renderPage(root, config, desc) {
   const { site } = config;
   const page = config.pages.find((p) => p.id === desc.id);
   const locale = config.locales.find((l) => l.code === desc.locale);
   const isDefault = desc.locale === config.defaultLocale;
   const base = `/${isDefault ? '' : `${desc.locale}/`}`;
+  const hash = page.hash ? config.hashes.find((h) => h.slug === page.hash) : null;
 
   const msgVars = {
     author: site.author,
@@ -196,9 +208,15 @@ export function renderPage(root, config, desc) {
     emailLink: `<a class="underline text-primary" href="mailto:${site.email}">${site.email}</a>`,
   };
   const messages = loadMessages(root, config, desc.locale, msgVars);
-  const meta = page.multilingual
-    ? messages.meta[page.id]
-    : { title: page.title, description: page.description, keywords: page.keywords };
+  const hp = hash ? hashTexts(messages, hash) : null;
+  const meta = hash
+    ? hp.meta
+    : page.multilingual
+      ? messages.meta[page.id]
+      : { title: page.title, description: page.description, keywords: page.keywords };
+
+  const href = (h) => `${base}${h.slug}-checksum/`;
+  const linkText = (h) => messages.hashpage.linkText.replace(/\{name\}/g, h.name);
 
   // language switcher: same page in another locale, or the locale home for English-only pages
   const langOptions = config.locales
@@ -220,21 +238,74 @@ export function renderPage(root, config, desc) {
       ].join('\n')
     : '';
 
-  const ctx = {
-    t: { ...messages, page: meta },
-    vars: {
-      htmlLang: locale.code,
-      base,
-      canonical: site.url + desc.url,
-      year: msgVars.year,
-      ...site,
-      repoLabel: site.repo.replace(/^https?:\/\//, ''),
-      langOptions,
-      hreflangLinks,
-      seoHead: buildSeoHead({ config, desc, page, locale, base, meta, messages }),
-      i18nJson: JSON.stringify(messages.ui).replace(/</g, '\\u003c'),
-    },
+  // "Tools" menu in the nav bar: all hash types, most popular first
+  const toolsMenu =
+    `<details class="tools relative"><summary class="flex cursor-pointer select-none items-center gap-1 rounded-control px-3 py-1.5 hover:bg-sunken hover:text-ink whitespace-nowrap">${messages.common.nav.tools}` +
+    '<svg class="chev h-3.5 w-3.5" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 6l5 5 5-5"/></svg></summary>' +
+    '<div class="columns-2 gap-x-2 p-1 text-sm md:absolute md:left-0 md:top-full md:z-40 md:mt-1 md:w-[26rem] md:columns-3 md:rounded-card md:border md:border-line md:bg-surface md:p-2 md:shadow-pop">' +
+    config.hashes
+      .map((h) => {
+        const cur = hash && hash.slug === h.slug;
+        return `<a class="block break-inside-avoid rounded-control px-3 py-1.5 hover:bg-sunken hover:text-ink${cur ? ' font-semibold text-ink' : ''}" href="${href(h)}"${cur ? ' aria-current="page"' : ''}>${h.name}</a>`;
+      })
+      .join('') +
+    '</div></details>';
+
+  // home page: grid of all hash pages
+  const hashLinks =
+    '<ul class="mt-4 grid gap-2 sm:grid-cols-2 md:grid-cols-3">' +
+    config.hashes
+      .map((h) => `<li><a class="block rounded-card border border-line bg-surface px-4 py-3 hover:border-primary" href="${href(h)}"><span class="font-semibold">${linkText(h)}</span><span class="block text-xs text-muted">${messages.hashpage.facts.charsValue.replace('{hexLen}', h.hexLen)}</span></a></li>`)
+      .join('') +
+    '</ul>';
+
+  const vars = {
+    htmlLang: locale.code,
+    base,
+    canonical: site.url + desc.url,
+    year: msgVars.year,
+    ...site,
+    repoLabel: site.repo.replace(/^https?:\/\//, ''),
+    langOptions,
+    hreflangLinks,
+    toolsMenu,
+    hashLinks,
+    focus: hash ? hash.name : '',
+    moreLabel: hash ? messages.ui.checkOther : messages.home.moreBtn,
+    hasLookup: hash ? hash.slug === 'sha256' : true, // "Known-file lookup": home + SHA-256 only
+    hasCmds: hash ? hash.cmds.length > 0 : false,
+    seoHead: buildSeoHead({ config, desc, page, locale, base, meta, messages, hash, hp }),
+    i18nJson: JSON.stringify(messages.ui).replace(/</g, '\\u003c'),
   };
+
+  if (hash) {
+    const rows = [
+      [hp.facts.size, hp.facts.bitsValue],
+      [hp.facts.length, hp.facts.charsValue],
+      [hp.facts.family, hash.family],
+      hash.year && [hp.facts.year, hash.year],
+      hash.designer && [hp.facts.designer, hash.designer],
+      hash.standard && [hp.facts.standard, hash.standard],
+      [hp.facts.security, `<span class="font-semibold ${TIER_CLASS[hash.tier]}">${hp.tiers[hash.tier]}</span>`],
+    ].filter(Boolean);
+    vars.factsHtml =
+      '<div class="overflow-x-auto"><table class="w-full overflow-hidden rounded-card border border-line text-sm"><tbody>' +
+      rows.map(([k, v]) => `<tr class="border-t border-line first:border-t-0"><th scope="row" class="w-36 bg-sunken px-3 py-2 text-left font-medium">${k}</th><td class="px-3 py-2">${v}</td></tr>`).join('') +
+      '</tbody></table></div>';
+    vars.emptyDigest = hash.empty;
+    vars.cmdHtml = hash.cmds
+      .map(([label, cmd]) => `<div class="mt-2"><div class="text-xs text-muted">${label}</div><pre class="mt-1 overflow-x-auto rounded-card border border-line bg-sunken p-3 text-xs"><code class="bg-transparent px-0">${escAttr(cmd)}</code></pre></div>`)
+      .join('');
+    vars.relatedLinks =
+      '<ul class="mt-2 flex flex-wrap gap-2">' +
+      hash.related
+        .map((slug) => config.hashes.find((h) => h.slug === slug))
+        .map((h) => `<li><a class="btn btn-secondary btn-sm" href="${href(h)}">${linkText(h)}</a></li>`)
+        .join('') +
+      '</ul>';
+  }
+
+  const ctx = { t: { ...messages, page: meta, ...(hash ? { hashpage: hp, hash: { about: hp.about } } : {}) }, vars };
 
   const where = `${desc.locale}:${desc.id}`;
   ctx.vars.content = renderTemplate(root, read(root, 'src/templates/pages', `${page.template || page.id}.html`), ctx, where);

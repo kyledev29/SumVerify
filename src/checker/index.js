@@ -3,6 +3,13 @@ import { FACTORIES as F, ORDER, MORE, CHUNK, MIN_HASH_MS, SECURITY, TIERS } from
 
 const $ = (id) => document.getElementById(id);
 
+/* On a hash page (e.g. /sha256-checksum/) the page's own hash is calculated first and alone;
+   the "Check other hash types" button then adds ALL the remaining types as one group,
+   most popular first. On the home page: 8 popular types first, 13 more on demand. */
+const FOCUS = (($('checker') && $('checker').dataset.focus) || '');
+const FIRST = FOCUS && F[FOCUS] ? [FOCUS] : ORDER;
+const REST = FOCUS && F[FOCUS] ? ORDER.concat(MORE).filter((n) => n !== FOCUS) : MORE;
+
 let S = {};            // name -> hex digest of the current file
 let active = '';       // hash type being calculated right now
 let wantMore = false;  // user asked for the "other" hash types
@@ -84,10 +91,12 @@ function row(n, first) {
     + `<div class="order-2 sm:order-3 flex items-center gap-2">${hit ? `<span class="text-xs font-semibold text-success">${t('match')}</span>` : ''}${v ? `<button data-copy="${v}" class="btn btn-secondary btn-sm">${t('copy')}</button>` : ''}</div></div>`;
 }
 function render() {
-  $('tPrimary').innerHTML = row('SHA-256', true);
-  $('tCommon').innerHTML = ORDER.slice(1).map((n) => row(n)).join('');
+  $('primaryHead').textContent = FOCUS || $('primaryHead').textContent;
+  $('commonHead').classList.toggle('hidden', FIRST.length < 2);
+  $('tPrimary').innerHTML = row(FIRST[0], true);
+  $('tCommon').innerHTML = FIRST.slice(1).map((n) => row(n)).join('');
   $('moreHead').classList.toggle('hidden', !wantMore);
-  $('tMore').innerHTML = wantMore ? MORE.map((n) => row(n)).join('') : '';
+  $('tMore').innerHTML = wantMore ? REST.map((n) => row(n)).join('') : '';
   $('moreBtn').classList.toggle('hidden', wantMore);
   evaluate();
 }
@@ -120,7 +129,7 @@ function evaluate() {
   }
   if (!curFile) return banner('info', t('hashesReady'));
 
-  const all = ORDER.concat(wantMore ? MORE : []);
+  const all = FIRST.concat(wantMore ? REST : []);
   const fn = curFile.name.toLowerCase();
   let named = null;
   entries.forEach((e) => { if (e.name && e.name.toLowerCase() === fn) named = e; });
@@ -138,12 +147,13 @@ function evaluate() {
     if (best === 'weak') html += `<div class="mt-2 rounded-control bg-danger-soft px-3 py-2 text-danger">${t('riskWeak', { types: bestTypes })}</div>`;
     return banner('ok', html);
   }
-  if (!ORDER.every((n) => S[n])) return banner('info', t('comparing'));
+  if (!FIRST.every((n) => S[n])) return banner('info', t('comparing'));
   if (!moreDone) {
-    if (wantMore) return banner('warn', t('checkingOther'));
-    return banner('warn', t('noMatchCommon', { button: `<button id="bannerMore" class="underline font-medium">${t('checkOther')}</button>` }));
+    const button = `<button id="bannerMore" class="underline font-medium">${t('checkOther')}</button>`;
+    if (wantMore) return banner('warn', FOCUS ? t('comparing') : t('checkingOther'));
+    return banner('warn', FOCUS ? t('noMatchFocus', { name: FOCUS, button }) : t('noMatchCommon', { button }));
   }
-  const total = ORDER.length + MORE.length;
+  const total = FIRST.length + REST.length;
   const body = entries.length > 1 ? t('noMatchMany', { count: entries.length, total }) : t('noMatchOne', { total });
   const namedNote = named ? t('noMatchNamed', { file: esc(curFile.name), line: named.line }) : '';
   banner('bad', `<b>${t('noMatchTitle')}</b> ${body}${namedNote}${t('noMatchAdvice')}`);
@@ -207,9 +217,9 @@ async function hashOne(name, id, idx, total, startProg) {
 async function maybeMore(id) {
   if (!wantMore || moreDone || id !== runId) return;
   resetProg();
-  for (let i = 0; i < MORE.length; i++) {
+  for (let i = 0; i < REST.length; i++) {
     if (id !== runId) return;
-    await hashOne(MORE[i], id, i, MORE.length, curProg);
+    await hashOne(REST[i], id, i, REST.length, curProg);
   }
   if (id !== runId) return;
   moreDone = true; render();
@@ -223,9 +233,9 @@ async function start(file) {
   $('fileInfo').innerHTML = `<span class="font-mono text-xs">${esc(file.name)}</span> · ${size(file.size)}`;
   render();
   try {
-    for (let i = 0; i < ORDER.length; i++) {
+    for (let i = 0; i < FIRST.length; i++) {
       if (id !== runId) return;
-      await hashOne(ORDER[i], id, i, ORDER.length, curProg);
+      await hashOne(FIRST[i], id, i, FIRST.length, curProg);
     }
     if (id !== runId) return;
     await maybeMore(id);
@@ -238,7 +248,7 @@ async function start(file) {
 }
 function askMore() {
   wantMore = true; render();
-  if (curFile && ORDER.every((n) => S[n])) maybeMore(runId);
+  if (curFile && FIRST.every((n) => S[n])) maybeMore(runId);
 }
 
 /* ---- events ---- */

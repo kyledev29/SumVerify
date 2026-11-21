@@ -7,7 +7,7 @@
   },
   "common": {
     "language": "Idioma", "themeAria": "Cambiar entre modo oscuro y claro", "menu": "Menú",
-    "nav": { "home": "Inicio", "what": "¿Qué es un checksum?", "faq": "Preguntas frecuentes", "about": "Acerca de", "contact": "Contacto" }
+    "nav": { "home": "Inicio", "tools": "Herramientas", "what": "¿Qué es un checksum?", "faq": "Preguntas frecuentes", "about": "Acerca de", "contact": "Contacto" }
   },
   "footer": { "tagline": "Calculadora de checksum gratuita que se ejecuta en tu navegador.", "pages": "Páginas", "legal": "Legal", "further": "Más información", "privacy": "Política de privacidad", "terms": "Términos de uso" },
   "home": {
@@ -39,6 +39,7 @@
       ],
       "note": "Un checksum demuestra que dos archivos son iguales, no que el archivo sea seguro. Solo es tan fiable como el lugar de donde lo copiaste."
     },
+    "byTypeTitle": "Calculadoras de checksum por tipo de hash",
     "faqTitle": "Preguntas frecuentes",
     "faq": [
       { "q": "¿Mi archivo se sube a algún sitio?", "a": "No. Los checksums se calculan en tu navegador, así que tu archivo nunca sale de tu dispositivo." },
@@ -88,6 +89,7 @@
     "riskMedium": "<b>Nota:</b> {types} es un tipo de hash antiguo y tiene un riesgo bajo de ser falsificado. Para archivos en los que realmente necesitas confiar, compara también un hash SHA-256 si el sitio lo ofrece.",
     "riskWeak": "<b>Advertencia de seguridad:</b> {types} solo detecta errores accidentales y no protege contra manipulaciones, por lo que el riesgo de seguridad es alto. No confíes en esta coincidencia para fiarte del archivo: compara en su lugar un hash SHA-256 del sitio oficial.",
     "comparing": "Comparando… aún sin coincidencia, sigue calculando. Los resultados aparecen un tipo de hash cada vez.",
+    "noMatchFocus": "<b>Sin coincidencia con {name}.</b> Si tu hash es de otro tipo, comprueba también los demás tipos de hash. {button}",
     "noMatchCommon": "<b>Sin coincidencia con los tipos de hash comunes.</b> Si tu hash usa otro formato, comprueba también los demás tipos. {button}",
     "checkOther": "Comprobar otros tipos de hash",
     "checkingOther": "Sin coincidencia con los tipos de hash comunes. Comprobando los otros tipos de hash…",
@@ -98,5 +100,84 @@
     "noMatchAdvice": " Comprueba que lo copiaste completo, o vuelve a descargar el archivo desde la fuente oficial.",
     "readError": "No se pudo leer este archivo. Puede que se haya movido o que el navegador se haya quedado sin recursos. Inténtalo de nuevo o usa un navegador de escritorio.",
     "hashFileError": "No se pudo leer este archivo como texto. Pega los hashes manualmente."
+  },
+  "hashpage": {
+    "meta": {
+      "title": "Calculadora {name} – Verifica el checksum en línea",
+      "description": "Calcula y verifica el checksum {name} ({hexLen} caracteres) de un archivo. Gratis, en tu navegador y sin subir nada.",
+      "keywords": "calculadora de checksum {name}, verificador de hash {name}, verificar {name} en línea, integridad de archivo {name}, generador de hash {name}"
+    },
+    "h1": "Calculadora de checksum {name}",
+    "lead": "Suelta un archivo para obtener su checksum {name}, o pega el código {name} de una página de descarga para ver si tu archivo coincide. Todo se ejecuta en tu dispositivo.",
+    "crumb": "Checksum {name}",
+    "linkText": "Checksum {name}",
+    "aboutTitle": "¿Qué es {name}?",
+    "factsTitle": "{name} de un vistazo",
+    "facts": {
+      "size": "Tamaño",
+      "length": "Longitud",
+      "family": "Familia",
+      "year": "Año",
+      "designer": "Creado por",
+      "standard": "Estándar",
+      "security": "Seguridad",
+      "bitsValue": "{bits} bits",
+      "charsValue": "{hexLen} caracteres"
+    },
+    "tiers": {
+      "strong": "Fuerte",
+      "medium": "Media (tipo antiguo)",
+      "weak": "Débil"
+    },
+    "exampleLead": "Todos los archivos vacíos tienen el mismo {name}:",
+    "secureTitle": "¿Es seguro {name}?",
+    "secure": {
+      "strong": "Sí. {name} se considera fuerte: no se conoce ninguna forma práctica de falsificar un archivo que coincida, así que es una buena opción para comprobar descargas.",
+      "medium": "Para detectar una descarga dañada o incompleta, sí. Pero {name} es un tipo antiguo, y se ha demostrado cómo crear dos archivos distintos con el mismo {name}. Si el sitio también ofrece {successor}, compáralo además.",
+      "weak": "No para seguridad. {name} está pensado para detectar errores accidentales, no manipulaciones, y un archivo modificado puede hacerse coincidir a propósito. Considera la coincidencia una comprobación básica y compara {successor} siempre que puedas."
+    },
+    "howTitle": "Cómo comprobar un checksum {name}",
+    "steps": [
+      "Busca el valor {name} ({hexLen} caracteres) en la página de descarga, o en el archivo de checksum (por ejemplo {ext}) junto a la descarga.",
+      "Suelta tu archivo en el recuadro de la parte superior de esta página y espera el resultado {name}.",
+      "Pega el valor en «Hash a comparar». Un Coincide en verde significa que tu archivo es idéntico al original."
+    ],
+    "cmdTitle": "O calcúlalo desde la línea de comandos",
+    "faqTitle": "Preguntas sobre {name}",
+    "faq": [
+      {
+        "q": "¿Cuánto mide un checksum {name}?",
+        "a": "Un checksum {name} tiene {bits} bits y se escribe con {hexLen} caracteres, usando los dígitos 0–9 y las letras a–f. Las mayúsculas y los espacios no importan."
+      },
+      {
+        "q": "¿Puedo comparar otro tipo de hash con {name}?",
+        "a": "No. Un valor {name} solo coincide con otro valor {name}, así que usa el tipo que indica la página de descarga. La longitud ({hexLen} caracteres) es una pista, pero varios tipos la comparten. Si dudas, pulsa «Comprobar otros tipos de hash» arriba."
+      }
+    ],
+    "relatedTitle": "Otros tipos de checksum",
+    "allTypes": "Ver todos los tipos de hash"
+  },
+  "hashes": {
+    "sha256": "SHA-256 es el checksum más usado hoy. Las descargas de Linux, las aplicaciones, el firmware y las herramientas para desarrolladores suelen publicar un valor SHA-256, y este código de 64 caracteres es el primero en el que confiar.",
+    "md5": "MD5 es un checksum clásico de 32 caracteres. Muchos sitios web, copias de seguridad y programas antiguos aún lo muestran porque se calcula muy rápido. Detecta bien las descargas dañadas, pero no se creó para impedir manipulaciones.",
+    "sha1": "SHA-1 fue el estándar durante años y aún aparece junto a descargas antiguas y dentro de Git. Sirve para detectar una descarga rota, pero los archivos nuevos deberían usar SHA-256.",
+    "sha512": "SHA-512 es el hermano mayor de SHA-256. Produce un código más largo, de 128 caracteres, y es habitual en distribuciones Linux, herramientas de seguridad y servidores. Es igual de seguro, solo que más minucioso.",
+    "crc32": "CRC32 es un código rápido de 8 caracteres creado para detectar errores accidentales. Los archivos ZIP y PNG, los mods de juegos y las listas .sfv de los sitios de archivos lo usan para confirmar que nada se corrompió.",
+    "blake2b": "BLAKE2b es un checksum rápido y moderno con un código de 128 caracteres. Es popular en software de seguridad y herramientas para desarrolladores, y en la mayoría de ordenadores es más rápido que SHA-512.",
+    "blake3": "BLAKE3 es uno de los checksums más nuevos y rápidos, con un código de 64 caracteres. Maneja archivos enormes con rapidez y gana terreno en herramientas modernas para desarrolladores y copias de seguridad.",
+    "crc32c": "CRC32C es un primo más rápido de CRC32 con un código de 8 caracteres. Los sistemas de almacenamiento, las bases de datos y los protocolos de red lo usan para detectar datos dañados, a menudo con ayuda del procesador.",
+    "sha384": "SHA-384 es una forma acortada de SHA-512 con un código de 96 caracteres. Lo encontrarás en conexiones seguras y en algunos paquetes firmados, donde se quiere un resultado fuerte pero algo más corto.",
+    "sha3-256": "SHA3-256 es la variante más común de SHA-3, con un código de 64 caracteres. Está construido de forma distinta a SHA-256, por eso algunos proyectos lo publican como una segunda opinión.",
+    "sha224": "SHA-224 es una versión recortada de SHA-256 que da un código de 56 caracteres. Es poco frecuente en las páginas de descarga, pero aún aparece en sistemas antiguos y en algunos dispositivos integrados.",
+    "sha3-512": "SHA3-512 es el resultado más largo de SHA-3 estándar, un código de 128 caracteres. Se usa donde se quiere la máxima fortaleza y es menos habitual en las páginas de descarga cotidianas.",
+    "blake2s": "BLAKE2s es la versión ligera de BLAKE2, pensada para dispositivos más pequeños. Su código de 64 caracteres es fuerte, y lo verás en algunas aplicaciones y herramientas que valoran la velocidad.",
+    "sha3-384": "SHA3-384 es una opción SHA-3 de tamaño intermedio con un código de 96 caracteres. Aparece en software de alta seguridad y en estándares que piden fortaleza adicional.",
+    "sha3-224": "SHA3-224 pertenece a SHA-3, la familia oficial más reciente. Construido de forma distinta a SHA-2, da un código de 56 caracteres y sirve de respaldo independiente por si SHA-2 llegara a debilitarse.",
+    "md4": "MD4 es un checksum de 32 caracteres muy antiguo, de 1990. Hoy se ve poco, sobre todo en sistemas heredados y enlaces de intercambio de archivos como eDonkey (ed2k). Úsalo solo para cotejar un valor antiguo.",
+    "adler32": "Adler-32 es una comprobación muy simple de 8 caracteres integrada en los formatos zlib y PNG. Es rápida pero fácil de engañar, así que solo sirve para detectar corrupción accidental.",
+    "crc16": "CRC16 es un código diminuto de 4 caracteres para detectar errores. Vive sobre todo en hardware, equipos industriales, enlaces serie y dispositivos integrados, donde el tamaño pequeño importa más que la fortaleza.",
+    "fletcher32": "Fletcher-32 es la versión de 8 caracteres de la comprobación de Fletcher. Se usa en algún software integrado y de almacenamiento, y es mejor verla como una comprobación rápida de errores, no como una protección.",
+    "fletcher16": "Fletcher-16 es una comprobación ligera de 4 caracteres de los años 80. Aún se encuentra en software de red e integrado antiguo, donde la velocidad y el tamaño mínimo eran lo más importante.",
+    "crc8": "CRC8 es el más pequeño de la familia, solo 2 caracteres. Protege mensajes muy cortos en sensores, baterías y chips pequeños, así que una coincidencia aquí demuestra muy poco por sí sola."
   }
 }

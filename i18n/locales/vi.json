@@ -9,7 +9,7 @@
     "language": "Ngôn ngữ",
     "themeAria": "Chuyển chế độ tối hoặc sáng",
     "menu": "Menu",
-    "nav": { "home": "Trang chủ", "what": "Checksum là gì?", "faq": "Câu hỏi thường gặp", "about": "Giới thiệu", "contact": "Liên hệ" }
+    "nav": { "home": "Trang chủ", "tools": "Công cụ", "what": "Checksum là gì?", "faq": "Câu hỏi thường gặp", "about": "Giới thiệu", "contact": "Liên hệ" }
   },
   "footer": {
     "tagline": "Công cụ tính checksum miễn phí chạy ngay trong trình duyệt.",
@@ -54,6 +54,7 @@
       ],
       "note": "Checksum cho biết hai tệp giống nhau, chứ không cho biết tệp có an toàn hay không. Độ tin cậy của nó chỉ bằng nơi bạn sao chép nó."
     },
+    "byTypeTitle": "Công cụ tính checksum theo loại hash",
     "faqTitle": "Câu hỏi thường gặp",
     "faq": [
       { "q": "Tệp của tôi có bị tải lên đâu không?", "a": "Không. Checksum được tính ngay trong trình duyệt, nên tệp của bạn không bao giờ rời khỏi thiết bị." },
@@ -110,6 +111,7 @@
     "riskMedium": "<b>Lưu ý:</b> {types} là loại hash đã cũ, có rủi ro thấp là bị làm giả. Với tệp bạn thật sự cần tin cậy, hãy so sánh thêm hash SHA-256 nếu trang tải xuống có cung cấp.",
     "riskWeak": "<b>Cảnh báo bảo mật:</b> {types} chỉ phát hiện được lỗi ngẫu nhiên và không bảo vệ trước việc bị sửa đổi, nên rủi ro bảo mật cao. Đừng dựa vào kết quả khớp này để tin tệp: hãy so sánh hash SHA-256 từ trang chính thức.",
     "comparing": "Đang so sánh… chưa có kết quả khớp, vẫn đang tính. Kết quả hiện lần lượt từng loại hash.",
+    "noMatchFocus": "<b>Không khớp với {name}.</b> Nếu mã hash của bạn thuộc loại khác, hãy kiểm tra thêm các loại hash khác. {button}",
     "noMatchCommon": "<b>Không khớp với các loại hash phổ biến.</b> Nếu mã hash của bạn dùng định dạng khác, hãy kiểm tra thêm các loại khác. {button}",
     "checkOther": "Kiểm tra các loại hash khác",
     "checkingOther": "Không khớp với các loại hash phổ biến. Đang kiểm tra các loại hash khác…",
@@ -120,5 +122,84 @@
     "noMatchAdvice": " Hãy kiểm tra bạn đã sao chép đầy đủ chưa, hoặc tải lại tệp từ nguồn chính thức.",
     "readError": "Không đọc được tệp này. Có thể tệp đã bị di chuyển hoặc trình duyệt hết tài nguyên. Hãy thử lại hoặc dùng trình duyệt trên máy tính.",
     "hashFileError": "Không đọc được tệp này dưới dạng văn bản. Vui lòng dán mã hash thủ công."
+  },
+  "hashpage": {
+    "meta": {
+      "title": "Tính checksum {name} – Kiểm tra {name} trực tuyến",
+      "description": "Công cụ tính checksum {name} miễn phí: đối chiếu mã {name} ({hexLen} ký tự) của tệp với trang tải xuống. Chạy ngay trong trình duyệt, không tải tệp lên.",
+      "keywords": "tính checksum {name}, kiểm tra hash {name}, xác minh {name} trực tuyến, kiểm tra toàn vẹn tệp {name}, tạo hash {name}"
+    },
+    "h1": "Tính checksum {name}",
+    "lead": "Thả tệp vào để lấy checksum {name}, hoặc dán mã {name} từ trang tải xuống để xem tệp của bạn có khớp không. Mọi thứ chạy ngay trên thiết bị của bạn.",
+    "crumb": "Checksum {name}",
+    "linkText": "Checksum {name}",
+    "aboutTitle": "{name} là gì?",
+    "factsTitle": "{name} trong nháy mắt",
+    "facts": {
+      "size": "Kích thước",
+      "length": "Độ dài",
+      "family": "Họ thuật toán",
+      "year": "Năm ra đời",
+      "designer": "Tác giả",
+      "standard": "Tiêu chuẩn",
+      "security": "Bảo mật",
+      "bitsValue": "{bits} bit",
+      "charsValue": "{hexLen} ký tự"
+    },
+    "tiers": {
+      "strong": "Mạnh",
+      "medium": "Trung bình (loại cũ)",
+      "weak": "Yếu"
+    },
+    "exampleLead": "Mọi tệp rỗng đều có cùng một mã {name}:",
+    "secureTitle": "{name} có an toàn không?",
+    "secure": {
+      "strong": "Có. {name} được xem là mạnh: hiện chưa có cách thực tế nào để làm giả một tệp có cùng mã, nên đây là lựa chọn tốt để kiểm tra tệp tải về.",
+      "medium": "Để phát hiện tệp tải về bị lỗi hoặc thiếu thì được. Nhưng {name} là loại cũ, và các nhà nghiên cứu đã chỉ ra cách tạo hai tệp khác nhau có cùng mã {name}. Nếu trang tải xuống cũng cung cấp {successor}, hãy so sánh thêm mã đó.",
+      "weak": "Không dùng cho mục đích bảo mật. {name} được thiết kế để bắt lỗi ngẫu nhiên chứ không chống sửa đổi, và một tệp bị thay đổi có thể bị cố tình làm cho khớp. Hãy xem kết quả khớp chỉ là bước kiểm tra cơ bản và so sánh thêm {successor} khi có thể."
+    },
+    "howTitle": "Cách kiểm tra checksum {name}",
+    "steps": [
+      "Tìm mã {name} ({hexLen} ký tự) trên trang tải xuống, hoặc trong tệp checksum (ví dụ {ext}) đi kèm bản tải.",
+      "Thả tệp của bạn vào khung ở đầu trang rồi chờ kết quả {name}.",
+      "Dán mã vào ô “Mã hash cần so sánh”. Dấu Khớp màu xanh nghĩa là tệp giống hệt bản gốc."
+    ],
+    "cmdTitle": "Hoặc tính bằng dòng lệnh",
+    "faqTitle": "Câu hỏi về {name}",
+    "faq": [
+      {
+        "q": "Checksum {name} dài bao nhiêu?",
+        "a": "Checksum {name} dài {bits} bit, được viết thành {hexLen} ký tự gồm chữ số 0–9 và chữ cái a–f. Chữ hoa và khoảng trắng không quan trọng."
+      },
+      {
+        "q": "Tôi có thể so sánh loại hash khác với {name} không?",
+        "a": "Không. Mã {name} chỉ khớp với mã {name} khác, nên hãy dùng đúng loại ghi trên trang tải xuống. Độ dài ({hexLen} ký tự) chỉ là gợi ý vì nhiều loại có cùng độ dài. Nếu không chắc, hãy bấm “Kiểm tra các loại hash khác” ở trên."
+      }
+    ],
+    "relatedTitle": "Các loại checksum khác",
+    "allTypes": "Xem tất cả loại hash"
+  },
+  "hashes": {
+    "sha256": "SHA-256 là loại checksum được dùng phổ biến nhất hiện nay. Các bản tải Linux, ứng dụng, firmware và công cụ cho lập trình viên thường công bố mã SHA-256, và mã 64 ký tự này là loại đáng tin cậy nhất để đối chiếu trước tiên.",
+    "md5": "MD5 là checksum 32 ký tự kinh điển. Nhiều trang web, bản sao lưu và phần mềm cũ vẫn ghi mã này vì tính rất nhanh. Nó phát hiện tốt tệp tải về bị lỗi, nhưng không được thiết kế để chống bị sửa đổi.",
+    "sha1": "SHA-1 từng là chuẩn trong nhiều năm và vẫn xuất hiện bên cạnh các bản tải cũ cũng như trong Git. Nó đủ tốt để phát hiện tệp tải về bị hỏng, nhưng với tệp mới nên dùng SHA-256.",
+    "sha512": "SHA-512 là bản “anh em” lớn hơn của SHA-256. Nó cho mã dài 128 ký tự và phổ biến ở các bản Linux, công cụ bảo mật và máy chủ. Độ an toàn tương đương, chỉ là kỹ lưỡng hơn.",
+    "crc32": "CRC32 là mã 8 ký tự nhanh, sinh ra để bắt lỗi ngẫu nhiên. Tệp ZIP và PNG, bản mod game và danh sách .sfv trên các trang lưu trữ dùng nó để xác nhận dữ liệu không bị hỏng.",
+    "blake2b": "BLAKE2b là checksum hiện đại, nhanh, cho mã 128 ký tự. Nó được ưa chuộng trong phần mềm bảo mật và công cụ lập trình, và trên hầu hết máy tính còn nhanh hơn SHA-512.",
+    "blake3": "BLAKE3 là một trong những checksum mới và nhanh nhất, cho mã 64 ký tự. Nó xử lý tệp rất lớn nhanh chóng và đang được dùng nhiều hơn trong công cụ lập trình và sao lưu hiện đại.",
+    "crc32c": "CRC32C là “người anh em” nhanh hơn của CRC32, cho mã 8 ký tự. Hệ thống lưu trữ, cơ sở dữ liệu và giao thức mạng dùng nó để phát hiện dữ liệu hỏng, thường nhờ bộ vi xử lý hỗ trợ.",
+    "sha384": "SHA-384 là bản rút gọn của SHA-512, cho mã 96 ký tự. Bạn sẽ gặp nó trong các kết nối bảo mật và một số gói phần mềm có chữ ký, nơi cần kết quả mạnh nhưng ngắn hơn một chút.",
+    "sha3-256": "SHA3-256 là biến thể SHA-3 phổ biến nhất, cho mã 64 ký tự. Nó được thiết kế khác với SHA-256, vì vậy một số dự án công bố thêm như một “ý kiến thứ hai”.",
+    "sha224": "SHA-224 là phiên bản rút gọn của SHA-256, cho mã 56 ký tự. Nó hiếm hơn trên các trang tải xuống nhưng vẫn xuất hiện ở hệ thống cũ và một số thiết bị nhúng.",
+    "sha3-512": "SHA3-512 là kết quả dài nhất của SHA-3 chuẩn, mã 128 ký tự. Nó được dùng khi cần độ mạnh tối đa và ít gặp hơn trên các trang tải xuống thông thường.",
+    "blake2s": "BLAKE2s là phiên bản nhẹ của BLAKE2, dành cho các thiết bị nhỏ hơn. Mã 64 ký tự của nó rất mạnh và xuất hiện trong một số ứng dụng, công cụ coi trọng tốc độ.",
+    "sha3-384": "SHA3-384 là lựa chọn cỡ vừa của SHA-3, cho mã 96 ký tự. Nó xuất hiện trong phần mềm bảo mật cao và các tiêu chuẩn đòi hỏi độ mạnh bổ sung.",
+    "sha3-224": "SHA3-224 thuộc SHA-3, họ chuẩn mới nhất. Được xây dựng khác với SHA-2, nó cho mã 56 ký tự và đóng vai trò dự phòng độc lập nếu SHA-2 yếu đi.",
+    "md4": "MD4 là checksum 32 ký tự rất cũ từ năm 1990. Ngày nay hiếm khi gặp, chủ yếu ở hệ thống cũ và các liên kết chia sẻ tệp như eDonkey (ed2k). Chỉ dùng để đối chiếu một mã cũ.",
+    "adler32": "Adler-32 là phép kiểm tra 8 ký tự rất đơn giản, có sẵn trong định dạng zlib và PNG. Nó chạy nhanh nhưng dễ bị đánh lừa, nên chỉ dùng để phát hiện hỏng dữ liệu ngẫu nhiên.",
+    "crc16": "CRC16 là mã 4 ký tự nhỏ gọn để bắt lỗi. Nó chủ yếu nằm trong phần cứng, thiết bị công nghiệp, đường truyền nối tiếp và thiết bị nhúng, nơi kích thước nhỏ quan trọng hơn độ mạnh.",
+    "fletcher32": "Fletcher-32 là phiên bản 8 ký tự của phép kiểm tra Fletcher. Nó được dùng trong một số phần mềm nhúng và lưu trữ, và nên xem là phép kiểm tra lỗi nhanh chứ không phải bảo vệ.",
+    "fletcher16": "Fletcher-16 là phép kiểm tra 4 ký tự nhẹ từ thập niên 1980. Nó vẫn có trong phần mềm mạng và nhúng đời cũ, nơi tốc độ và kích thước nhỏ là ưu tiên.",
+    "crc8": "CRC8 nhỏ nhất trong họ CRC, chỉ 2 ký tự. Nó bảo vệ các thông điệp rất ngắn trong cảm biến, pin và chip nhỏ, nên một kết quả khớp ở đây tự nó chứng minh rất ít."
   }
 }

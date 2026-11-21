@@ -9,7 +9,7 @@
     "language": "Language",
     "themeAria": "Switch dark or light mode",
     "menu": "Menu",
-    "nav": { "home": "Home", "what": "What is a checksum?", "faq": "FAQ", "about": "About", "contact": "Contact" }
+    "nav": { "home": "Home", "tools": "Tools", "what": "What is a checksum?", "faq": "FAQ", "about": "About", "contact": "Contact" }
   },
   "footer": {
     "tagline": "Free checksum calculator that runs in your browser.",
@@ -54,6 +54,7 @@
       ],
       "note": "A checksum shows that two files are the same, not that the file is safe. It is only as trustworthy as the place you copied it from."
     },
+    "byTypeTitle": "Checksum calculators by hash type",
     "faqTitle": "FAQ",
     "faq": [
       { "q": "Is my file uploaded anywhere?", "a": "No. Checksums are calculated in your browser, so your file never leaves your device." },
@@ -110,6 +111,7 @@
     "riskMedium": "<b>Note:</b> {types} is an older hash type and carries a small risk of being forged. For files you really need to trust, compare a SHA-256 hash too if the site provides one.",
     "riskWeak": "<b>Security warning:</b> {types} only detects accidental errors and gives no protection against tampering, so the security risk is high. Don’t rely on this match to trust the file: compare a SHA-256 hash from the official site instead.",
     "comparing": "Comparing… no match yet, still calculating. Results appear one hash type at a time.",
+    "noMatchFocus": "<b>No match with {name}.</b> If your hash is a different type, check the other hash types too. {button}",
     "noMatchCommon": "<b>No match with the common hash types.</b> If your hash uses a different format, check the other types too. {button}",
     "checkOther": "Check other hash types",
     "checkingOther": "No match with the common hash types. Checking the other hash types…",
@@ -120,5 +122,84 @@
     "noMatchAdvice": " Check that you copied it fully, or download the file again from the official source.",
     "readError": "This file couldn’t be read. It may have been moved or the browser ran out of resources. Try again, or use a desktop browser.",
     "hashFileError": "This file couldn’t be read as text. Please paste the hashes manually."
+  },
+  "hashpage": {
+    "meta": {
+      "title": "{name} Checksum Calculator – Verify {name} Online",
+      "description": "Free {name} checksum calculator: check a file’s {name} hash ({hexLen} characters) against the download page. Runs in your browser, nothing is uploaded.",
+      "keywords": "{name} checksum calculator, {name} hash checker, verify {name} online, {name} file integrity, {name} hash generator"
+    },
+    "h1": "{name} Checksum Calculator",
+    "lead": "Drop a file to get its {name} checksum, or paste the {name} code from a download page to see if your file matches. Everything runs on your device.",
+    "crumb": "{name} checksum",
+    "linkText": "{name} checksum",
+    "aboutTitle": "What is {name}?",
+    "factsTitle": "{name} at a glance",
+    "facts": {
+      "size": "Size",
+      "length": "Length",
+      "family": "Family",
+      "year": "Year",
+      "designer": "Created by",
+      "standard": "Standard",
+      "security": "Security",
+      "bitsValue": "{bits} bits",
+      "charsValue": "{hexLen} characters"
+    },
+    "tiers": {
+      "strong": "Strong",
+      "medium": "Fair (older type)",
+      "weak": "Weak"
+    },
+    "exampleLead": "Every empty file has the same {name}:",
+    "secureTitle": "Is {name} safe to use?",
+    "secure": {
+      "strong": "Yes. {name} is considered strong: no practical way to forge a matching file is known, so it is a good choice for checking downloads.",
+      "medium": "For spotting a broken or incomplete download, yes. But {name} is an older type, and researchers have shown ways to build two different files with the same {name}. If the site also offers {successor}, compare that one too.",
+      "weak": "Not for security. {name} is designed to catch accidental errors, not tampering, and a changed file can be made to match it on purpose. Treat a match as a basic sanity check and compare {successor} when you can."
+    },
+    "howTitle": "How to check a {name} checksum",
+    "steps": [
+      "Find the {name} value ({hexLen} characters) on the download page, or in the checksum file (such as {ext}) next to the download.",
+      "Drop your file on the box at the top of this page and wait for the {name} result.",
+      "Paste the value into “Hash to compare”. A green Match means your file is identical to the original."
+    ],
+    "cmdTitle": "Or calculate it from the command line",
+    "faqTitle": "{name} questions",
+    "faq": [
+      {
+        "q": "How long is a {name} checksum?",
+        "a": "A {name} checksum is {bits} bits long, which is written as {hexLen} characters using the digits 0–9 and the letters a–f. Capital letters and spaces don’t matter."
+      },
+      {
+        "q": "Can I compare a different hash type with {name}?",
+        "a": "No. A {name} value only matches another {name} value, so use the type named on the download page. The length ({hexLen} characters) is a hint, but several types share it. If you’re unsure, press “Check other hash types” above."
+      }
+    ],
+    "relatedTitle": "Other checksum types",
+    "allTypes": "See all hash types"
+  },
+  "hashes": {
+    "sha256": "SHA-256 is the most widely used checksum today. Linux downloads, apps, firmware and developer tools usually publish a SHA-256 value, and its 64-character code is the one to trust first.",
+    "md5": "MD5 is a classic 32-character checksum. Many websites, backups and old programs still list it because it is quick to calculate. It catches broken downloads well, but it was not built to stop tampering.",
+    "sha1": "SHA-1 was the standard for years and still appears next to older downloads and inside Git. It is fine for spotting a broken download, but newer files should use SHA-256.",
+    "sha512": "SHA-512 is SHA-256’s bigger sibling. It produces a longer 128-character code and is common on Linux distributions, security tools and servers. It is just as safe, only more thorough.",
+    "crc32": "CRC32 is a quick 8-character code made to catch accidental errors. ZIP and PNG files, game mods and .sfv lists on archive sites use it to confirm that nothing got corrupted.",
+    "blake2b": "BLAKE2b is a fast, modern checksum with a 128-character code. It is popular in security software and developer tools, and it is quicker than SHA-512 on most computers.",
+    "blake3": "BLAKE3 is one of the newest and fastest checksums, with a 64-character code. It handles huge files quickly and is gaining ground in modern developer tools and backups.",
+    "crc32c": "CRC32C is a faster cousin of CRC32 with an 8-character code. Storage systems, databases and network protocols use it to catch damaged data, often with help from your processor.",
+    "sha384": "SHA-384 is a shortened form of SHA-512 with a 96-character code. You will meet it in secure connections and some signed packages, where a strong but slightly shorter result is wanted.",
+    "sha3-256": "SHA3-256 is the most common SHA-3 variant, with a 64-character code. It is built differently from SHA-256, which is why some projects publish it as a second opinion.",
+    "sha224": "SHA-224 is a trimmed-down version of SHA-256 that gives a 56-character code. It is rarer on download pages but still shows up in older systems and some embedded devices.",
+    "sha3-512": "SHA3-512 is the longest standard SHA-3 result, a 128-character code. It is used where maximum strength is wanted and is rarer on everyday download pages.",
+    "blake2s": "BLAKE2s is the lighter version of BLAKE2, made for smaller devices. Its 64-character code is strong, and you will find it in some apps and tools that value speed.",
+    "sha3-384": "SHA3-384 is a mid-size SHA-3 option with a 96-character code. It turns up in high-security software and standards that ask for extra strength.",
+    "sha3-224": "SHA3-224 comes from SHA-3, the newest official family. Built differently from SHA-2, it gives a 56-character code and acts as an independent backup if SHA-2 ever weakens.",
+    "md4": "MD4 is a very old 32-character checksum from 1990. You will rarely see it today, mostly with legacy systems and file-sharing links such as eDonkey (ed2k). Use it only to match an old value.",
+    "adler32": "Adler-32 is a very simple 8-character check built into the zlib and PNG formats. It runs fast but is easy to fool, so it is only for catching accidental corruption.",
+    "crc16": "CRC16 is a tiny 4-character code for catching errors. It lives mostly in hardware, industrial gear, serial links and embedded devices, where small size matters more than strength.",
+    "fletcher32": "Fletcher-32 is the 8-character version of Fletcher’s check. It is used in some embedded and storage software, and is best seen as a quick error check, not protection.",
+    "fletcher16": "Fletcher-16 is a light 4-character check from the 1980s. It is still found in older network and embedded software, where speed and tiny size mattered most.",
+    "crc8": "CRC8 is the smallest of the family, just 2 characters. It guards very short messages in sensors, batteries and small chips, so a match here proves very little on its own."
   }
 }

@@ -1,0 +1,41 @@
+<section class="mx-auto max-w-5xl px-4 py-8">
+ <nav aria-label="Breadcrumb" class="mb-4 text-sm text-muted"><a class="hover:underline" href="{{@base}}">{{common.nav.home}}</a> <span aria-hidden="true">/</span> <span>{{hashpage.crumb}}</span></nav>
+ <h1 class="text-3xl sm:text-4xl font-bold tracking-tight">{{hashpage.h1}}</h1>
+ <p class="mt-2 mb-6 max-w-2xl text-muted">{{hashpage.lead}}</p>
+ {{> checker}}
+ {{#if @hasLookup}}{{> lookup}}{{/if}}
+</section>
+
+<section class="mx-auto max-w-5xl px-4 pt-12">
+ <div class="max-w-2xl space-y-4">
+  <h2 class="text-2xl font-bold tracking-tight">{{hashpage.aboutTitle}}</h2>
+  <p>{{hash.about}}</p>
+
+  <h2 class="text-xl font-bold tracking-tight pt-4">{{hashpage.factsTitle}}</h2>
+  {{@factsHtml}}
+  <p>{{hashpage.exampleLead}} <code class="break-all">{{@emptyDigest}}</code></p>
+
+  <h2 class="text-xl font-bold tracking-tight pt-4">{{hashpage.secureTitle}}</h2>
+  <p>{{hashpage.secureCurrent}}</p>
+
+  <h2 class="text-xl font-bold tracking-tight pt-4">{{hashpage.howTitle}}</h2>
+  <ol class="list-decimal pl-5 space-y-1">
+   {{#each hashpage.steps}}<li>{{.}}</li>
+   {{/each}}
+  </ol>
+  {{#if @hasCmds}}<h3 class="font-semibold pt-2">{{hashpage.cmdTitle}}</h3>
+  {{@cmdHtml}}{{/if}}
+ </div>
+</section>
+
+<section class="mx-auto max-w-5xl px-4 pt-12">
+ <h2 class="text-xl font-bold tracking-tight mb-4">{{hashpage.faqTitle}}</h2>
+ <div class="max-w-2xl divide-y divide-line border-y border-line">
+  {{#each hashpage.faq}}<details class="py-3"><summary class="flex cursor-pointer justify-between gap-4 font-medium">{{.q}}<svg class="chev h-4 w-4 mt-1.5 shrink-0" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6l5 5 5-5"/></svg></summary><p class="mt-2 text-muted">{{.a}}</p></details>
+  {{/each}}
+ </div>
+
+ <h2 class="text-xl font-bold tracking-tight mt-12">{{hashpage.relatedTitle}}</h2>
+ {{@relatedLinks}}
+ <p class="mt-4"><a class="underline text-primary" href="{{@base}}#hash-types">{{hashpage.allTypes}}</a></p>
+</section>

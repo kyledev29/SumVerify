@@ -1,3 +1,5 @@
+import HASHES from './i18n/hashes.js';
+
 /**
  * Single source of truth for the multilingual build.
  *
@@ -28,6 +30,8 @@ export default {
     indexNowKey: '',            // optional: 8-128 hex chars; emits /<key>.txt for Bing IndexNow
   },
 
+  hashes: HASHES, // 21 hash types -> /<slug>-checksum/ pages, Tools menu, checker order
+
   defaultLocale: 'en', // served at "/", others at "/<code>/"
 
   locales: [
@@ -46,6 +50,7 @@ export default {
   ],
 
   pages: [
+    ...HASHES.map((h) => ({ id: `hash-${h.slug}`, template: 'hash', hash: h.slug, path: `${h.slug}-checksum/`, multilingual: true })),
     { id: 'home', path: '', multilingual: true },
     { id: 'about', path: 'about/', multilingual: true },
     { id: 'contact', path: 'contact/', multilingual: true },

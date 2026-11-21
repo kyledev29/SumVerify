@@ -33,5 +33,10 @@ export function initShell() {
       btn.setAttribute('aria-expanded', String(!menu.classList.contains('hidden')));
     };
   }
+
+  // "Tools" dropdown: close on outside click, Escape, or choosing a link
+  const tools = document.querySelectorAll('details.tools');
+  document.addEventListener('click', (e) => tools.forEach((d) => { if (d.open && !d.contains(e.target)) d.open = false; }));
+  document.addEventListener('keydown', (e) => { if (e.key === 'Escape') tools.forEach((d) => { d.open = false; }); });
   syncLabels();
 }

@@ -7,7 +7,7 @@
   },
   "common": {
     "language": "Bahasa", "themeAria": "Beralih mode gelap atau terang", "menu": "Menu",
-    "nav": { "home": "Beranda", "what": "Apa itu checksum?", "faq": "FAQ", "about": "Tentang", "contact": "Kontak" }
+    "nav": { "home": "Beranda", "tools": "Alat", "what": "Apa itu checksum?", "faq": "FAQ", "about": "Tentang", "contact": "Kontak" }
   },
   "footer": { "tagline": "Kalkulator checksum gratis yang berjalan di browser Anda.", "pages": "Halaman", "legal": "Legal", "further": "Informasi lebih lanjut", "privacy": "Kebijakan Privasi", "terms": "Ketentuan Penggunaan" },
   "home": {
@@ -39,6 +39,7 @@
       ],
       "note": "Checksum menunjukkan bahwa dua file sama, bukan bahwa file tersebut aman. Tingkat kepercayaannya hanya setara dengan tempat Anda menyalinnya."
     },
+    "byTypeTitle": "Kalkulator checksum menurut jenis hash",
     "faqTitle": "FAQ",
     "faq": [
       { "q": "Apakah file saya diunggah ke suatu tempat?", "a": "Tidak. Checksum dihitung di browser Anda, sehingga file Anda tidak pernah meninggalkan perangkat." },
@@ -88,6 +89,7 @@
     "riskMedium": "<b>Catatan:</b> {types} adalah jenis hash lama dengan risiko kecil untuk dipalsukan. Untuk file yang benar-benar perlu Anda percaya, bandingkan juga hash SHA-256 jika situsnya menyediakan.",
     "riskWeak": "<b>Peringatan keamanan:</b> {types} hanya mendeteksi kesalahan yang tidak disengaja dan tidak melindungi dari perubahan berbahaya, sehingga risiko keamanannya tinggi. Jangan mengandalkan kecocokan ini untuk memercayai file: bandingkan hash SHA-256 dari situs resmi.",
     "comparing": "Membandingkan… belum ada yang cocok, masih menghitung. Hasil muncul satu jenis hash demi satu.",
+    "noMatchFocus": "<b>Tidak cocok dengan {name}.</b> Jika hash Anda berjenis lain, periksa juga jenis hash lainnya. {button}",
     "noMatchCommon": "<b>Tidak cocok dengan jenis hash yang umum.</b> Jika hash Anda memakai format lain, periksa juga jenis lainnya. {button}",
     "checkOther": "Periksa jenis hash lainnya",
     "checkingOther": "Tidak cocok dengan jenis hash yang umum. Memeriksa jenis hash lainnya…",
@@ -98,5 +100,84 @@
     "noMatchAdvice": " Pastikan Anda menyalinnya secara lengkap, atau unduh ulang file dari sumber resmi.",
     "readError": "File ini tidak dapat dibaca. Mungkin file telah dipindahkan atau browser kehabisan sumber daya. Coba lagi, atau gunakan browser desktop.",
     "hashFileError": "File ini tidak dapat dibaca sebagai teks. Silakan tempel hash secara manual."
+  },
+  "hashpage": {
+    "meta": {
+      "title": "Kalkulator Checksum {name} – Cek Online",
+      "description": "Kalkulator checksum {name} gratis: cocokkan hash {name} file ({hexLen} karakter) dengan halaman unduhan. Berjalan di browser Anda, tanpa mengunggah apa pun.",
+      "keywords": "kalkulator checksum {name}, pengecek hash {name}, verifikasi {name} online, integritas file {name}, generator hash {name}"
+    },
+    "h1": "Kalkulator Checksum {name}",
+    "lead": "Letakkan file untuk mendapatkan checksum {name}-nya, atau tempel kode {name} dari halaman unduhan untuk melihat apakah file Anda cocok. Semuanya berjalan di perangkat Anda.",
+    "crumb": "Checksum {name}",
+    "linkText": "Checksum {name}",
+    "aboutTitle": "Apa itu {name}?",
+    "factsTitle": "{name} sekilas",
+    "facts": {
+      "size": "Ukuran",
+      "length": "Panjang",
+      "family": "Keluarga",
+      "year": "Tahun",
+      "designer": "Dibuat oleh",
+      "standard": "Standar",
+      "security": "Keamanan",
+      "bitsValue": "{bits} bit",
+      "charsValue": "{hexLen} karakter"
+    },
+    "tiers": {
+      "strong": "Kuat",
+      "medium": "Sedang (jenis lama)",
+      "weak": "Lemah"
+    },
+    "exampleLead": "Setiap file kosong memiliki {name} yang sama:",
+    "secureTitle": "Apakah {name} aman digunakan?",
+    "secure": {
+      "strong": "Ya. {name} dianggap kuat: belum diketahui cara praktis untuk memalsukan file yang cocok, jadi ini pilihan yang baik untuk memeriksa unduhan.",
+      "medium": "Untuk mendeteksi unduhan yang rusak atau tidak lengkap, ya. Namun {name} adalah jenis lama, dan peneliti telah menunjukkan cara membuat dua file berbeda dengan {name} yang sama. Jika situs juga menyediakan {successor}, bandingkan juga yang itu.",
+      "weak": "Tidak untuk keamanan. {name} dirancang untuk menangkap kesalahan yang tidak disengaja, bukan perubahan berbahaya, dan file yang diubah bisa sengaja dibuat cocok. Anggap kecocokan sebagai pemeriksaan dasar dan bandingkan {successor} jika memungkinkan."
+    },
+    "howTitle": "Cara memeriksa checksum {name}",
+    "steps": [
+      "Temukan nilai {name} ({hexLen} karakter) di halaman unduhan, atau di file checksum (misalnya {ext}) di samping unduhan.",
+      "Letakkan file Anda di kotak pada bagian atas halaman ini dan tunggu hasil {name}.",
+      "Tempel nilainya ke “Hash untuk dibandingkan”. Cocok berwarna hijau berarti file Anda identik dengan aslinya."
+    ],
+    "cmdTitle": "Atau hitung lewat baris perintah",
+    "faqTitle": "Pertanyaan tentang {name}",
+    "faq": [
+      {
+        "q": "Seberapa panjang checksum {name}?",
+        "a": "Checksum {name} panjangnya {bits} bit, ditulis sebagai {hexLen} karakter dengan angka 0–9 dan huruf a–f. Huruf kapital dan spasi tidak berpengaruh."
+      },
+      {
+        "q": "Bisakah saya membandingkan jenis hash lain dengan {name}?",
+        "a": "Tidak. Nilai {name} hanya cocok dengan nilai {name} lain, jadi gunakan jenis yang disebutkan di halaman unduhan. Panjangnya ({hexLen} karakter) hanyalah petunjuk karena beberapa jenis memiliki panjang yang sama. Jika ragu, tekan “Periksa jenis hash lainnya” di atas."
+      }
+    ],
+    "relatedTitle": "Jenis checksum lainnya",
+    "allTypes": "Lihat semua jenis hash"
+  },
+  "hashes": {
+    "sha256": "SHA-256 adalah checksum yang paling banyak dipakai saat ini. Unduhan Linux, aplikasi, firmware, dan alat pengembang biasanya mencantumkan nilai SHA-256, dan kode 64 karakter ini adalah yang pertama layak dipercaya.",
+    "md5": "MD5 adalah checksum klasik 32 karakter. Banyak situs web, cadangan, dan program lama masih mencantumkannya karena cepat dihitung. MD5 bagus untuk mendeteksi unduhan rusak, tetapi tidak dibuat untuk mencegah pemalsuan.",
+    "sha1": "SHA-1 pernah menjadi standar bertahun-tahun dan masih muncul di samping unduhan lama serta di dalam Git. Cukup untuk mendeteksi unduhan yang rusak, tetapi file baru sebaiknya memakai SHA-256.",
+    "sha512": "SHA-512 adalah kakak SHA-256. Ia menghasilkan kode lebih panjang, 128 karakter, dan umum di distribusi Linux, alat keamanan, dan server. Sama amannya, hanya lebih teliti.",
+    "crc32": "CRC32 adalah kode cepat 8 karakter yang dibuat untuk menangkap kesalahan yang tidak disengaja. File ZIP dan PNG, mod game, serta daftar .sfv di situs arsip memakainya untuk memastikan tidak ada yang rusak.",
+    "blake2b": "BLAKE2b adalah checksum modern yang cepat dengan kode 128 karakter. Populer di perangkat lunak keamanan dan alat pengembang, dan lebih cepat daripada SHA-512 di kebanyakan komputer.",
+    "blake3": "BLAKE3 adalah salah satu checksum terbaru dan tercepat, dengan kode 64 karakter. Ia memproses file raksasa dengan cepat dan makin banyak dipakai di alat pengembang dan cadangan modern.",
+    "crc32c": "CRC32C adalah kerabat CRC32 yang lebih cepat dengan kode 8 karakter. Sistem penyimpanan, basis data, dan protokol jaringan memakainya untuk mendeteksi data rusak, sering dengan bantuan prosesor.",
+    "sha384": "SHA-384 adalah bentuk ringkas SHA-512 dengan kode 96 karakter. Anda akan menjumpainya pada koneksi aman dan beberapa paket bertanda tangan, yang menginginkan hasil kuat namun sedikit lebih pendek.",
+    "sha3-256": "SHA3-256 adalah varian SHA-3 yang paling umum, dengan kode 64 karakter. Cara kerjanya berbeda dari SHA-256, itulah sebabnya beberapa proyek mencantumkannya sebagai pendapat kedua.",
+    "sha224": "SHA-224 adalah versi ringkas SHA-256 yang menghasilkan kode 56 karakter. Lebih jarang di halaman unduhan, tetapi masih muncul di sistem lama dan beberapa perangkat tertanam.",
+    "sha3-512": "SHA3-512 adalah hasil terpanjang dari SHA-3 standar, kode 128 karakter. Dipakai saat kekuatan maksimum diinginkan dan lebih jarang di halaman unduhan sehari-hari.",
+    "blake2s": "BLAKE2s adalah versi ringan BLAKE2, dibuat untuk perangkat yang lebih kecil. Kode 64 karakternya kuat, dan Anda akan menemukannya di beberapa aplikasi dan alat yang mengutamakan kecepatan.",
+    "sha3-384": "SHA3-384 adalah opsi SHA-3 berukuran menengah dengan kode 96 karakter. Muncul di perangkat lunak keamanan tinggi dan standar yang meminta kekuatan ekstra.",
+    "sha3-224": "SHA3-224 berasal dari SHA-3, keluarga resmi terbaru. Dibangun berbeda dari SHA-2, ia menghasilkan kode 56 karakter dan menjadi cadangan independen jika suatu saat SHA-2 melemah.",
+    "md4": "MD4 adalah checksum 32 karakter yang sangat tua, dari tahun 1990. Kini jarang terlihat, sebagian besar pada sistem lawas dan tautan berbagi file seperti eDonkey (ed2k). Pakai hanya untuk mencocokkan nilai lama.",
+    "adler32": "Adler-32 adalah pemeriksaan 8 karakter yang sangat sederhana dan tertanam dalam format zlib dan PNG. Cepat, tetapi mudah dikelabui, jadi hanya untuk menangkap kerusakan yang tidak disengaja.",
+    "crc16": "CRC16 adalah kode mungil 4 karakter untuk menangkap kesalahan. Banyak ditemukan di perangkat keras, peralatan industri, jalur serial, dan perangkat tertanam, tempat ukuran kecil lebih penting daripada kekuatan.",
+    "fletcher32": "Fletcher-32 adalah versi 8 karakter dari pemeriksaan Fletcher. Dipakai di beberapa perangkat lunak tertanam dan penyimpanan, dan sebaiknya dipandang sebagai pemeriksaan kesalahan cepat, bukan perlindungan.",
+    "fletcher16": "Fletcher-16 adalah pemeriksaan ringan 4 karakter dari tahun 1980-an. Masih ditemukan di perangkat lunak jaringan dan tertanam lawas, tempat kecepatan dan ukuran kecil paling penting.",
+    "crc8": "CRC8 adalah yang terkecil di keluarganya, hanya 2 karakter. Ia menjaga pesan yang sangat pendek di sensor, baterai, dan chip kecil, sehingga kecocokan di sini hanya membuktikan sedikit."
   }
 }

@@ -7,7 +7,7 @@
   },
   "common": {
     "language": "Sprache", "themeAria": "Zwischen dunklem und hellem Modus wechseln", "menu": "Menü",
-    "nav": { "home": "Startseite", "what": "Was ist eine Prüfsumme?", "faq": "FAQ", "about": "Über uns", "contact": "Kontakt" }
+    "nav": { "home": "Startseite", "tools": "Tools", "what": "Was ist eine Prüfsumme?", "faq": "FAQ", "about": "Über uns", "contact": "Kontakt" }
   },
   "footer": { "tagline": "Kostenloser Prüfsummenrechner, der in Ihrem Browser läuft.", "pages": "Seiten", "legal": "Rechtliches", "further": "Weitere Informationen", "privacy": "Datenschutzerklärung", "terms": "Nutzungsbedingungen" },
   "home": {
@@ -39,6 +39,7 @@
       ],
       "note": "Eine Prüfsumme zeigt, dass zwei Dateien gleich sind, nicht dass die Datei sicher ist. Sie ist nur so vertrauenswürdig wie die Quelle, von der Sie sie kopiert haben."
     },
+    "byTypeTitle": "Prüfsummenrechner nach Hash-Typ",
     "faqTitle": "FAQ",
     "faq": [
       { "q": "Wird meine Datei irgendwohin hochgeladen?", "a": "Nein. Prüfsummen werden in Ihrem Browser berechnet, Ihre Datei verlässt also nie Ihr Gerät." },
@@ -88,6 +89,7 @@
     "riskMedium": "<b>Hinweis:</b> {types} ist ein älterer Hash-Typ mit einem geringen Fälschungsrisiko. Bei Dateien, denen Sie wirklich vertrauen müssen, vergleichen Sie zusätzlich einen SHA-256-Hash, falls die Seite einen bietet.",
     "riskWeak": "<b>Sicherheitswarnung:</b> {types} erkennt nur zufällige Fehler und schützt nicht vor Manipulation, das Sicherheitsrisiko ist daher hoch. Verlassen Sie sich nicht auf diese Übereinstimmung, um der Datei zu vertrauen. Vergleichen Sie stattdessen einen SHA-256-Hash von der offiziellen Seite.",
     "comparing": "Vergleiche… noch keine Übereinstimmung, die Berechnung läuft noch. Die Ergebnisse erscheinen nacheinander für jeden Hash-Typ.",
+    "noMatchFocus": "<b>Keine Übereinstimmung mit {name}.</b> Wenn Ihr Hash ein anderer Typ ist, prüfen Sie auch die anderen Hash-Typen. {button}",
     "noMatchCommon": "<b>Keine Übereinstimmung bei den gängigen Hash-Typen.</b> Wenn Ihr Hash ein anderes Format verwendet, prüfen Sie auch die anderen Typen. {button}",
     "checkOther": "Andere Hash-Typen prüfen",
     "checkingOther": "Keine Übereinstimmung bei den gängigen Hash-Typen. Die anderen Hash-Typen werden geprüft…",
@@ -98,5 +100,84 @@
     "noMatchAdvice": " Prüfen Sie, ob Sie ihn vollständig kopiert haben, oder laden Sie die Datei erneut von der offiziellen Quelle herunter.",
     "readError": "Diese Datei konnte nicht gelesen werden. Möglicherweise wurde sie verschoben oder dem Browser gingen die Ressourcen aus. Versuchen Sie es erneut oder nutzen Sie einen Desktop-Browser.",
     "hashFileError": "Diese Datei konnte nicht als Text gelesen werden. Bitte fügen Sie die Hashes manuell ein."
+  },
+  "hashpage": {
+    "meta": {
+      "title": "{name}-Prüfsummenrechner – {name} online prüfen",
+      "description": "Kostenloser {name}-Prüfsummenrechner: Vergleichen Sie den {name}-Hash einer Datei ({hexLen} Zeichen) mit der Download-Seite. Läuft im Browser, ohne Upload.",
+      "keywords": "{name} Prüfsummenrechner, {name} Hash prüfen, {name} online verifizieren, {name} Dateiintegrität, {name} Hash-Generator"
+    },
+    "h1": "{name}-Prüfsummenrechner",
+    "lead": "Legen Sie eine Datei ab, um ihre {name}-Prüfsumme zu erhalten, oder fügen Sie den {name}-Wert von einer Download-Seite ein, um zu sehen, ob Ihre Datei übereinstimmt. Alles läuft auf Ihrem Gerät.",
+    "crumb": "{name}-Prüfsumme",
+    "linkText": "{name}-Prüfsumme",
+    "aboutTitle": "Was ist {name}?",
+    "factsTitle": "{name} auf einen Blick",
+    "facts": {
+      "size": "Größe",
+      "length": "Länge",
+      "family": "Familie",
+      "year": "Jahr",
+      "designer": "Entwickelt von",
+      "standard": "Standard",
+      "security": "Sicherheit",
+      "bitsValue": "{bits} Bit",
+      "charsValue": "{hexLen} Zeichen"
+    },
+    "tiers": {
+      "strong": "Stark",
+      "medium": "Mittel (älterer Typ)",
+      "weak": "Schwach"
+    },
+    "exampleLead": "Jede leere Datei hat denselben {name}:",
+    "secureTitle": "Ist {name} sicher?",
+    "secure": {
+      "strong": "Ja. {name} gilt als stark: Es ist kein praktikabler Weg bekannt, eine passende Datei zu fälschen, daher eignet es sich gut zum Prüfen von Downloads.",
+      "medium": "Um einen defekten oder unvollständigen Download zu erkennen, ja. Aber {name} ist ein älterer Typ, und Forschende haben gezeigt, wie sich zwei verschiedene Dateien mit demselben {name} erzeugen lassen. Wenn die Seite auch {successor} anbietet, vergleichen Sie zusätzlich diesen Wert.",
+      "weak": "Nicht für die Sicherheit. {name} soll zufällige Fehler erkennen, keine Manipulation, und eine veränderte Datei lässt sich absichtlich passend machen. Sehen Sie eine Übereinstimmung nur als einfachen Grundcheck und vergleichen Sie nach Möglichkeit {successor}."
+    },
+    "howTitle": "So prüfen Sie eine {name}-Prüfsumme",
+    "steps": [
+      "Suchen Sie den {name}-Wert ({hexLen} Zeichen) auf der Download-Seite oder in der Prüfsummendatei (zum Beispiel {ext}) neben dem Download.",
+      "Legen Sie Ihre Datei im Feld oben auf dieser Seite ab und warten Sie auf das {name}-Ergebnis.",
+      "Fügen Sie den Wert unter „Hash zum Vergleichen“ ein. Ein grünes „Übereinstimmung“ bedeutet, dass Ihre Datei mit dem Original identisch ist."
+    ],
+    "cmdTitle": "Oder auf der Kommandozeile berechnen",
+    "faqTitle": "Fragen zu {name}",
+    "faq": [
+      {
+        "q": "Wie lang ist eine {name}-Prüfsumme?",
+        "a": "Eine {name}-Prüfsumme ist {bits} Bit lang und wird als {hexLen} Zeichen aus den Ziffern 0–9 und den Buchstaben a–f geschrieben. Groß- und Kleinschreibung sowie Leerzeichen spielen keine Rolle."
+      },
+      {
+        "q": "Kann ich einen anderen Hash-Typ mit {name} vergleichen?",
+        "a": "Nein. Ein {name}-Wert stimmt nur mit einem anderen {name}-Wert überein, nutzen Sie also den Typ, der auf der Download-Seite genannt wird. Die Länge ({hexLen} Zeichen) ist ein Hinweis, aber mehrere Typen teilen sie. Wenn Sie unsicher sind, klicken Sie oben auf „Andere Hash-Typen prüfen“."
+      }
+    ],
+    "relatedTitle": "Weitere Prüfsummentypen",
+    "allTypes": "Alle Hash-Typen ansehen"
+  },
+  "hashes": {
+    "sha256": "SHA-256 ist heute die am häufigsten verwendete Prüfsumme. Linux-Downloads, Apps, Firmware und Entwicklerwerkzeuge veröffentlichen meist einen SHA-256-Wert, und dieser 64-stellige Code ist der erste, dem Sie vertrauen sollten.",
+    "md5": "MD5 ist eine klassische Prüfsumme mit 32 Zeichen. Viele Websites, Backups und alte Programme nennen sie noch, weil sie schnell berechnet ist. Sie erkennt defekte Downloads gut, wurde aber nicht gebaut, um Manipulation zu verhindern.",
+    "sha1": "SHA-1 war jahrelang der Standard und taucht noch bei älteren Downloads und in Git auf. Zum Erkennen eines defekten Downloads genügt es, aber neuere Dateien sollten SHA-256 nutzen.",
+    "sha512": "SHA-512 ist das größere Geschwister von SHA-256. Es erzeugt einen längeren Code mit 128 Zeichen und ist bei Linux-Distributionen, Sicherheitswerkzeugen und Servern verbreitet. Es ist genauso sicher, nur gründlicher.",
+    "crc32": "CRC32 ist ein schneller Code mit 8 Zeichen, gemacht um zufällige Fehler zu erkennen. ZIP- und PNG-Dateien, Spiele-Mods und .sfv-Listen auf Archivseiten nutzen ihn, um zu bestätigen, dass nichts beschädigt wurde.",
+    "blake2b": "BLAKE2b ist eine schnelle, moderne Prüfsumme mit einem Code aus 128 Zeichen. Sie ist in Sicherheitssoftware und Entwicklerwerkzeugen beliebt und auf den meisten Rechnern schneller als SHA-512.",
+    "blake3": "BLAKE3 ist eine der neuesten und schnellsten Prüfsummen mit einem Code aus 64 Zeichen. Sie verarbeitet riesige Dateien zügig und gewinnt in modernen Entwicklerwerkzeugen und Backups an Boden.",
+    "crc32c": "CRC32C ist ein schnellerer Verwandter von CRC32 mit einem Code aus 8 Zeichen. Speichersysteme, Datenbanken und Netzwerkprotokolle nutzen ihn, um beschädigte Daten zu erkennen, oft mit Unterstützung des Prozessors.",
+    "sha384": "SHA-384 ist eine gekürzte Form von SHA-512 mit einem Code aus 96 Zeichen. Sie begegnet Ihnen bei sicheren Verbindungen und manchen signierten Paketen, wo ein starkes, aber etwas kürzeres Ergebnis gewünscht ist.",
+    "sha3-256": "SHA3-256 ist die häufigste SHA-3-Variante mit einem Code aus 64 Zeichen. Sie ist anders aufgebaut als SHA-256, weshalb manche Projekte sie als zweite Meinung mitveröffentlichen.",
+    "sha224": "SHA-224 ist eine abgespeckte Version von SHA-256 und liefert einen Code aus 56 Zeichen. Auf Download-Seiten ist sie seltener, taucht aber in älteren Systemen und manchen Embedded-Geräten noch auf.",
+    "sha3-512": "SHA3-512 ist das längste Standardergebnis von SHA-3, ein Code aus 128 Zeichen. Es wird dort genutzt, wo maximale Stärke gefragt ist, und ist auf gewöhnlichen Download-Seiten seltener.",
+    "blake2s": "BLAKE2s ist die leichtere Version von BLAKE2, gemacht für kleinere Geräte. Ihr Code aus 64 Zeichen ist stark, und sie steckt in manchen Apps und Werkzeugen, die auf Tempo setzen.",
+    "sha3-384": "SHA3-384 ist eine mittelgroße SHA-3-Option mit einem Code aus 96 Zeichen. Sie taucht in Hochsicherheitssoftware und in Standards auf, die zusätzliche Stärke verlangen.",
+    "sha3-224": "SHA3-224 gehört zu SHA-3, der neuesten offiziellen Familie. Anders aufgebaut als SHA-2 liefert es einen Code aus 56 Zeichen und dient als unabhängiger Rückhalt, falls SHA-2 einmal schwächer würde.",
+    "md4": "MD4 ist eine sehr alte Prüfsumme mit 32 Zeichen von 1990. Heute sieht man sie selten, meist bei Altsystemen und Dateitausch-Links wie eDonkey (ed2k). Nutzen Sie sie nur, um einen alten Wert abzugleichen.",
+    "adler32": "Adler-32 ist eine sehr einfache Prüfung mit 8 Zeichen, eingebaut in die Formate zlib und PNG. Sie ist schnell, aber leicht zu täuschen und daher nur zum Erkennen zufälliger Beschädigung gedacht.",
+    "crc16": "CRC16 ist ein winziger Code aus 4 Zeichen zum Erkennen von Fehlern. Er sitzt meist in Hardware, Industrietechnik, seriellen Verbindungen und Embedded-Geräten, wo geringe Größe wichtiger ist als Stärke.",
+    "fletcher32": "Fletcher-32 ist die Variante der Fletcher-Prüfung mit 8 Zeichen. Sie steckt in manchen Embedded- und Speichersoftware und ist am besten als schneller Fehlertest zu verstehen, nicht als Schutz.",
+    "fletcher16": "Fletcher-16 ist eine leichte Prüfung mit 4 Zeichen aus den 1980er-Jahren. Man findet sie noch in älterer Netzwerk- und Embedded-Software, wo Tempo und geringe Größe am wichtigsten waren.",
+    "crc8": "CRC8 ist der kleinste der Familie, nur 2 Zeichen. Er schützt sehr kurze Nachrichten in Sensoren, Akkus und kleinen Chips, daher beweist eine Übereinstimmung hier für sich genommen sehr wenig."
   }
 }
