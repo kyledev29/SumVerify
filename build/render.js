@@ -96,14 +96,17 @@ const ROBOTS = 'index,follow,max-image-preview:large,max-snippet:-1,max-video-pr
 
 /** Expands the {name} {bits} {hexLen} {successor} {ext} tokens of the `hashpage` / `hashes` messages for one hash. */
 export function hashTexts(messages, h, sep = ' ') {
-  const hv = { name: h.name, slug: h.slug, bits: String(h.bits), hexLen: String(h.hexLen), successor: h.successor, ext: h.ext, designer: h.designer, released: h.year, standard: h.standard, variant: h.variant };
+  const hv = { name: h.name, slug: h.slug, bits: String(h.bits), hexLen: String(h.hexLen), successor: h.successor, ext: h.ext, alias: h.alias || h.name, nameAlias: h.alias ? `${h.name} (${h.alias})` : h.name, designer: h.designer, released: h.year, standard: h.standard, variant: h.variant };
   const fill = (str) => str.replace(/\{(\w+)\}/g, (m, k) => (k in hv ? hv[k] : m));
   const hp = mapStrings(messages.hashpage, fill);
   hp.about = fill(messages.hashes?.[h.slug] ?? '');
+  // keywords: drop exact duplicates (hashes without an alias would repeat themselves)
+  hp.meta.keywords = [...new Map(hp.meta.keywords.split(',').map((k) => [k.trim().toLowerCase(), k.trim()])).values()].join(', ');
   hp.secureCurrent = hp.secure[h.tier];
   // "Information about X": a short paragraph built from the facts we actually have for this hash
   hp.infoText = [
     hp.info.size,
+    h.alias ? hp.info.alias : '',
     h.designer && h.year ? hp.info.origin : '',
     h.standard ? hp.info.standard : '',
     h.variant ? hp.info.variant : '',
@@ -166,7 +169,7 @@ function buildSeoHead({ config, desc, page, locale, base, meta, messages, hash, 
     const appId = `${url}#app`;
     pageNode.mainEntity = { '@id': appId };
     graph.push({
-      '@type': 'WebApplication', '@id': appId, name: hash ? hp.h1 : site.name, url, description: meta.description, inLanguage: lang,
+      '@type': 'WebApplication', '@id': appId, name: hash ? hp.h1 : site.name, ...(hash?.alias ? { alternateName: [hash.alias, `${hash.alias} checksum`] } : {}), url, description: meta.description, inLanguage: lang,
       applicationCategory: 'UtilitiesApplication', operatingSystem: 'Any',
       browserRequirements: 'Requires JavaScript and WebAssembly', isAccessibleForFree: true,
       offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
@@ -223,7 +226,7 @@ export function renderPage(root, config, desc) {
       ? messages.meta[page.id]
       : { title: page.title, description: page.description, keywords: page.keywords };
 
-  const href = (h) => `${base}${h.slug}-checksum/`;
+  const href = (h) => `${base}${h.slug}/`;
   const linkText = (h) => messages.hashpage.linkText.replace(/\{name\}/g, h.name);
 
   // language switcher: same page in another locale, or the locale home for English-only pages
@@ -328,6 +331,19 @@ export function buildSitemap(root, config, pages) {
     return `<url><loc>${url}${p.url}</loc><lastmod>${lastmod(root, config, p)}</lastmod>${alts}</url>`;
   });
   return `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">\n${rows.join('\n')}\n</urlset>\n`;
+}
+
+/** 301s from the old /<slug>-checksum/ URLs to /<slug>/ (Netlify / Cloudflare Pages `_redirects` format). */
+export function buildRedirects(config) {
+  const lines = [];
+  for (const l of config.locales) {
+    const prefix = l.code === config.defaultLocale ? '' : `/${l.code}`;
+    for (const h of config.hashes) {
+      lines.push(`${prefix}/${h.slug}-checksum/ ${prefix}/${h.slug}/ 301`);
+      lines.push(`${prefix}/${h.slug}-checksum ${prefix}/${h.slug}/ 301`);
+    }
+  }
+  return `${lines.join('\n')}\n`;
 }
 
 export function buildRobots(config) {

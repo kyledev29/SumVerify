@@ -105,15 +105,15 @@
   },
   "hashpage": {
     "meta": {
-      "title": "{name} チェックサム計算 – {name} をオンラインで確認",
-      "description": "無料の {name} チェックサム計算ツール。ファイルの {name} 値（{hexLen} 文字）をダウンロードページと照合できます。ブラウザ上で動作し、アップロードは不要です。",
-      "keywords": "{name} チェックサム計算,{name} ハッシュ確認,{name} オンライン検証,{name} ファイル整合性,{name} ハッシュ生成"
+      "title": "{nameAlias} チェックサム計算 – オンライン確認",
+      "description": "無料の {nameAlias} チェックサム計算ツール。ファイルのハッシュ値（{hexLen} 文字）をダウンロードページと照合。ブラウザ上で動作し、アップロード不要です。",
+      "keywords": "{name} チェックサム計算,{alias} チェックサム,{name} ハッシュ確認,{alias} ハッシュ,{name} オンライン検証,{alias} ファイル検証,{name} ハッシュ生成"
     },
-    "h1": "{name} チェックサム計算",
+    "h1": "{nameAlias} チェックサム計算",
     "lead": "ファイルをドロップすると {name} チェックサムが分かります。ダウンロードページの {name} 値を貼り付ければ、ファイルと一致するかも確認できます。処理はすべてお使いのデバイス上で行われます。",
     "crumb": "{name} チェックサム",
     "linkText": "{name} チェックサム",
-    "aboutTitle": "{name} とは？",
+    "aboutTitle": "{nameAlias} とは？",
     "exampleLead": "空のファイルの {name} は、どれも同じ値になります：",
     "secureTitle": "{name} は安全？",
     "secure": {
@@ -134,6 +134,7 @@
     "infoTitle": "{name} の基本情報",
     "info": {
       "size": "{name} は {bits} ビットのチェックサムを作り、{hexLen} 文字（数字 0〜9 と英字 a〜f）で表します。大文字・小文字や空白は関係ありません。",
+      "alias": "{alias} と表記されることもよくありますが、同じものを指します。",
       "origin": "{designer} によって {released} 年に作られました。",
       "standard": "規格は {standard} に定められています。",
       "variant": "このページでは {variant} 方式を使っています。",

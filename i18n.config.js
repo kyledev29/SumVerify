@@ -50,7 +50,7 @@ export default {
   ],
 
   pages: [
-    ...HASHES.map((h) => ({ id: `hash-${h.slug}`, template: 'hash', hash: h.slug, path: `${h.slug}-checksum/`, multilingual: true })),
+    ...HASHES.map((h) => ({ id: `hash-${h.slug}`, template: 'hash', hash: h.slug, path: `${h.slug}/`, multilingual: true })),
     { id: 'home', path: '', multilingual: true },
     { id: 'about', path: 'about/', multilingual: true },
     { id: 'contact', path: 'contact/', multilingual: true },

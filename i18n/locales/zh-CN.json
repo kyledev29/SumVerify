@@ -105,15 +105,15 @@
   },
   "hashpage": {
     "meta": {
-      "title": "{name} 校验和计算器 – 在线校验 {name}",
-      "description": "免费的 {name} 校验和计算器：将文件的 {name} 值（{hexLen} 位字符）与下载页面比对。在浏览器中运行，不上传文件。",
-      "keywords": "{name} 校验和计算器,{name} 哈希校验,在线校验 {name},{name} 文件完整性,{name} 哈希生成"
+      "title": "{nameAlias} 校验和计算器 – 在线校验",
+      "description": "免费的 {nameAlias} 校验和计算器：将文件的哈希值（{hexLen} 位字符）与下载页面比对。在浏览器中运行，不上传文件。",
+      "keywords": "{name} 校验和计算器,{alias} 校验和,{name} 哈希校验,{alias} 哈希,在线校验 {name},{alias} 文件校验,{name} 哈希生成"
     },
-    "h1": "{name} 校验和计算器",
+    "h1": "{nameAlias} 校验和计算器",
     "lead": "拖入文件即可得到它的 {name} 校验和，或粘贴下载页面上的 {name} 值，看看文件是否一致。一切都在你的设备上运行。",
     "crumb": "{name} 校验和",
     "linkText": "{name} 校验和",
-    "aboutTitle": "什么是 {name}？",
+    "aboutTitle": "什么是 {nameAlias}？",
     "exampleLead": "所有空文件的 {name} 都相同：",
     "secureTitle": "{name} 安全吗？",
     "secure": {
@@ -134,6 +134,7 @@
     "infoTitle": "关于 {name} 的信息",
     "info": {
       "size": "{name} 生成 {bits} 位的校验和，写成 {hexLen} 个字符（数字 0–9 和字母 a–f）。大小写和空格都不影响。",
+      "alias": "你也经常会看到它被写成 {alias}，两者是同一个东西。",
       "origin": "它由 {designer} 于 {released} 年创建。",
       "standard": "它的规范见 {standard}。",
       "variant": "本页使用的是 {variant} 变体。",

@@ -105,15 +105,15 @@
   },
   "hashpage": {
     "meta": {
-      "title": "Kalkulator Checksum {name} – Cek Online",
-      "description": "Kalkulator checksum {name} gratis: cocokkan hash {name} file ({hexLen} karakter) dengan halaman unduhan. Berjalan di browser Anda, tanpa mengunggah apa pun.",
-      "keywords": "kalkulator checksum {name}, pengecek hash {name}, verifikasi {name} online, integritas file {name}, generator hash {name}"
+      "title": "Kalkulator Checksum {nameAlias} – Cek Online",
+      "description": "Kalkulator checksum {nameAlias} gratis: cocokkan hash ({hexLen} karakter) dengan halaman unduhan. Berjalan di browser, tanpa unggah file.",
+      "keywords": "kalkulator checksum {name}, checksum {alias}, pengecek hash {name}, hash {alias}, verifikasi {name} online, cek file {alias}, generator hash {name}"
     },
-    "h1": "Kalkulator Checksum {name}",
+    "h1": "Kalkulator Checksum {nameAlias}",
     "lead": "Letakkan file untuk mendapatkan checksum {name}-nya, atau tempel kode {name} dari halaman unduhan untuk melihat apakah file Anda cocok. Semuanya berjalan di perangkat Anda.",
     "crumb": "Checksum {name}",
     "linkText": "Checksum {name}",
-    "aboutTitle": "Apa itu {name}?",
+    "aboutTitle": "Apa itu {nameAlias}?",
     "exampleLead": "Setiap file kosong memiliki {name} yang sama:",
     "secureTitle": "Apakah {name} aman digunakan?",
     "secure": {
@@ -134,6 +134,7 @@
     "infoTitle": "Informasi tentang {name}",
     "info": {
       "size": "{name} menghasilkan checksum {bits} bit, ditulis sebagai {hexLen} karakter (angka 0–9 dan huruf a–f). Huruf kapital dan spasi tidak berpengaruh.",
+      "alias": "Anda juga akan sering melihatnya ditulis {alias}, artinya sama.",
       "origin": "Dibuat oleh {designer} pada tahun {released}.",
       "standard": "Ditetapkan dalam {standard}.",
       "variant": "Halaman ini memakai varian {variant}.",

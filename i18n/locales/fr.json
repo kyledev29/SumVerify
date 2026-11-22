@@ -105,15 +105,15 @@
   },
   "hashpage": {
     "meta": {
-      "title": "Calculateur {name} – Vérifier le checksum en ligne",
-      "description": "Calculez et vérifiez le checksum {name} ({hexLen} caractères) d’un fichier. Gratuit, dans votre navigateur, sans envoi.",
-      "keywords": "calculateur checksum {name}, vérificateur de hash {name}, vérifier {name} en ligne, intégrité de fichier {name}, générateur de hash {name}"
+      "title": "Calculateur {nameAlias} – Vérifier en ligne",
+      "description": "Calculez et vérifiez le checksum {nameAlias} ({hexLen} caractères) d’un fichier. Gratuit, dans votre navigateur, sans envoi.",
+      "keywords": "calculateur checksum {name}, checksum {alias}, vérificateur de hash {name}, hash {alias}, vérifier {name} en ligne, vérifier un fichier {alias}, générateur de hash {name}"
     },
-    "h1": "Calculateur de checksum {name}",
+    "h1": "Calculateur de checksum {nameAlias}",
     "lead": "Déposez un fichier pour obtenir son checksum {name}, ou collez le code {name} d’une page de téléchargement pour voir si votre fichier correspond. Tout se passe sur votre appareil.",
     "crumb": "Checksum {name}",
     "linkText": "Checksum {name}",
-    "aboutTitle": "Qu’est-ce que {name} ?",
+    "aboutTitle": "Qu’est-ce que {nameAlias} ?",
     "exampleLead": "Tous les fichiers vides ont le même {name} :",
     "secureTitle": "{name} est-il sûr ?",
     "secure": {
@@ -134,6 +134,7 @@
     "infoTitle": "Informations sur {name}",
     "info": {
       "size": "{name} produit un checksum de {bits} bits, écrit sur {hexLen} caractères (chiffres 0–9 et lettres a–f). Les majuscules et les espaces n’ont pas d’importance.",
+      "alias": "Vous le verrez aussi souvent écrit {alias} : c’est la même chose.",
       "origin": "Il a été créé par {designer} en {released}.",
       "standard": "Il est défini dans {standard}.",
       "variant": "Cette page utilise la variante {variant}.",

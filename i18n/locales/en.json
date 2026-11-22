@@ -127,15 +127,15 @@
   },
   "hashpage": {
     "meta": {
-      "title": "{name} Checksum Calculator – Verify {name} Online",
-      "description": "Free {name} checksum calculator: check a file’s {name} hash ({hexLen} characters) against the download page. Runs in your browser, nothing is uploaded.",
-      "keywords": "{name} checksum calculator, {name} hash checker, verify {name} online, {name} file integrity, {name} hash generator"
+      "title": "{nameAlias} Checksum Calculator – Verify Online",
+      "description": "Free {nameAlias} checksum calculator: check a file’s hash ({hexLen} characters) against the download page. Runs in your browser, nothing is uploaded.",
+      "keywords": "{name} checksum calculator, {alias} checksum, {name} hash checker, {alias} hash, verify {name} online, {alias} file checksum, {name} hash generator"
     },
-    "h1": "{name} Checksum Calculator",
+    "h1": "{nameAlias} Checksum Calculator",
     "lead": "Drop a file to get its {name} checksum, or paste the {name} code from a download page to see if your file matches. Everything runs on your device.",
     "crumb": "{name} checksum",
     "linkText": "{name} checksum",
-    "aboutTitle": "What is {name}?",
+    "aboutTitle": "What is {nameAlias}?",
     "exampleLead": "Every empty file has the same {name}:",
     "secureTitle": "Is {name} safe to use?",
     "secure": {
@@ -156,6 +156,7 @@
     "infoTitle": "Information about {name}",
     "info": {
       "size": "{name} produces a checksum {bits} bits long, written as {hexLen} characters (digits 0–9 and letters a–f). Capital letters and spaces don’t matter.",
+      "alias": "You will often see it written as {alias}, which means the same thing.",
       "origin": "It was created by {designer} in {released}.",
       "standard": "It is specified in {standard}.",
       "variant": "This page uses the {variant} variant.",

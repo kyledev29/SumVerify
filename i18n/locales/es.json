@@ -105,15 +105,15 @@
   },
   "hashpage": {
     "meta": {
-      "title": "Calculadora {name} – Verifica el checksum en línea",
-      "description": "Calcula y verifica el checksum {name} ({hexLen} caracteres) de un archivo. Gratis, en tu navegador y sin subir nada.",
-      "keywords": "calculadora de checksum {name}, verificador de hash {name}, verificar {name} en línea, integridad de archivo {name}, generador de hash {name}"
+      "title": "Calculadora {nameAlias} – Verifica en línea",
+      "description": "Calcula y verifica el checksum {nameAlias} ({hexLen} caracteres) de un archivo. Gratis, en tu navegador y sin subir nada.",
+      "keywords": "calculadora de checksum {name}, checksum {alias}, verificador de hash {name}, hash {alias}, verificar {name} en línea, comprobar archivo {alias}, generador de hash {name}"
     },
-    "h1": "Calculadora de checksum {name}",
+    "h1": "Calculadora de checksum {nameAlias}",
     "lead": "Suelta un archivo para obtener su checksum {name}, o pega el código {name} de una página de descarga para ver si tu archivo coincide. Todo se ejecuta en tu dispositivo.",
     "crumb": "Checksum {name}",
     "linkText": "Checksum {name}",
-    "aboutTitle": "¿Qué es {name}?",
+    "aboutTitle": "¿Qué es {nameAlias}?",
     "exampleLead": "Todos los archivos vacíos tienen el mismo {name}:",
     "secureTitle": "¿Es seguro {name}?",
     "secure": {
@@ -134,6 +134,7 @@
     "infoTitle": "Información sobre {name}",
     "info": {
       "size": "{name} genera un checksum de {bits} bits, escrito con {hexLen} caracteres (dígitos 0–9 y letras a–f). Las mayúsculas y los espacios no importan.",
+      "alias": "También lo verás escrito a menudo como {alias}: es lo mismo.",
       "origin": "Lo creó {designer} en {released}.",
       "standard": "Está definido en {standard}.",
       "variant": "Esta página usa la variante {variant}.",

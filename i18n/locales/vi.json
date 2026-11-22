@@ -127,15 +127,15 @@
   },
   "hashpage": {
     "meta": {
-      "title": "Tính checksum {name} – Kiểm tra {name} trực tuyến",
-      "description": "Công cụ tính checksum {name} miễn phí: đối chiếu mã {name} ({hexLen} ký tự) của tệp với trang tải xuống. Chạy ngay trong trình duyệt, không tải tệp lên.",
-      "keywords": "tính checksum {name}, kiểm tra hash {name}, xác minh {name} trực tuyến, kiểm tra toàn vẹn tệp {name}, tạo hash {name}"
+      "title": "Tính checksum {nameAlias} – Kiểm tra trực tuyến",
+      "description": "Tính checksum {nameAlias} miễn phí: đối chiếu mã ({hexLen} ký tự) với trang tải xuống. Chạy trong trình duyệt, không tải tệp lên.",
+      "keywords": "tính checksum {name}, checksum {alias}, kiểm tra hash {name}, hash {alias}, xác minh {name} trực tuyến, kiểm tra tệp bằng {alias}, tạo hash {name}"
     },
-    "h1": "Tính checksum {name}",
+    "h1": "Tính checksum {nameAlias}",
     "lead": "Thả tệp vào để lấy checksum {name}, hoặc dán mã {name} từ trang tải xuống để xem tệp của bạn có khớp không. Mọi thứ chạy ngay trên thiết bị của bạn.",
     "crumb": "Checksum {name}",
     "linkText": "Checksum {name}",
-    "aboutTitle": "{name} là gì?",
+    "aboutTitle": "{nameAlias} là gì?",
     "exampleLead": "Mọi tệp rỗng đều có cùng một mã {name}:",
     "secureTitle": "{name} có an toàn không?",
     "secure": {
@@ -156,6 +156,7 @@
     "infoTitle": "Thông tin về {name}",
     "info": {
       "size": "{name} tạo ra checksum {bits} bit, được viết thành {hexLen} ký tự (chữ số 0–9 và chữ cái a–f). Chữ hoa và khoảng trắng không quan trọng.",
+      "alias": "Bạn cũng sẽ thường thấy nó được viết là {alias}, nghĩa là cùng một thứ.",
       "origin": "Nó do {designer} tạo ra vào năm {released}.",
       "standard": "Nó được quy định trong {standard}.",
       "variant": "Trang này dùng biến thể {variant}.",

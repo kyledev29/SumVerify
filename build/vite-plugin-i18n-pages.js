@@ -3,7 +3,7 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { normalizePath } from 'vite';
 import config from '../i18n.config.js';
-import { listPages, renderPage, buildSitemap, buildRobots } from './render.js';
+import { listPages, renderPage, buildSitemap, buildRobots, buildRedirects } from './render.js';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 
@@ -23,6 +23,7 @@ export default function i18nPages() {
     const out = {
       '/sitemap.xml': [buildSitemap(ROOT, config, pages), 'application/xml; charset=utf-8'],
       '/robots.txt': [buildRobots(config), 'text/plain; charset=utf-8'],
+      '/_redirects': [buildRedirects(config), 'text/plain; charset=utf-8'],
     };
     if (indexNowKey) out[`/${indexNowKey}.txt`] = [indexNowKey, 'text/plain; charset=utf-8'];
     return out;

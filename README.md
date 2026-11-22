@@ -54,7 +54,9 @@ Các `{token}` khác (`{n}`, `{name}`, …) giữ nguyên cho JS chạy trên tr
 ## Trang theo từng loại hash (21 trang × 12 ngôn ngữ)
 
 - Dữ liệu trung tính ngôn ngữ của 21 loại hash (độ dài, họ thuật toán, năm, tác giả, tiêu chuẩn, mức bảo mật, lệnh terminal, giá trị của file rỗng, trang liên quan) nằm ở `i18n/hashes.js`, **xếp theo độ phổ biến**. Thứ tự này quyết định menu **Tools**, lưới "Công cụ theo loại hash" ở trang chủ và nhóm "Other hash types".
-- Mỗi loại có URL `/<slug>-checksum/` ở mọi ngôn ngữ (ví dụ `/sha256-checksum/`, `/ja/md5-checksum/`, `/vi/sha3-256-checksum/`), dùng chung template `src/templates/pages/hash.html`.
+- Mỗi loại có URL ngắn `/<slug>/` ở mọi ngôn ngữ (ví dụ `/sha256/`, `/ja/md5/`, `/vi/sha3-256/`), dùng chung template `src/templates/pages/hash.html`. Slug khai báo trong `i18n/hashes.js`.
+- **Cách viết người dùng hay gõ:** trường `alias` (SHA256 cho SHA-256, SHA1, SHA512, SHA384, SHA224, Adler32, Fletcher16, Fletcher32) được dùng tự nhiên trong title ("SHA-256 (SHA256) Checksum Calculator"), H1, tiêu đề "What is SHA-256 (SHA256)?", một câu trong đoạn thông tin, keywords và `alternateName` của JSON-LD.
+- **Chuyển URL cũ:** build tạo thêm `_redirects` (Netlify / Cloudflare Pages) để 301 từ `/<slug>-checksum/` sang `/<slug>/` cho mọi ngôn ngữ. Host khác (Vercel, nginx…) cần tự cấu hình 301 tương đương; nếu chưa từng công bố URL cũ thì có thể bỏ qua.
 - Nội dung dịch: `hashpage` (khung câu, có token `{name}`, `{bits}`, `{hexLen}`, `{successor}`, `{ext}`) và `hashes.<slug>` (đoạn giới thiệu riêng cho từng hash) trong JSON mỗi ngôn ngữ. Title, description, keywords, đoạn "Thông tin về …" (viết thành một đoạn văn từ các dữ kiện có thật của hash đó), JSON-LD và breadcrumb của từng trang đều sinh từ đó. Trang hash không có phần FAQ; FAQ chỉ còn ở trang chủ.
 - Trang hash chỉ tính loại hash của chính nó trước; nút **Check other hash types** sẽ tính nốt 20 loại còn lại trong **một nhóm duy nhất**, xếp theo độ phổ biến.
 - Khối "Known-file lookup – Coming soon" xuất hiện ở trang chủ và cả 21 trang hash (cờ `hasLookup` trong `build/render.js`; About/Contact/Privacy/Terms không có).

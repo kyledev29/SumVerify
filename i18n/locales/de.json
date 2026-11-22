@@ -105,15 +105,15 @@
   },
   "hashpage": {
     "meta": {
-      "title": "{name}-Prüfsummenrechner – {name} online prüfen",
-      "description": "Kostenloser {name}-Prüfsummenrechner: Vergleichen Sie den {name}-Hash einer Datei ({hexLen} Zeichen) mit der Download-Seite. Läuft im Browser, ohne Upload.",
-      "keywords": "{name} Prüfsummenrechner, {name} Hash prüfen, {name} online verifizieren, {name} Dateiintegrität, {name} Hash-Generator"
+      "title": "{nameAlias}-Prüfsummenrechner – online prüfen",
+      "description": "Kostenloser {nameAlias}-Prüfsummenrechner: Vergleichen Sie den Hash ({hexLen} Zeichen) mit der Download-Seite. Läuft im Browser, ohne Upload.",
+      "keywords": "{name} Prüfsummenrechner, {alias} Prüfsumme, {name} Hash prüfen, {alias} Hash, {name} online verifizieren, {alias} Datei prüfen, {name} Hash-Generator"
     },
-    "h1": "{name}-Prüfsummenrechner",
+    "h1": "{nameAlias}-Prüfsummenrechner",
     "lead": "Legen Sie eine Datei ab, um ihre {name}-Prüfsumme zu erhalten, oder fügen Sie den {name}-Wert von einer Download-Seite ein, um zu sehen, ob Ihre Datei übereinstimmt. Alles läuft auf Ihrem Gerät.",
     "crumb": "{name}-Prüfsumme",
     "linkText": "{name}-Prüfsumme",
-    "aboutTitle": "Was ist {name}?",
+    "aboutTitle": "Was ist {nameAlias}?",
     "exampleLead": "Jede leere Datei hat denselben {name}:",
     "secureTitle": "Ist {name} sicher?",
     "secure": {
@@ -134,6 +134,7 @@
     "infoTitle": "Informationen zu {name}",
     "info": {
       "size": "{name} erzeugt eine Prüfsumme mit {bits} Bit, geschrieben als {hexLen} Zeichen (Ziffern 0–9 und Buchstaben a–f). Groß- und Kleinschreibung sowie Leerzeichen spielen keine Rolle.",
+      "alias": "Häufig wird es auch {alias} geschrieben, gemeint ist dasselbe.",
       "origin": "Entwickelt wurde es von {designer} im Jahr {released}.",
       "standard": "Festgelegt ist es in {standard}.",
       "variant": "Diese Seite verwendet die Variante {variant}.",
